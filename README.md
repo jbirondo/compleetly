@@ -15,11 +15,24 @@ Compleetly is a theme based news site where you can pick pick different news out
 
 ### Functionality and MVP
 
- -[]  
- -[]  
- -[]  
- -[]  
+ - [ ]  User authorization: sign up and log in
+ - [ ]  Splash page with sign up / login modals. Splash page will also have a "Get started for free" button
+ - [ ]  Has different feeds and boards from specific news outlets 
+ - [ ]  News api (newsapi.org) will allow users to retrieve recent articles
+ - [ ]  News feed nav bar allows user to organize by category
+ - [ ]  News feed nav bar has/adds news outlets to our custom feed
+ - [ ]  Production README
+
+ Bonus Features
+
+ - [ ]  Notifications on log in/ Keyword alerts
+ - [ ]  Read-later functionalty
+ - [ ]  Search bar
+
+
 
 ### Technologies and Technical Challenges
+
+
 
 ### Group Members and Work Breakdown
