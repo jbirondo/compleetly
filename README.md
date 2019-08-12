@@ -11,7 +11,7 @@ Compleetly is a theme based news site where you can pick pick different news out
  * Construct a Web application with customizable newsfeed interface
  * Utilizes free news api (newsapi.org) to populate articles 
  * Uses bcrypts for backend user auth and stores a session token inside cookies for frontend user auth
-  * Does not store plain-text password
+* Does not store plain-text password
 
 ### Functionality and MVP
 
@@ -33,6 +33,43 @@ Compleetly is a theme based news site where you can pick pick different news out
 
 ### Technologies and Technical Challenges
 
+Backend: MongoDB/Express
+
+Technical challenges:
+
+* Storing a user's feed preferences
+* utilizing API to generate live news feed
+* generating content based off live news feed
+
+Frontend: React/Node.js
+
+Technical challenges:
+
+* Reading data from MongoDB database and organizing for display
+* Proper display of API data
+* Customizable nav bar based on followed feeds/filters
 
 
 ### Group Members and Work Breakdown
+
+**DAY 1**
+
+* Complete README
+* Create MongoDB
+* User Auth
+* Investigate news feed api
+* Sign Up/Login Modal
+
+**DAY 2**
+
+* Implement news feed api
+* Upper nav bar 
+* Left nav bar/customizable news feed
+* Keyword Alerts
+
+**DAY 3**
+
+* 
+
+**DAY 4**
+**DAY 5**
