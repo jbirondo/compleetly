@@ -7,7 +7,7 @@ module.exports = function validateLoginInput(data) {
     data.email = validText(data.email) ? data.email : '';
     data.password = validText(data.password) ? data.password: '';
 
-    if (Validator.isEmail(data.email)) {
+    if (!Validator.isEmail(data.email)) {
         errors.email = 'Email is invalid';
     };
 
@@ -18,7 +18,8 @@ module.exports = function validateLoginInput(data) {
     if (Validator.isEmpty(data.password)) {
         errors.password = 'Password field is required';
     };
-
+//    console.log(errors)
+//    console.log(data.email)
     return {
         errors,
         isValid: Object.keys(errors).length === 0
