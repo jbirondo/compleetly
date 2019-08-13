@@ -1,12 +1,9 @@
 import React from 'react';
 import { withRouter } from 'react-router';
 import axios from 'axios';
-<<<<<<< HEAD
 // import { link } from 'fs';
-=======
-import { link } from 'fs';
-import './newsfeed.css';
->>>>>>> f5b4aaa25fe973779a1c74fce33e85ea6db2f811
+// import { link } from 'fs';
+// import './newsfeed.css';
 // const NewsAPI = require('newsapi');
 // const newsapi = new NewsAPI('c74b69f1594f4080902981643aa178df');
 
@@ -29,6 +26,7 @@ class NewsFeed extends React.Component {
         const req = new Request(url);
         axios(req).then(res => {
             this.setState({articles: res.data.articles})
+            console.log(res)
         })
     }
     

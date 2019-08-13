@@ -1,8 +1,8 @@
 import React from 'react';
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
 import { Route, Switch } from 'react-router-dom';
-import LoginFormContainer from './loginform/loginform_container';
-import SignUpFormContainer from './loginform/signup_form_container';
+import LoginFormContainer from './session_form/loginform_container';
+import SignUpFormContainer from './session_form/signup_form_container';
 import NewsFeed from './newsfeed/news_explore';
 import NewsFeedAddContent from './newsfeed_addcontent/add_content';
 import TechnologyFeed from './newsfeed_addcontent/content_pages/technology';
@@ -24,15 +24,15 @@ const App = () => (
       <NavBarContainer />
       <Switch>
          <Route exact path="/" component={MainPage} />
-         <Route exact path="/newsfeed" component={NewsFeed} />
-         <Route exact path="/newsfeed/add" component={NewsFeedAddContent} />
-         <Route exact path="/newsfeed/technology" component={TechnologyFeed} />
-         <Route exact path="/newsfeed/science" component={ScienceFeed} />
-         <Route exact path="/newsfeed/sports" component={SportsFeed} />
-         <Route exact path="/newsfeed/health" component={HealthFeed} />
-         <Route exact path="/newsfeed/general" component={GeneralFeed} />
-         <Route exact path="/newsfeed/entertainment" component={EntertainmentFeed} />
-         <Route exact path="/newsfeed/business" component={BusinessFeed} />
+         <ProtectedRoute exact path="/newsfeed" component={NewsFeed} />
+         <ProtectedRoute exact path="/newsfeed/add" component={NewsFeedAddContent} />
+         <ProtectedRoute exact path="/newsfeed/technology" component={TechnologyFeed} />
+         <ProtectedRoute exact path="/newsfeed/science" component={ScienceFeed} />
+         <ProtectedRoute exact path="/newsfeed/sports" component={SportsFeed} />
+         <ProtectedRoute exact path="/newsfeed/health" component={HealthFeed} />
+         <ProtectedRoute exact path="/newsfeed/general" component={GeneralFeed} />
+         <ProtectedRoute exact path="/newsfeed/entertainment" component={EntertainmentFeed} />
+         <ProtectedRoute exact path="/newsfeed/business" component={BusinessFeed} />
          <AuthRoute exact path="/login" component={LoginFormContainer} />
          <AuthRoute exact path="/signup" component={SignUpFormContainer} />
          {/* <AuthRoute exact path="/login" component={LoginFormContainer} />
