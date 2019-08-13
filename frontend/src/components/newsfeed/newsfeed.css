@@ -1,0 +1,17 @@
+.news-exlore-li{
+   list-style: none;
+   padding: 30px;
+   width: 500px;
+   font-size: 14px;
+}
+
+.news-explore-img{
+   border-radius: 0.2rem;
+   height: 78px;
+   width: 130px;
+   float: left;
+}
+
+.news-explore-author{
+   font-weight: 400;
+}
