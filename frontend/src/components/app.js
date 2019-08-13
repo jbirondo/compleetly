@@ -4,7 +4,7 @@
 import React from 'react';
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
 import { Route, Switch } from 'react-router-dom';
-import LoginFormContainer from '../components/loginform/loginform_container';
+import LoginFormContainer from './loginform/loginform_container';
 import SignUpFormContainer from './loginform/signup_form_container';
 // import NavBarContainer from './nav/navbar_container';
 
