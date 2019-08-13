@@ -19,10 +19,12 @@ router.get('/current', passport.authenticate('jwt', {session: false}), (req, res
 
 router.post('/register', (req, res) => {
     // Check to make sure nobody has already registered with a duplicate email
-    // debugger;
+   //  debugger;
+   // console.log(req.body);
     const { errors, isValid } = validateRegisterInput(req.body);
 
     if (!isValid) {
+      //  console.log('invalid');
         return res.status(400).json(errors)
     }
 
@@ -52,6 +54,8 @@ router.post('/register', (req, res) => {
             }
         })
 })
+
+
 router.post('/login', (req, res) => {
     const { errors, isValid } = validateLoginInput(req.body);
     // debugger;
