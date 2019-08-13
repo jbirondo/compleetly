@@ -8,6 +8,7 @@ import jwt_decode from 'jwt-decode';
 
 export const RECEIVE_USER_LOGOUT = "RECEIVE_USER_LOGOUT";
 export const RECEIVE_CURRENT_USER = "RECEIVE_CURRENT_USER";
+<<<<<<< HEAD
 // export const RECEIVE_SESSION_ERRORS = "RECEIVE_SESSION_ERRORS";
 export const RECEIVE_USER_SIGN_IN = "RECEIVE_USER_SIGN_IN";
 
@@ -47,16 +48,60 @@ export const signup = user => dispatch => (
 
 
 
+=======
+export const RECEIVE_SESSION_ERRORS = "RECEIVE_SESSION_ERRORS";
+export const RECEIVE_USER_SIGN_UP = "RECEIVE_USER_SIGN_UP";
+>>>>>>> 958000ac6b4865332d6c38f64e0c68e6b70acc8b
 
 export const logoutUser = () => ({
     type: RECEIVE_USER_LOGOUT
 });
 
+export const receiveErrors = errors => ({
+    type: RECEIVE_SESSION_ERRORS,
+    errors
+});
+
+
+export const receiveCurrentUser = currentUser => ({
+    type: RECEIVE_CURRENT_USER,
+    currentUser
+}); /// do we need this and receiveCurrentUser? 
+// do we just watn to receiveCurrentUser as our main action?
+
+export const receiveUserSignUp = currentUser => ({
+    type: RECEIVE_USER_SIGN_UP,
+    currentUser
+});
+
+export const signup = user => dispatch => (
+    APIUtil.signup(user).then(user => {
+        dispatch(receiveUserSignUp(user))
+    }).catch(err => {
+        dispatch(receiveErrors(err.response.data))
+    })
+);
+
+export const login = user => dispatch => (
+    APIUtil.login(user).then( res => {
+        const { token } = res.data;
+        localStorage.setItem('jwtToken', token);
+        APIUtil.setAuthToken(token);
+        const decoded = jwt_decode(token);
+        dispatch(receiveCurrentUser(decoded))
+    })
+        .catch( err => {
+            dispatch(receiveErrors(err.response.data));
+        })
+)
+
 export const logout = () => dispatch => {
     // Remove the token from local storage
-    localStorage.removeItem('jwtToken')
+    localStorage.removeItem('jwtToken');
     // Remove the token from the common axios header
-    APIUtil.setAuthToken(false)
+    APIUtil.setAuthToken(false);
     // Dispatch a logout action
-    dispatch(logoutUser())
+    dispatch(logoutUser());
 };
+
+window.logout = logout

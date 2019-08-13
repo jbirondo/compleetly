@@ -14,13 +14,17 @@ router.get('/current', passport.authenticate('jwt', {session: false}), (req, res
         email: req.body.email,
         fName: req.body.firstName
     });
-    
+
 });
 
 router.post('/register', (req, res) => {
     // Check to make sure nobody has already registered with a duplicate email
+<<<<<<< HEAD
    //  debugger;
    // console.log(req.body);
+=======
+    debugger;
+>>>>>>> 958000ac6b4865332d6c38f64e0c68e6b70acc8b
     const { errors, isValid } = validateRegisterInput(req.body);
 
     if (!isValid) {
@@ -41,7 +45,6 @@ router.post('/register', (req, res) => {
                     email: req.body.email,
                     password: req.body.password
                 })
-
                 bcrypt.genSalt(10, (err, salt) => {
                     bcrypt.hash(newUser.password, salt, (err, hash) => {
                         if (err) throw err;
@@ -55,10 +58,12 @@ router.post('/register', (req, res) => {
         })
 })
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 958000ac6b4865332d6c38f64e0c68e6b70acc8b
 router.post('/login', (req, res) => {
     const { errors, isValid } = validateLoginInput(req.body);
-    // debugger;
     if (!isValid) {
         return res.status(400).json(errors);
     }
@@ -66,7 +71,7 @@ router.post('/login', (req, res) => {
     const email = req.body.email;
     const password = req.body.password;
 
-    User.findOne({ email })
+    User.findOne({email})
     .then( user => {
         if (!user) {
             return res.status(404).json({ email: 'This user does not exist'})

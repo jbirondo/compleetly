@@ -11,6 +11,7 @@ module.exports = function validateRegisterInput(data) {
   data.password2 = validText(data.password2) ? data.password2 : '';
   
   if (Validator.isEmpty(data.firstName)) {
+<<<<<<< HEAD
      errors.firstName = 'First name field is required';
    }
    
@@ -46,4 +47,41 @@ module.exports = function validateRegisterInput(data) {
       errors,
       isValid: Object.keys(errors).length === 0
    };
+=======
+    errors.firstName = 'First name field is required';
+  }
+
+  if (Validator.isEmpty(data.lastName)) {
+     error.lastName = 'Last name field is required';
+  }
+
+  if (Validator.isEmpty(data.email)) {
+    errors.email = 'Email field is required';
+  }
+
+  if (!Validator.isEmail(data.email)) {
+    errors.email = 'Email is invalid';
+  }
+
+  if (Validator.isEmpty(data.password)) {
+    errors.password = 'Password field is required';
+  }
+
+  if (!Validator.isLength(data.password, { min: 6, max: 30 })) {
+    errors.password = 'Password must be at least 6 characters';
+  }
+
+  if (Validator.isEmpty(data.password2)) {
+    errors.password2 = 'Confirm Password field is required';
+  }
+
+  if (!Validator.equals(data.password, data.password2)) {
+    errors.password2 = 'Passwords must match';
+  }
+
+  return {
+    errors,
+    isValid: Object.keys(errors).length === 0
+  };
+>>>>>>> 958000ac6b4865332d6c38f64e0c68e6b70acc8b
 };
