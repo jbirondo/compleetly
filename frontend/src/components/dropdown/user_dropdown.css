@@ -1,0 +1,33 @@
+.user-dropdown-button {
+    float: right;
+    border: none;
+    display: inline-block;
+    background: transparent;
+    height: 40px;
+}
+
+.user-dropdown-button > button {
+    background: transparent;
+    border: none;
+    height: 40px;
+}
+
+.user-dropdown-menu {
+    display: block;
+    list-style-type: none;
+    border: 1px light grey;
+    position: relative;
+    right: 31px;
+}
+
+.logout-button {
+    width: 100px;
+    height: 40px;
+    font: BrandonText;
+    border-radius: 8px;
+    line-height: 2rem;
+}
+
+.hide {
+    visibility: hidden;
+}

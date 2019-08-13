@@ -1,12 +1,13 @@
 import React from 'react';
+import UserDropdown from '../dropdown/user_dropdown'
 
-
-export default ({ currentUser, logout, openModal }) => {
+export default ({ isAuthenticated, currentUser, logout, openModal }) => {
     // debugger
-    const display = currentUser ? ( //temp change
+    const display = isAuthenticated ? (
         <div className='nav-bar-logged-in'>
-           <h1 className='nav-bar-current-user'>{currentUser.firstName}</h1>
-           {/* <button onClick={logout()}>Log Out</button> */}
+           {/* <h1 className='nav-bar-current-user'>{currentUser.firstName}</h1>
+           <button onClick={() => logout()}>Log Out</button> */}
+            <UserDropdown/>
         </div>
     ) : (
          <div className='nav-bar-session-form'>

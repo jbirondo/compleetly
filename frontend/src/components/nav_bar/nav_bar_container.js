@@ -8,7 +8,8 @@ import { logout } from '../../actions/session_actions'
 const mstp = state => {
     // debugger
     return {
-   currentUser: state.session.user
+    isAuthenticated: state.session.isAuthenticated,
+    currentUser: state.session.user
     }
 }
 

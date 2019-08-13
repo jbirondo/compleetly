@@ -59,46 +59,57 @@ class SignupForm extends React.Component {
 
    render() {
       return (
-         <div className="login-form-container">
-            <form className='sessionForm' onSubmit={this.handleSubmit}>
-               <div className="login-form">
-                  <br />
-                     <br/>
-                     <input type="First Name"
-                        value={this.state.firstName}
-                        onChange={this.update('firstName')}
-                        placeholder="First Name"
-                     />
-                  <br />
-                  <input type="Last Name"
-                     value={this.state.lastName}
-                     onChange={this.update('lastName')}
-                     placeholder="Last Name"
-                  />
-                  <br />
-                  <input type="text"
-                     value={this.state.email}
-                     onChange={this.update('email')}
-                     placeholder="Email"
-                  />
-                  <br />
-                  <input type="password"
-                     value={this.state.password}
-                     onChange={this.update('password')}
-                     placeholder="Password"
-                  />
-                  <br />
-                  <input type="password"
-                     value={this.state.password2}
-                     onChange={this.update('password2')}
-                     placeholder="Confirm Password"
-                  />
-                  <br />
-                  <input type="submit" value="Submit" />
-                  {/* {this.renderErrors()} */}
-               </div>
-            </form>
-         </div>
+        <div>
+          <form className="sessionForm" onSubmit={this.handleSubmit}>
+            <div>
+              <br />
+              <h2 className='sessionForm-greeting'>Sign up to compleetly</h2>
+              <br />
+              <input
+                type="First Name"
+                value={this.state.firstName}
+                onChange={this.update("firstName")}
+                placeholder="First Name"
+                className="input-btns input-top"
+              />
+              <br />
+              <input
+                type="Last Name"
+                value={this.state.lastName}
+                onChange={this.update("lastName")}
+                placeholder="Last Name"
+                className="input-btns"
+              />
+              <br />
+              <input
+                type="text"
+                value={this.state.email}
+                onChange={this.update("email")}
+                placeholder="Email"
+                className="input-btns"
+              />
+              <br />
+              <input
+                type="password"
+                value={this.state.password}
+                onChange={this.update("password")}
+                placeholder="Password"
+                     className="input-btns"
+              />
+              <br />
+              <input
+                  type="password"
+                  value={this.state.password2}
+                  onChange={this.update("password2")}
+                  placeholder="Confirm Password"
+                  className="input-btns input-bottom"
+              />
+              <br />
+              <input className='sessionForm-submit' type="submit" value="Submit" />
+              {/* {this.renderErrors()} */}
+            </div>
+          </form>
+        </div>
       );
    }
 }
