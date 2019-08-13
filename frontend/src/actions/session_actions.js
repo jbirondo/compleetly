@@ -12,6 +12,11 @@ export const logoutUser = () => ({
     type: RECEIVE_USER_LOGOUT
 });
 
+export const receiveErrors = errors => ({
+    type: RECEIVE_SESSION_ERRORS,
+    errors
+});
+
 export const logout = () => dispatch => {
     // Remove the token from local storage
     localStorage.removeItem('jwtToken')

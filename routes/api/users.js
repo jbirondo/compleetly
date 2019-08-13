@@ -14,12 +14,12 @@ router.get('/current', passport.authenticate('jwt', {session: false}), (req, res
         email: req.body.email,
         fName: req.body.firstName
     });
-    
+
 });
 
 router.post('/register', (req, res) => {
     // Check to make sure nobody has already registered with a duplicate email
-    // debugger;
+    debugger;
     const { errors, isValid } = validateRegisterInput(req.body);
 
     if (!isValid) {
