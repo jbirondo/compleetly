@@ -10,8 +10,14 @@ export const setAuthToken = token => {
 
 export const login = (userData) => {
    // debugger;
-   console.log(userData)
+   // console.log(userData)
    return axios.post('/api/users/login', userData)
+}
+
+export const signup = (userData) => {
+   // debugger;
+   // console.log(userData)
+   return axios.post('/api/users/register', userData)
 }
 
 window.axios = axios

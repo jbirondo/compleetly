@@ -1,4 +1,7 @@
-import { RECEIVE_USER_LOGOUT, RECEIVE_CURRENT_USER } from '../actions/session_actions';
+import { RECEIVE_USER_LOGOUT,
+   RECEIVE_CURRENT_USER,
+   RECEIVE_USER_SIGN_UP,
+} from '../actions/session_actions';
 
 const initialState = {
     isAuthenticated: false,
@@ -15,9 +18,16 @@ export default function (state = initialState, action) {
          };
       case RECEIVE_CURRENT_USER:
          return {
-            isAuthenticated: true,
-            user: action.user.id
+            ...state,
+            isAuthenticated: !!action.currentUser,
+            user: action.currentUser
          };
+      case RECEIVE_USER_SIGN_UP:
+         return {
+            ...state, /// do we know what the spread operator on state is doing?
+            isAuthenticated: true, // shouldn't this be isAuthenticated?
+            user: action.currentUser // not isSignedIn?
+         }
       default:
          return state;
    }

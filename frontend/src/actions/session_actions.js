@@ -9,6 +9,7 @@ import jwt_decode from 'jwt-decode';
 export const RECEIVE_USER_LOGOUT = "RECEIVE_USER_LOGOUT";
 export const RECEIVE_CURRENT_USER = "RECEIVE_CURRENT_USER";
 export const RECEIVE_USER_ERRORS = "RECEIVE_USER_ERRORS";
+export const RECEIVE_USER_SIGN_UP = "RECEIVE_USER_SIGN_UP";
 
 export const logoutUser = () => ({
     type: RECEIVE_USER_LOGOUT
@@ -22,7 +23,21 @@ export const receiveErrors = errors => ({
 export const receiveCurrentUser = currentUser => ({
     type: RECEIVE_CURRENT_USER,
     currentUser
+}); /// do we need this and receiveCurrentUser? 
+// do we just watn to receiveCurrentUser as our main action?
+
+export const receiveUserSignUp = currentUser => ({
+    type: RECEIVE_USER_SIGN_UP,
+    currentUser
 });
+
+export const signup = user => dispatch => (
+    APIUtil.signup(user).then(user => {
+        dispatch(receiveUserSignUp(user))
+    }).catch(err => {
+        dispatch(receiveErrors(err.response.data))
+    })
+);
 
 export const login = user => dispatch => (
     APIUtil.login(user).then( res => {
@@ -39,9 +54,11 @@ export const login = user => dispatch => (
 
 export const logout = () => dispatch => {
     // Remove the token from local storage
-    localStorage.removeItem('jwtToken')
+    localStorage.removeItem('jwtToken');
     // Remove the token from the common axios header
-    APIUtil.setAuthToken(false)
+    APIUtil.setAuthToken(false);
     // Dispatch a logout action
-    dispatch(logoutUser())
+    dispatch(logoutUser());
 };
+
+window.logout = logout
