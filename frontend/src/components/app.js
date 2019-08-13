@@ -14,13 +14,14 @@ import EntertainmentFeed from './newsfeed_addcontent/content_pages/entertainment
 import BusinessFeed from './newsfeed_addcontent/content_pages/business';
 // import NavBarContainer from './nav/navbar_container';
 
+import NavBarContainer from './nav_bar/nav_bar_container';
+import Modal from './modal/modal'
 import MainPage from './main/main_page';
-// import LoginFormContainer from './session/login_form_container';
-// import SignupFormContainer from './session/signup_form_container';
 
 const App = () => (
    <div>
-      {/* <NavBarContainer /> */}
+      <Modal />
+      <NavBarContainer />
       <Switch>
          <Route exact path="/" component={MainPage} />
          <Route exact path="/newsfeed" component={NewsFeed} />
@@ -35,7 +36,7 @@ const App = () => (
          <AuthRoute exact path="/login" component={LoginFormContainer} />
          <AuthRoute exact path="/signup" component={SignUpFormContainer} />
          {/* <AuthRoute exact path="/login" component={LoginFormContainer} />
-         <AuthRoute exact path="/signup" component={SignupFormContainer} /> */}
+         <AuthRoute exact path="/signup" component={SignUpFormContainer} /> */}
       </Switch>
    </div>
 );

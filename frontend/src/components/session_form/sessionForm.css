@@ -1,0 +1,34 @@
+.sessionForm{
+   display: block;
+   border-radius: 5px;
+   background-color: #fafafa;
+   padding: 30px;
+   margin: 0 auto;
+   width: 75%;
+}
+
+.input-btns{
+   color: rgb(190, 190, 190);
+}
+
+.input-top{
+   border-top-left-radius: 3px;
+   border-top-right-radius: 3px;
+}
+
+.input-bottom{
+   border-bottom-left-radius: 3px;
+   border-bottom-right-radius: 3px;
+}
+
+.sessionForm-submit{
+   background-color: green;
+   border-radius: 5px;
+   color: white;
+   padding: 3px;
+}
+
+.sessionForm-greeting{
+   text-size: 16px;
+   font-weight: 600;
+}

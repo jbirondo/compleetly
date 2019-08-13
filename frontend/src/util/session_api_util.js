@@ -20,4 +20,4 @@ export const signup = (userData) => {
    return axios.post('/api/users/register', userData)
 }
 
-window.axios = axios
+window.axios = axios;
