@@ -15,7 +15,7 @@ const App = () => (
       {/* <NavBarContainer /> */}
       <Switch>
          <Route exact path="/" component={MainPage} />
-         <AuthRoute exact path="/newsfeed" component={NewsFeed} />
+         <Route exact path="/newsfeed" component={NewsFeed} />
          <AuthRoute exact path="/login" component={LoginFormContainer} />
          <AuthRoute exact path="/signup" component={SignUpFormContainer} />
          {/* <AuthRoute exact path="/login" component={LoginFormContainer} />
