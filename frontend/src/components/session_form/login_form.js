@@ -28,9 +28,21 @@ class LoginForm extends React.Component {
             email: this.state.email,
             password: this.state.password
         }
+        // debugger;
 
-        // this.props.login(user).then(this.props.closeModal);
-        this.props.login(user);
+        // this.props.closeModal();
+        // if(this.props.errors.length === 0) {
+        this.props.login(user)
+        // .then((e) => {
+        //     console.log(`then`, e);
+        //     this.props.closeModal()
+        // })
+        // this.props.closeModal();
+        // } 
+        // else {
+            // this.props.login(user);
+
+        // }
     }
 
     renderErrors() {
@@ -42,6 +54,7 @@ class LoginForm extends React.Component {
                         {this.props.errors[error]}
                     </li>
                 ))}
+
                 {/* <li>
                {this.state.errors}
             </li> */}
@@ -52,7 +65,7 @@ class LoginForm extends React.Component {
     render() {
         return (
           <div>
-            <form className="sessionForm" onSubmit={this.handleSubmit}>
+                <form className="sessionForm" onSubmit={this.handleSubmit}>
               <div>
                 <br/>
                 <h2 className='sessionForm-greeting'>Log in to compleetly</h2>
