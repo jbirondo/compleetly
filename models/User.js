@@ -19,6 +19,12 @@ const UserSchema = new Schema({
       type: String, 
       required: true
    },
+   followedSources: [
+      {
+         type: Schema.Types.ObjectId,
+         ref: 'follows'
+      }
+   ],
    date: {
       type: Date, 
       default: Date.now
