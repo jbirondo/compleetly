@@ -10,7 +10,7 @@ const validateRegisterInput = require('../../validation/register');
 const validateLoginInput = require('../../validation/login');
 
 router.get('/current', passport.authenticate('jwt', {session: false}), (req, res) => {
-    debugger;
+    // debugger;
     res.json({
         id: req.body.id,
         email: req.body.email,
@@ -68,7 +68,7 @@ router.post('/register', (req, res) => {
                         // debugger;
                         // if (err) throw err;
                         newUser.password = hash;
-                        debugger;
+                        // debugger;
                         newUser.save()
                         .then(user => {
                             // debugger;

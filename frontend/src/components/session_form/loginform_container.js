@@ -1,6 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux';
-import { login } from '../../actions/session_actions';
+import { login, resetErrors } from '../../actions/session_actions';
 import LoginForm from './login_form';
 import { closeModal, openModal } from '../../actions/modal_actions';
 
@@ -17,7 +17,8 @@ const mdp = dispatch => ({
             </button>
         ),
         closeModal: () => dispatch(closeModal()),
-        login: user => dispatch(login(user))
+        login: user => dispatch(login(user)),
+        resetErrors: () => dispatch(resetErrors())
 })
 
 export default connect(msp, mdp)(LoginForm);

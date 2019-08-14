@@ -1,6 +1,7 @@
 import {
     RECEIVE_SESSION_ERRORS,
     RECEIVE_CURRENT_USER,
+    RESET_SESSION_ERRORS
 } from '../actions/session_actions';
 
 import { CLOSE_MODAL, OPEN_MODAL } from '../actions/modal_actions';
@@ -10,6 +11,8 @@ export default (state = [], action) => {
     switch (action.type) {
         case RECEIVE_SESSION_ERRORS:
             return action.errors;
+        case RESET_SESSION_ERRORS:
+            return [];
         case RECEIVE_CURRENT_USER:
             return [];
         case CLOSE_MODAL:
