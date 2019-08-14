@@ -20,19 +20,19 @@ class userDropdown extends React.Component {
             <div className="user-dropdown-button">
                 <button onClick={this.addHiddenClass}><h3 className="nav-bar-welcome-message">{this.props.currentUser.firstName[0]}</h3></button>
                 <ul className={this.state.hidden ? 'user-dropdown-menu hide' : 'user-dropdown-menu'}>
-                    <li>
-                        <div>{this.props.currentUser.firstName[0]}</div>
-                        <div>{this.props.currentUser.firstName} {this.props.currentUser.lastName}</div>
-                        <div>{this.props.currentUser.email}</div>
+                    <li className='li-dropdown'>
+                        {/* <div>{this.props.currentUser.firstName[0]}</div> */}
+                        <h3>{this.props.currentUser.firstName} {this.props.currentUser.lastName}</h3>
+                        {/* <div>{this.props.currentUser.email}</div> */}
                     </li> 
-                    <li>Settings</li>
-                    <li>Organized Sources</li>
-                    <li>Mobile Apps</li>
-                    <li>Browser Add-ons</li>
-                    <li>Support</li>
-                    <li>Privacy</li>
-                    <li>Terms & Policy</li>
-                    <li><button className="logout-button" onClick={this.props.logout}>Logout</button></li>
+                    <li className='li-dropdown'>Settings</li>
+                    <li className='li-dropdown'>Organized Sources</li>
+                    <li className='li-dropdown'>Mobile Apps</li>
+                    <li className='li-dropdown'>Browser Add-ons</li>
+                    <li className='li-dropdown'>Support</li>
+                    <li className='li-dropdown'>Privacy</li>
+                    <li className='li-dropdown'>Terms &amp; Policy</li>
+                    <li className='li-dropdown'><button className="logout-button" onClick={this.props.logout}>Logout</button></li>
                 </ul>
             </div>
         )
