@@ -4,18 +4,41 @@ const bcrypt = require('bcryptjs');
 const keys = require('../../config/keys');
 const jwt = require('jsonwebtoken');
 const passport = require('passport');
-const User = require('../../models/User')
+const User = require("../../models/User");
+const Follow = require("../../models/Follow");
 const validateRegisterInput = require('../../validation/register');
 const validateLoginInput = require('../../validation/login');
 
 router.get('/current', passport.authenticate('jwt', {session: false}), (req, res) => {
+    debugger;
     res.json({
         id: req.body.id,
         email: req.body.email,
-        fName: req.body.firstName
     });
 
 });
+
+router.post('/:userId/follow', (req, res) => {
+    const userId = req.params.userId
+
+    User.findOne({_id: userId})
+        .then(user => {
+           const newFollow = new Follow({
+               followName: req.body.followName,
+               followURL: req.body.followURL,
+               follower: req.params.userId
+           })
+           
+           newFollow.save()
+            .then(follow => {
+                // debugger;
+                user.followedSources.push(follow);
+                user.save();
+                res.json(follow);
+            })
+            .catch(err => console.log(err)); 
+        })
+})
 
 router.post('/register', (req, res) => {
     // Check to make sure nobody has already registered with a duplicate email
@@ -100,7 +123,8 @@ router.post('/login', (req, res) => {
                     id: user.id,
                     firstName: user.firstName,
                     lastName: user.lastName,
-                    email: user.email
+                    email: user.email,
+                    followedSources: user.followedSources
                 }
                 jwt.sign(
                     payload,
