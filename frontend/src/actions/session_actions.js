@@ -1,10 +1,5 @@
-// src/actions/session_actions.js
-
-// Although there's only one function here so far, let's import the whole file since we will be adding more later
 import * as APIUtil from '../util/session_api_util';
 import jwt_decode from 'jwt-decode';
-
-// This pattern should be familiar to you from the full stack project
 
 export const RECEIVE_USER_LOGOUT = "RECEIVE_USER_LOGOUT";
 export const RECEIVE_CURRENT_USER = "RECEIVE_CURRENT_USER";
@@ -34,11 +29,24 @@ export const receiveUserSignUp = currentUser => ({
 
 export const signup = user => dispatch => (
     APIUtil.signup(user).then(user => {
-        dispatch(receiveUserSignUp(user))
-    }).catch(err => {
-        dispatch(receiveErrors(err.response.data))
+        APIUtil.login(user).then(res => {
+            const { token } = res.data;
+            localStorage.setItem('jwtToken', token);
+            APIUtil.setAuthToken(token);
+            const decoded = jwt_decode(token);
+            dispatch(receiveCurrentUser(decoded))
+    })}).catch(err => {
+        dispatch(receiveErrors(err))
     })
 );
+
+// export const signup = user => dispatch => (
+//     APIUtil.signup(user).then(user => {
+//         dispatch(receiveUserSignUp(user))
+//     }).catch(err => {
+//         dispatch(receiveErrors(err.response.data))
+//     })
+// );
 
 export const login = user => dispatch => (
     APIUtil.login(user).then( res => {

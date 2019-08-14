@@ -4,7 +4,7 @@ const bcrypt = require('bcryptjs');
 const keys = require('../../config/keys');
 const jwt = require('jsonwebtoken');
 const passport = require('passport');
-const User = require("../../models/User");
+const User = require('../../models/User')
 const validateRegisterInput = require('../../validation/register');
 const validateLoginInput = require('../../validation/login');
 
@@ -41,8 +41,10 @@ router.post('/register', (req, res) => {
                 })
                 bcrypt.genSalt(10, (err, salt) => {
                     bcrypt.hash(newUser.password, salt, (err, hash) => {
+                        debugger;
                         if (err) throw err;
                         newUser.password = hash;
+                        debugger;
                         newUser.save()
                             .then(user => res.json(user))
                             .catch(err => console.log(err));
@@ -60,9 +62,12 @@ router.post('/login', (req, res) => {
 
     const email = req.body.email;
     const password = req.body.password;
-
+    console.log(email); 
+    console.log(password);
+    debugger;
     User.findOne({email})
     .then( user => {
+        debugger;
         if (!user) {
             return res.status(404).json({ email: 'This user does not exist'})
         }
