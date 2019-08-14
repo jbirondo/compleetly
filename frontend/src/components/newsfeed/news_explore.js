@@ -20,14 +20,14 @@ class NewsFeed extends React.Component {
     }
     
     getArticles() {
-        const url = 'https://newsapi.org/v2/top-headlines?' +
-        'country=us&' +
-        'apiKey=c74b69f1594f4080902981643aa178df';
-        const req = new Request(url);
-        axios(req).then(res => {
-            this.setState({articles: res.data.articles})
-            console.log(res)
-        })
+        // const url = 'https://newsapi.org/v2/top-headlines?' +
+        // 'country=us&' +
+        // 'apiKey=c74b69f1594f4080902981643aa178df';
+        // const req = new Request(url);
+        // axios(req).then(res => {
+        //     this.setState({articles: res.data.articles})
+        //     console.log(res)
+        // })
     }
     
     // let articles;
