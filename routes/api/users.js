@@ -19,8 +19,8 @@ router.get('/current', passport.authenticate('jwt', {session: false}), (req, res
 });
 
 router.post('/:userId/follow', (req, res) => {
-    const userId = req.params.userId
-
+    const userId = req.body.currentUserId
+    debugger;
     User.findOne({_id: userId})
         .then(user => {
            const newFollow = new Follow({

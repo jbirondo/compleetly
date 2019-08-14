@@ -1,6 +1,8 @@
 import React from 'react';
-import { withRouter } from 'react-router';
+import { withRouter, Link } from 'react-router';
+import { connect } from 'react-redux'
 import axios from 'axios';
+import { createFollow } from '../../../actions/follow_actions'
 
 // const NewsAPI = require('newsapi');
 // const newsapi = new NewsAPI('c74b69f1594f4080902981643aa178df');
@@ -18,21 +20,23 @@ class TechnologyFeed extends React.Component {
     }
 
     getArticles() {
-        // const url = 'https://newsapi.org/v2/sources?' +
-        //     'country=us&' +
-        //     'category=technology&' +
-        //     'apiKey=c74b69f1594f4080902981643aa178df';
-        // const req = new Request(url);
-        // axios(req).then(res => {
-        //     this.setState({ articles: res.data.sources })
-        //     console.log(res)
-        // })
+        const url = 'https://newsapi.org/v2/sources?' +
+            'country=us&' +
+            'category=technology&' +
+            'apiKey=c74b69f1594f4080902981643aa178df';
+        const req = new Request(url);
+        axios(req).then(res => {
+            this.setState({ articles: res.data.sources })
+            console.log(res)
+        })
     }
 
 
     render() {
         let articles;
-        articles = this.state.articles.map((article, i) => <li key={i}>{article.name} {article.description} {article.category}</li>)
+        articles = this.state.articles.map((article, i) => <li key={i}>{article.name} {article.url}
+            <button onClick={() => this.props.createFollow({followName: article.name, followURL: article.url, currentUserId: this.props.currentUserId})}>Follow ME!</button>
+        </li>)
 
         return (
             <div>
@@ -43,4 +47,13 @@ class TechnologyFeed extends React.Component {
 
 };
 
-export default withRouter(TechnologyFeed)
+const msp = state => ({
+    // errors: state.errors.follows // don't have error reducers set up
+    currentUserId: state.session.user.id
+})
+
+const mdp = dispatch => ({
+    createFollow: follow => dispatch(createFollow(follow)),
+})
+
+export default withRouter(connect(msp, mdp)(TechnologyFeed));
