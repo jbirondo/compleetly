@@ -2,6 +2,9 @@ import { RECEIVE_USER_LOGOUT,
    RECEIVE_CURRENT_USER,
    // RECEIVE_USER_SIGN_UP,
 } from '../actions/session_actions';
+import { RECEIVE_NEW_FOLLOW } from '../actions/follow_actions';
+import merge from 'lodash/merge'
+
 
 const initialState = {
     isAuthenticated: false,
@@ -9,7 +12,7 @@ const initialState = {
 }
 
 export default function (state = initialState, action) {
-   // debugger;
+   Object.freeze(state);
    switch (action.type) {
       case RECEIVE_USER_LOGOUT:
          return {
@@ -17,18 +20,19 @@ export default function (state = initialState, action) {
             user: undefined
          };
       case RECEIVE_CURRENT_USER:
-         // debugger;
          return {
             ...state,
             isAuthenticated: !!action.currentUser,
             user: action.currentUser
          };
-      // case RECEIVE_USER_SIGN_UP:
-      //    return {
-      //       ...state, /// do we know what the spread operator on state is doing?
-      //       isAuthenticated: true, // shouldn't this be isAuthenticated?
-      //       user: action.currentUser // not isSignedIn?
-      //    }
+      case RECEIVE_NEW_FOLLOW:
+         let newState;
+         let oSources;
+         newState = merge({}, state)
+         oSources = newState.user.followedSources;
+         oSources.push(action.follow.data._id);
+         newState.user.followedSources = oSources;
+         return newState
       default:
          return state;
    }

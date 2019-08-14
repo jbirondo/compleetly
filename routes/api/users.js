@@ -10,7 +10,6 @@ const validateRegisterInput = require('../../validation/register');
 const validateLoginInput = require('../../validation/login');
 
 router.get('/current', passport.authenticate('jwt', {session: false}), (req, res) => {
-    debugger;
     res.json({
         id: req.body.id,
         email: req.body.email,
@@ -20,7 +19,6 @@ router.get('/current', passport.authenticate('jwt', {session: false}), (req, res
 
 router.post('/:userId/follow', (req, res) => {
     const userId = req.body.currentUserId
-    debugger;
     User.findOne({_id: userId})
         .then(user => {
            const newFollow = new Follow({
@@ -30,10 +28,10 @@ router.post('/:userId/follow', (req, res) => {
            })
            
            newFollow.save()
-            .then(follow => {
+            .then(async follow => {
                 // debugger;
                 user.followedSources.push(follow);
-                user.save();
+                await user.save();
                 res.json(follow);
             })
             .catch(err => console.log(err)); 
@@ -68,7 +66,6 @@ router.post('/register', (req, res) => {
                         // debugger;
                         // if (err) throw err;
                         newUser.password = hash;
-                        debugger;
                         newUser.save()
                         .then(user => {
                             // debugger;
@@ -76,7 +73,8 @@ router.post('/register', (req, res) => {
                                 id: user.id,
                                 firstName: user.firstName,
                                 lastName: user.lastName,
-                                email: user.email
+                                email: user.email,
+                                followedSources: user.followedSources
                             }
                             jwt.sign(
                                 payload,
@@ -106,8 +104,8 @@ router.post('/login', (req, res) => {
 
     const email = req.body.email;
     const password = req.body.password;
-    console.log(email); 
-    console.log(password);
+    // console.log(email); 
+    // console.log(password);
     // debugger;
     User.findOne({email})
     .then( user => {

@@ -1,7 +1,7 @@
 import React from 'react';
 import { withRouter, Link } from 'react-router';
-import { connect } from 'react-redux'
 import axios from 'axios';
+import { connect } from 'react-redux'
 import { createFollow } from '../../../actions/follow_actions'
 
 // const NewsAPI = require('newsapi');
