@@ -39,15 +39,36 @@ router.post('/register', (req, res) => {
                     email: req.body.email,
                     password: req.body.password
                 })
+
                 bcrypt.genSalt(10, (err, salt) => {
                     bcrypt.hash(newUser.password, salt, (err, hash) => {
-                        debugger;
-                        if (err) throw err;
+                        // debugger;
+                        // if (err) throw err;
                         newUser.password = hash;
                         debugger;
                         newUser.save()
-                            .then(user => res.json(user))
-                            .catch(err => console.log(err));
+                        .then(user => {
+                            // debugger;
+                            const payload = {
+                                id: user.id,
+                                firstName: user.firstName,
+                                lastName: user.lastName,
+                                email: user.email
+                            }
+                            jwt.sign(
+                                payload,
+                                keys.secretOrKey,
+                                { expiresIn: 3600 },
+                                (err, token) => {
+                                    // debugger;
+                                    res.json({
+                                        success: true,
+                                        token: 'Bearer ' + token
+                                    });
+                                }
+                            )
+                        })
+                        .catch(err => console.log(err));
                     })
                 })
             }
@@ -64,10 +85,10 @@ router.post('/login', (req, res) => {
     const password = req.body.password;
     console.log(email); 
     console.log(password);
-    debugger;
+    // debugger;
     User.findOne({email})
     .then( user => {
-        debugger;
+        // debugger;
         if (!user) {
             return res.status(404).json({ email: 'This user does not exist'})
         }

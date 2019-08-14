@@ -22,28 +22,28 @@ export const receiveCurrentUser = currentUser => ({
 }); /// do we need this and receiveCurrentUser? 
 // do we just watn to receiveCurrentUser as our main action?
 
-export const receiveUserSignUp = currentUser => ({
-    type: RECEIVE_USER_SIGN_UP,
-    currentUser
-});
+// export const receiveUserSignUp = currentUser => ({
+//     type: RECEIVE_USER_SIGN_UP,
+//     currentUser
+// });
 
 export const signup = user => dispatch => (
-    APIUtil.signup(user).then(user => {
-        APIUtil.login(user).then(res => {
+    APIUtil.signup(user).then(res => {
             const { token } = res.data;
             localStorage.setItem('jwtToken', token);
             APIUtil.setAuthToken(token);
             const decoded = jwt_decode(token);
             dispatch(receiveCurrentUser(decoded))
-    })}).catch(err => {
+    }).catch(err => {
         dispatch(receiveErrors(err))
     })
 );
 
 // export const signup = user => dispatch => (
 //     APIUtil.signup(user).then(user => {
-//         dispatch(receiveUserSignUp(user))
+//         dispatch(receiveCurrentUser(user))
 //     }).catch(err => {
+//         debugger
 //         dispatch(receiveErrors(err.response.data))
 //     })
 // );
