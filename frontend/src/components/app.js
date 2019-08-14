@@ -17,6 +17,7 @@ import BusinessFeed from './newsfeed_addcontent/content_pages/business';
 import NavBarContainer from './nav_bar/nav_bar_container';
 import Modal from './modal/modal'
 import MainPage from './main/main_page';
+import './cssreset.css';
 
 const App = () => (
    <div>

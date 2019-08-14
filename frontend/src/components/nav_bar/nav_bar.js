@@ -1,5 +1,6 @@
 import React from 'react';
-import UserDropdown from '../dropdown/user_dropdown'
+import UserDropdown from '../dropdown/user_dropdown';
+import './navbar.css';
 
 export default ({ isAuthenticated, currentUser, logout, openModal }) => {
     // debugger
