@@ -41,10 +41,10 @@ router.post('/register', (req, res) => {
                 })
                 bcrypt.genSalt(10, (err, salt) => {
                     bcrypt.hash(newUser.password, salt, (err, hash) => {
-                        debugger;
+                        // debugger;
                         if (err) throw err;
                         newUser.password = hash;
-                        debugger;
+                        // debugger;
                         newUser.save()
                             .then(user => res.json(user))
                             .catch(err => console.log(err));
@@ -62,12 +62,12 @@ router.post('/login', (req, res) => {
 
     const email = req.body.email;
     const password = req.body.password;
-    console.log(email); 
-    console.log(password);
-    debugger;
+    // console.log(email); 
+    // console.log(password);
+    // debugger;
     User.findOne({email})
     .then( user => {
-        debugger;
+        // debugger;
         if (!user) {
             return res.status(404).json({ email: 'This user does not exist'})
         }

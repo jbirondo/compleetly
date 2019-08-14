@@ -4,7 +4,7 @@ import jwt_decode from 'jwt-decode';
 export const RECEIVE_USER_LOGOUT = "RECEIVE_USER_LOGOUT";
 export const RECEIVE_CURRENT_USER = "RECEIVE_CURRENT_USER";
 export const RECEIVE_SESSION_ERRORS = "RECEIVE_SESSION_ERRORS";
-export const RECEIVE_USER_SIGN_UP = "RECEIVE_USER_SIGN_UP";
+// export const RECEIVE_USER_SIGN_UP = "RECEIVE_USER_SIGN_UP";
 
 export const logoutUser = () => ({
     type: RECEIVE_USER_LOGOUT
@@ -22,10 +22,10 @@ export const receiveCurrentUser = currentUser => ({
 }); /// do we need this and receiveCurrentUser? 
 // do we just watn to receiveCurrentUser as our main action?
 
-export const receiveUserSignUp = currentUser => ({
-    type: RECEIVE_USER_SIGN_UP,
-    currentUser
-});
+// export const receiveUserSignUp = currentUser => ({
+//     type: RECEIVE_USER_SIGN_UP,
+//     currentUser
+// });
 
 export const signup = user => dispatch => (
     APIUtil.signup(user).then(user => {
