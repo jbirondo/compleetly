@@ -20,12 +20,16 @@ export default function (state = initialState, action) {
             user: undefined
          };
       case RECEIVE_CURRENT_USER:
-         // debugger;
+         let cUser;
+         cUser = action.currentUser;
+         delete cUser['sourcesArray']
+
          return {
             ...state,
             isAuthenticated: !!action.currentUser,
-            user: action.currentUser
+            user: cUser
          };
+
       case RECEIVE_NEW_FOLLOW:
          let newState;
          let oSources;

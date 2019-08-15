@@ -8,7 +8,7 @@ class UserNavBar extends React.Component {
 
     }
     renderFollows() {
-        debugger
+        // debugger
         return (
             <ul>    
                 {this.props.currentUser.followedSources.map(
@@ -33,7 +33,7 @@ class UserNavBar extends React.Component {
 
 
 
-                <Link to={`/${this.props.currentUserId}/discover`}>+ ADD CONTENT</Link>
+                <Link to={`/newsfeed/add`}>+ ADD CONTENT</Link>
             </div>
         );
     }

@@ -7,8 +7,19 @@ export default function (state = {}, action) {
         case RECEIVE_NEW_FOLLOW:
             return merge({}, state, {[action.follow.data._id]: action.follow.data});
         case RECEIVE_CURRENT_USER:
+            let tempState;
+            let newState;
+            newState = merge({}, state);
+            tempState = {};
             // debugger;
-            return state;
+            if (action.currentUser.sourcesArray){
+                action.currentUser.sourcesArray.forEach( (source, i) => (
+                    tempState[action.currentUser.sourcesArray[i]._id] = source
+                ))
+            }
+            // debugger;
+            return merge({}, newState, tempState)
+        
         default: 
             return state;
     }

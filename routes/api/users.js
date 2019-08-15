@@ -108,33 +108,40 @@ router.post('/login', (req, res) => {
     // console.log(password);
     // debugger;
     User.findOne({email})
-    .then( user => {
+    .then(user => {
         // debugger;
         if (!user) {
             return res.status(404).json({ email: 'This user does not exist'})
         }
 
         bcrypt.compare(password, user.password)
-        .then( isMatch => {
+
+        .then(async isMatch => {
             if (isMatch) {
-                const payload = {
-                    id: user.id,
-                    firstName: user.firstName,
-                    lastName: user.lastName,
-                    email: user.email,
-                    followedSources: user.followedSources
-                }
-                jwt.sign(
-                    payload,
-                    keys.secretOrKey,
-                    { expiresIn: 3600 },
-                    (err, token) => {
-                        res.json({
-                            success: true,
-                            token: 'Bearer ' + token
-                        });
+                await Follow.find({ follower: user.id }).then(follows => {
+                    
+                    const payload = {
+                        id: user.id,
+                        firstName: user.firstName,
+                        lastName: user.lastName,
+                        email: user.email,
+                        followedSources: user.followedSources,
+                        sourcesArray: follows
                     }
-                )
+                    
+                    // debugger;
+                    jwt.sign(
+                        payload,
+                        keys.secretOrKey,
+                        { expiresIn: 3600 },
+                        (err, token) => {
+                            res.json({
+                                success: true,
+                                token: 'Bearer ' + token
+                            });
+                        }
+                    )
+                })
             } else {
                 return res.status(400).json({password: 'Incorrect Password!'});
             }

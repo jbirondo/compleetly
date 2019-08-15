@@ -24,9 +24,9 @@ const App = () => (
    <div>
       <Modal />
       <NavBarContainer />
+      <ProtectedRoute path="/" component={UserNavBar} />
+      <AuthRoute path="/" component={MainPage} />
       <Switch>
-         {/* <AuthRoute path="/" component={MainPage} /> */}
-         <ProtectedRoute path="/" component={UserNavBar} />
          <ProtectedRoute exact path="/newsfeed" component={NewsFeed} />
          <ProtectedRoute exact path="/newsfeed/add" component={NewsFeedAddContent} />
          <ProtectedRoute exact path="/newsfeed/technology" component={TechnologyFeed} />
@@ -36,8 +36,8 @@ const App = () => (
          <ProtectedRoute exact path="/newsfeed/general" component={GeneralFeed} />
          <ProtectedRoute exact path="/newsfeed/entertainment" component={EntertainmentFeed} />
          <ProtectedRoute exact path="/newsfeed/business" component={BusinessFeed} />
-         <AuthRoute exact path="/login" component={LoginFormContainer} />
-         <AuthRoute exact path="/signup" component={SignUpFormContainer} />
+         {/* <AuthRoute exact path="/login" component={LoginFormContainer} /> */}
+         {/* <AuthRoute exact path="/signup" component={SignUpFormContainer} /> */}
          {/* <AuthRoute exact path="/login" component={LoginFormContainer} />
          <AuthRoute exact path="/signup" component={SignUpFormContainer} /> */}
       </Switch>
