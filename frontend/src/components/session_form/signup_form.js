@@ -11,28 +11,29 @@ class SignupForm extends React.Component {
          email: '',
          password: '',
          password2: '',
-         errors: []
       };
 
       this.handleSubmit = this.handleSubmit.bind(this);
-      // this.clearedErrors = false;
    }
 
    // componentWillReceiveProps(nextProps) {
-   //    if (nextProps.signedIn === true) {
-   //       this.props.history.push('/login');
-   //    }
+   //    debugger
+   //    this.setState({ errors: nextProps.errors })
+   // }
 
-   //    // this.setState({ errors: nextProps.errors })
+   // componentDidUpdate(banana) {
+   //    // debugger
+   //    this.setState({ errors: banana.errors})
    // }
 
    update(field) {
-      return e => this.setState({
-         [field]: e.currentTarget.value
-      });
-   }
+      return e => {
+         this.setState({[field]: e.currentTarget.value});
+         this.props.resetErrors();
+   }}
 
    handleSubmit(e) {
+      // debugger;
       e.preventDefault();
       let user = {
          firstName: this.state.firstName,
@@ -42,20 +43,26 @@ class SignupForm extends React.Component {
          password2: this.state.password2
       };
 
-      this.props.signup(user, this.props.history).then(this.props.closeModal);
+
+      //    this.props.signup(user).then(this.props.closeModal);
+         this.props.signup(user);
+      
    }
 
-   // renderErrors() {
-   //    return (
-   //       <ul>
-   //          {Object.keys(this.state.errors).map((error, i) => (
-   //             <li key={`error-${i}`}>
-   //                {this.state.errors[error]}
-   //             </li>
-   //          ))}
-   //       </ul>
-   //    );
-   // }
+   renderErrors() {
+      return (
+         <ul>
+            {Object.keys(this.props.errors).map((error, i) => (
+               <li key={`error-${i}`}>
+                  {this.props.errors[error]}
+               </li>
+            ))}
+            {/* <li>
+               {this.state.errors}
+            </li> */}
+         </ul>
+      );
+   }
 
    render() {
       return (
@@ -90,11 +97,11 @@ class SignupForm extends React.Component {
               />
               <br />
               <input
-                type="password"
-                value={this.state.password}
-                onChange={this.update("password")}
-                placeholder="Password"
-                     className="input-btns"
+                  type="password"
+                  value={this.state.password}
+                  onChange={this.update("password")}
+                  placeholder="Password"
+                  className="input-btns"
               />
               <br />
               <input
@@ -106,7 +113,7 @@ class SignupForm extends React.Component {
               />
               <br />
               <input className='sessionForm-submit' type="submit" value="Submit" />
-              {/* {this.renderErrors()} */}
+              {this.renderErrors()}
             </div>
           </form>
         </div>

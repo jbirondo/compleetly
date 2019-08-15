@@ -9,7 +9,6 @@ class LoginForm extends React.Component {
         this.state = {
             email: '',
             password: '',
-            errors: [], // should this be an object from when we merge w/ errors?
         }
 
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -19,6 +18,7 @@ class LoginForm extends React.Component {
     update(field) {
         return e => {
             this.setState({[field]: e.target.value})
+            this.props.resetErrors();
         };
     };
 
@@ -28,26 +28,44 @@ class LoginForm extends React.Component {
             email: this.state.email,
             password: this.state.password
         }
+        // debugger;
 
-        this.props.login(user).then(this.props.closeModal);
+        // this.props.closeModal();
+        // if(this.props.errors.length === 0) {
+        this.props.login(user)
+        // .then((e) => {
+        //     console.log(`then`, e);
+        //     this.props.closeModal()
+        // })
+        // this.props.closeModal();
+        // } 
+        // else {
+            // this.props.login(user);
+
+        // }
     }
 
     renderErrors() {
-        // return (
-        //     <ul>
-        //         {this.state.errors.map((err, i) => (
-        //             <li key={i}>
-        //                 {err}
-        //             </li>
-        //         ))}
-        //     </ul>
-        // );
+        // debugger;
+        return (
+            <ul>
+                {Object.keys(this.props.errors).map((error, i) => (
+                    <li key={`error-${i}`}>
+                        {this.props.errors[error]}
+                    </li>
+                ))}
+
+                {/* <li>
+               {this.state.errors}
+            </li> */}
+            </ul>
+        );
     }
 
     render() {
         return (
           <div>
-            <form className="sessionForm" onSubmit={this.handleSubmit}>
+                <form className="sessionForm" onSubmit={this.handleSubmit}>
               <div>
                 <br/>
                 <h2 className='sessionForm-greeting'>Log in to compleetly</h2>
@@ -67,8 +85,7 @@ class LoginForm extends React.Component {
                     className="input-btns input-bottom"
                 />
                 <input className='sessionForm-submit' type="submit" value="Login" />
-                {/* <button>Login!</button> */}
-                {/* {this.renderErrors()} */}
+                {this.renderErrors()}
               </div>
             </form>
           </div>
@@ -77,4 +94,4 @@ class LoginForm extends React.Component {
 
 }
 
-export default withRouter(LoginForm)
+export default withRouter(LoginForm);

@@ -39,8 +39,6 @@ router.post('/:userId/follow', (req, res) => {
 })
 
 router.post('/register', (req, res) => {
-    // Check to make sure nobody has already registered with a duplicate email
-    // debugger;
     const { errors, isValid } = validateRegisterInput(req.body);
 
     if (!isValid) {
@@ -66,6 +64,7 @@ router.post('/register', (req, res) => {
                         // debugger;
                         // if (err) throw err;
                         newUser.password = hash;
+
                         newUser.save()
                         .then(user => {
                             // debugger;
@@ -104,12 +103,10 @@ router.post('/login', (req, res) => {
 
     const email = req.body.email;
     const password = req.body.password;
-    // console.log(email); 
-    // console.log(password);
-    // debugger;
+
     User.findOne({email})
     .then(user => {
-        // debugger;
+ 
         if (!user) {
             return res.status(404).json({ email: 'This user does not exist'})
         }
@@ -129,7 +126,6 @@ router.post('/login', (req, res) => {
                         sourcesArray: follows
                     }
                     
-                    // debugger;
                     jwt.sign(
                         payload,
                         keys.secretOrKey,
