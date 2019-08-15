@@ -10,7 +10,6 @@ const validateRegisterInput = require('../../validation/register');
 const validateLoginInput = require('../../validation/login');
 
 router.get('/current', passport.authenticate('jwt', {session: false}), (req, res) => {
-    // debugger;
     res.json({
         id: req.body.id,
         email: req.body.email,
@@ -19,8 +18,7 @@ router.get('/current', passport.authenticate('jwt', {session: false}), (req, res
 });
 
 router.post('/:userId/follow', (req, res) => {
-    const userId = req.params.userId
-
+    const userId = req.body.currentUserId
     User.findOne({_id: userId})
         .then(user => {
            const newFollow = new Follow({
@@ -30,10 +28,10 @@ router.post('/:userId/follow', (req, res) => {
            })
            
            newFollow.save()
-            .then(follow => {
+            .then(async follow => {
                 // debugger;
                 user.followedSources.push(follow);
-                user.save();
+                await user.save();
                 res.json(follow);
             })
             .catch(err => console.log(err)); 
@@ -41,8 +39,6 @@ router.post('/:userId/follow', (req, res) => {
 })
 
 router.post('/register', (req, res) => {
-    // Check to make sure nobody has already registered with a duplicate email
-    // debugger;
     const { errors, isValid } = validateRegisterInput(req.body);
 
     if (!isValid) {
@@ -68,7 +64,7 @@ router.post('/register', (req, res) => {
                         // debugger;
                         // if (err) throw err;
                         newUser.password = hash;
-                        // debugger;
+
                         newUser.save()
                         .then(user => {
                             // debugger;
@@ -76,7 +72,8 @@ router.post('/register', (req, res) => {
                                 id: user.id,
                                 firstName: user.firstName,
                                 lastName: user.lastName,
-                                email: user.email
+                                email: user.email,
+                                followedSources: user.followedSources
                             }
                             jwt.sign(
                                 payload,
@@ -106,37 +103,41 @@ router.post('/login', (req, res) => {
 
     const email = req.body.email;
     const password = req.body.password;
-    console.log(email); 
-    console.log(password);
-    // debugger;
+
     User.findOne({email})
-    .then( user => {
-        // debugger;
+    .then(user => {
+ 
         if (!user) {
             return res.status(404).json({ email: 'This user does not exist'})
         }
 
         bcrypt.compare(password, user.password)
-        .then( isMatch => {
+
+        .then(async isMatch => {
             if (isMatch) {
-                const payload = {
-                    id: user.id,
-                    firstName: user.firstName,
-                    lastName: user.lastName,
-                    email: user.email,
-                    followedSources: user.followedSources
-                }
-                jwt.sign(
-                    payload,
-                    keys.secretOrKey,
-                    { expiresIn: 3600 },
-                    (err, token) => {
-                        res.json({
-                            success: true,
-                            token: 'Bearer ' + token
-                        });
+                await Follow.find({ follower: user.id }).then(follows => {
+                    
+                    const payload = {
+                        id: user.id,
+                        firstName: user.firstName,
+                        lastName: user.lastName,
+                        email: user.email,
+                        followedSources: user.followedSources,
+                        sourcesArray: follows
                     }
-                )
+                    
+                    jwt.sign(
+                        payload,
+                        keys.secretOrKey,
+                        { expiresIn: 3600 },
+                        (err, token) => {
+                            res.json({
+                                success: true,
+                                token: 'Bearer ' + token
+                            });
+                        }
+                    )
+                })
             } else {
                 return res.status(400).json({password: 'Incorrect Password!'});
             }

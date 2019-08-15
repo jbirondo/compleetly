@@ -12,6 +12,7 @@ import HealthFeed from './newsfeed_addcontent/content_pages/health';
 import GeneralFeed from './newsfeed_addcontent/content_pages/general';
 import EntertainmentFeed from './newsfeed_addcontent/content_pages/entertainment';
 import BusinessFeed from './newsfeed_addcontent/content_pages/business';
+import UserNavBar from "./user_nav_bar/user_nav_bar"
 // import NavBarContainer from './nav/navbar_container';
 
 import NavBarContainer from './nav_bar/nav_bar_container';
@@ -23,8 +24,9 @@ const App = () => (
    <div>
       <Modal />
       <NavBarContainer />
+      <ProtectedRoute path="/" component={UserNavBar} />
+      <AuthRoute path="/" component={MainPage} />
       <Switch>
-         <Route exact path="/" component={MainPage} />
          <ProtectedRoute exact path="/newsfeed" component={NewsFeed} />
          <ProtectedRoute exact path="/newsfeed/add" component={NewsFeedAddContent} />
          <ProtectedRoute exact path="/newsfeed/technology" component={TechnologyFeed} />
@@ -34,8 +36,8 @@ const App = () => (
          <ProtectedRoute exact path="/newsfeed/general" component={GeneralFeed} />
          <ProtectedRoute exact path="/newsfeed/entertainment" component={EntertainmentFeed} />
          <ProtectedRoute exact path="/newsfeed/business" component={BusinessFeed} />
-         <AuthRoute exact path="/login" component={LoginFormContainer} />
-         <AuthRoute exact path="/signup" component={SignUpFormContainer} />
+         {/* <AuthRoute exact path="/login" component={LoginFormContainer} /> */}
+         {/* <AuthRoute exact path="/signup" component={SignUpFormContainer} /> */}
          {/* <AuthRoute exact path="/login" component={LoginFormContainer} />
          <AuthRoute exact path="/signup" component={SignUpFormContainer} /> */}
       </Switch>
