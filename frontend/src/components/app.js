@@ -24,8 +24,8 @@ const App = () => (
    <div>
       <Modal />
       <NavBarContainer />
-      <ProtectedRoute path="/" component={UserNavBar} />
       <AuthRoute path="/" component={MainPage} />
+      <ProtectedRoute path="/" component={UserNavBar} />
       <Switch>
          <ProtectedRoute exact path="/newsfeed" component={NewsFeed} />
          <ProtectedRoute exact path="/newsfeed/add" component={NewsFeedAddContent} />

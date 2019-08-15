@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom'
-import { receiveCurrentUser } from '../../actions/session_actions';
+import { fetchUser } from '../../actions/session_actions';
 // import Follow from "../../../../models/Follow"
 class UserNavBar extends React.Component {
     constructor(props) {
@@ -11,7 +11,7 @@ class UserNavBar extends React.Component {
 
     componentDidMount() {
         // debugger;
-        this.props.receiveCurrentUser(this.props.currentUser);
+        this.props.fetchUser(this.props.currentUser);
     }
 
     renderFollows() {
@@ -62,7 +62,8 @@ const mstp = state => {
 }
 
 const mdtp = dispatch => ({
-    receiveCurrentUser: user => dispatch(receiveCurrentUser(user)), 
+    fetchUser: user => dispatch(fetchUser(user)),
+
 })
 
 export default connect(mstp, mdtp)(UserNavBar);
