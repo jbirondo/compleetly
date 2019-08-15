@@ -32,7 +32,7 @@ class UserNavBar extends React.Component {
         }
         return (
             <div className="user-bar-container" >
-                <Link to={`/${this.props.currentUserId}/today`}>Today</Link>
+                <Link to='/newsfeed'>Today</Link>
                 <Link to={`/${this.props.currentUserId}/read_later`}>Read later</Link>
                 <Link to={`/${this.props.currentUserId}/filters`}>Filters</Link>
                 <div>Feeds <Link to={`/${this.props.currentUserId}/organize`}>⚙︎</Link></div>
