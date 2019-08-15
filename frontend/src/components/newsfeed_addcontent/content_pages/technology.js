@@ -17,6 +17,7 @@ class TechnologyFeed extends React.Component {
 
     componentDidMount() {
         this.getArticles();
+
     }
 
     getArticles() {
@@ -27,16 +28,21 @@ class TechnologyFeed extends React.Component {
         const req = new Request(url);
         axios(req).then(res => {
             this.setState({ articles: res.data.sources })
-            console.log(res)
         })
     }
 
 
     render() {
         let articles;
-        articles = this.state.articles.map((article, i) => <li key={i}>{article.name} {article.url}
-            <button onClick={() => this.props.createFollow({followName: article.name, followURL: article.url, currentUserId: this.props.currentUserId})}>Follow ME!</button>
-        </li>)
+        let followsArr;
+        followsArr = Object.values(this.props.follows);
+        // followsArr = this.props.currentUser.followedSources;
+        articles = this.state.articles.map((article, i) => {
+            // debugger;
+           return <li key={i}>{article.name} {article.url}
+                <button onClick={() => this.props.createFollow({followName: article.name, followURL: article.url, currentUserId: this.props.currentUserId})}>Follow ME!</button>
+            </li>
+        })
 
         return (
             <div>
@@ -49,7 +55,9 @@ class TechnologyFeed extends React.Component {
 
 const msp = state => ({
     // errors: state.errors.follows // don't have error reducers set up
-    currentUserId: state.session.user.id
+    currentUserId: state.session.user.id,
+    currentUser: state.session.user,
+    follows: state.entities.follows
 })
 
 const mdp = dispatch => ({

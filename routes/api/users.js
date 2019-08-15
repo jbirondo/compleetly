@@ -17,6 +17,26 @@ router.get('/current', passport.authenticate('jwt', {session: false}), (req, res
 
 });
 
+router.get('/:userId', (req, res) => {
+    // debugger;
+    // const user = req.params.userId;
+    User.findOne({_id: req.params.userId})
+        .then(async user => {
+            await Follow.find({follower: user.id})
+                .then(follows => {
+                    const payload = {
+                        id: user.id,
+                        firstName: user.firstName,
+                        lastName: user.lastName,
+                        email: user.email,
+                        followedSources: user.followedSources,
+                        sourcesArray: follows
+                    }
+                    res.json(payload)
+                })
+        })
+})
+
 router.post('/:userId/follow', (req, res) => {
     const userId = req.body.currentUserId
     User.findOne({_id: userId})
@@ -62,7 +82,7 @@ router.post('/register', (req, res) => {
                 bcrypt.genSalt(10, (err, salt) => {
                     bcrypt.hash(newUser.password, salt, (err, hash) => {
                         // debugger;
-                        // if (err) throw err;
+                        if (err) throw err;
                         newUser.password = hash;
 
                         newUser.save()
@@ -125,7 +145,7 @@ router.post('/login', (req, res) => {
                         followedSources: user.followedSources,
                         sourcesArray: follows
                     }
-                    
+
                     jwt.sign(
                         payload,
                         keys.secretOrKey,
