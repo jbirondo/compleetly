@@ -17,6 +17,7 @@ class TechnologyFeed extends React.Component {
 
     componentDidMount() {
         this.getArticles();
+
     }
 
     getArticles() {
