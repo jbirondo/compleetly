@@ -4,3 +4,7 @@
    border-bottom: rgb(185, 185, 185) solid 1px;
 }
 
+.nav-bar-logged-in:focus{
+   outline: none;
+}
+
