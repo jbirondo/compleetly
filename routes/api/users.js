@@ -62,18 +62,20 @@ router.delete('/:userId/follow', (req, res) => {
     Follow.findOne({_id: req.body.followId})
         .then(follow => {
             follow.delete()
+            res.json(follow);
         }
     );
     User.findOne({_id: req.params.userId})
-        .then(user => {
-            for (let index = 0; index < user.followedSources.length; index++) {
-                const element = user.followedSources[index];
-                if (element == req.body.followId) {
-                    user.followedSources.splice(index, 1);
-                    user.save()
-                }
+    .then(user => {
+        for (let index = 0; index < user.followedSources.length; index++) {
+            const element = user.followedSources[index];
+            if (element == req.body.followId) {
+                user.followedSources.splice(index, 1);
+                user.save();
             }
-        })
+        }
+    })
+    
     // debugger;
 }) 
 //splice

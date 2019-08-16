@@ -19,6 +19,7 @@ class BusinessFeed extends React.Component {
         this.getArticles();
     }
 
+
     getArticles() {
         const url = 'https://newsapi.org/v2/sources?' +
             'country=us&' +
@@ -40,11 +41,8 @@ class BusinessFeed extends React.Component {
             let followName = []; // ['bloomberg', 'nbc', 'cnbc']
             Object.values(this.props.entities.follows).forEach(follow => followName.push(follow.followName));
 
-            let follows = []; // ['bloomberg', 'nbc', 'cnbc']
+            let follows = [];
             Object.values(this.props.entities.follows).forEach(follow => follows.push(follow));
-
-            // let followId = []; // ['5d557bc811d45e62ed028963', '5d557bc811d45e62ed028233']
-            // Object.values(this.props.entities.follows).forEach(follow => followId.push(follow._id));
 
             follows.forEach(follow => {
                 if (follow.followName.includes(article.name)){

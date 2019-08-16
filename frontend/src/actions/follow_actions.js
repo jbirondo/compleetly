@@ -15,7 +15,8 @@ export const createFollow = follow => dispatch => (
 export const deleteFollow = follow => dispatch => {
     // debugger;
     return (
-    APIUtil.deleteFollow(follow).then(follow => (
-        dispatch({type: DELETE_FOLLOW, follow})))
-        // .catch( err => dispatch({type: RECEIVE_FOLLOW_ERRORS, err}))
+    APIUtil.deleteFollow(follow).then(follow => {
+        // debugger;
+        return dispatch({type: DELETE_FOLLOW, follow})})
+            .catch( err => dispatch({type: RECEIVE_FOLLOW_ERRORS, err}))
 )}

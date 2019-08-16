@@ -8,7 +8,8 @@ export default function (state = {}, action) {
     switch(action.type) {
         case RECEIVE_NEW_FOLLOW:
             return merge({}, state, {[action.follow.data._id]: action.follow.data});
-        case DELETE_FOLLOW: 
+        case DELETE_FOLLOW:
+            // debugger;
             newState = merge({}, state);
             delete newState[action.follow.data._id];
             return newState;
