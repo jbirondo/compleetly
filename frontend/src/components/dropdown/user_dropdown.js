@@ -39,14 +39,12 @@ class userDropdown extends React.Component {
 }
 
 const mapStateToProps = state => {
-    // debugger
     return {
         currentUser: state.session.user
     }
 }
 
 const mapDispatchToProps = dispatch => {
-    // debugger
     return {
         logout: () => dispatch(logout())
     }

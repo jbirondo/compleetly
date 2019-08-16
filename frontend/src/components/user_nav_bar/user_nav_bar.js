@@ -67,7 +67,6 @@ class UserNavBar extends React.Component {
         if (!this.props.follows) {
             return null;
         }
-        // debugger
         return (
             <div className="user-bar-container" >
                 <Link to={`/newsfeed`}>Today</Link>
@@ -88,12 +87,10 @@ const mstp = state => {
     // debugger
     const user = state.session.user;
     let follows;
-    // debugger;
     let readLater;
     if (!user.sourcesArray) {
         follows = user.followedSources.map(id => state.entities.follows[id] )
     }
-    // debugger
     // if (!user.readLater) {
     //     readLater = user.readLater.map(id => state.entities.readLater[id] )
     // }

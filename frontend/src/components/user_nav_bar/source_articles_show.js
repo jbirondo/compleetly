@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom' 
 import { fetchArticles } from '../../actions/source_articles_actions';
+import { createReadLater } from "../../actions/read_later_actions"
 
 class SourceArticlesShow extends React.Component {
     constructor(props) {
@@ -22,7 +23,6 @@ class SourceArticlesShow extends React.Component {
         //     this.setState({ articles: res.data.sources }
         // )
         if (this.props.location.state) {
-            // debugger;
             // const sourceName = this.props.match.params.source
             const sourceName = this.props.location.state.source.source
             // `sources=buzzfeed&` +
@@ -60,11 +60,9 @@ class SourceArticlesShow extends React.Component {
         // if (!source) {
             //     return null;
             // }
-            // debugger;
             // if(!this.props.source || !this.props.articles) {
                 //     return null;
                 // }
-                // debugger;
         // if (!this.props.location) {
         //     return null;
         // }
@@ -83,7 +81,12 @@ class SourceArticlesShow extends React.Component {
         
         if (articles.length > 0) {
             articles = articles.map((article, i) => 
-            <li key={i}>{article.title} {article.author} {article.description}</li>
+            <li key={i}>{article.title} {article.author} {article.description}
+                    <button onClick={() => this.props.createReadLater({
+                        readLaterURL: article.url,
+                        readLaterDescription: article.description,
+                        reader: this.props.user.id
+                    })}>Read Later</button></li >
             )
         }
         // debugger;
@@ -112,13 +115,14 @@ const msp = (state, ownProps) => {
 
     return {
         articles: state.entities.articles,
-        follows: state.entities.follows
-        // follows: follows 
+        follows: state.entities.follows,
+        user: state.session.user
     }
 };
 
 const mdp = dispatch => ({
-    fetchArticles: req => dispatch(fetchArticles(req))
+    fetchArticles: req => dispatch(fetchArticles(req)),
+    createReadLater: readLater => dispatch(createReadLater(readLater)),
 });
 
 export default withRouter(connect(msp, mdp)(SourceArticlesShow));

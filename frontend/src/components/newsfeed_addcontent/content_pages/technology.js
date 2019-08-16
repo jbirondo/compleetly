@@ -30,6 +30,29 @@ class TechnologyFeed extends React.Component {
     }
 
     render() {
+        
+        //     this.articles = this.articles.map((article, i) => {
+        //         return <li key={i}>{article.name} {article.url}
+        //             <button onClick={() => this.props.createFollow({ source: article.id, followName: article.name, followURL: article.url, currentUserId: this.props.currentUserId })}>Follow ME!</button>
+        //         </li>
+        //     })
+        // }
+        // let articles;
+        // this.articles = Object.values(this.props.articles);
+        // let followName = []; // ['bloomberg', 'nbc', 'cnbc']
+        // let follows = [];
+
+        // if (this.articles.length > 0 && this.articles) {
+        //     this.articles = this.articles.map((article, i) => {
+        //         Object.values(this.props.follows).forEach(follow => followName.push(follow.followName));
+
+        //         Object.values(this.props.follows).forEach(follow => follows.push(follow));
+
+        //         follows.forEach(follow => {
+        //             if (follow.followName.includes(article.name)) {
+        //                 article.followId = follow._id;
+        //             }
+        //         })
 
         let articles;
         if ((this.state.articles.length === 0) || !this.props.follows) {

@@ -57,7 +57,7 @@ const msp = state => ({
 const mdp = dispatch => ({
     fetchCategories: req => dispatch(fetchCategories(req)),
     createFollow: follow => dispatch(createFollow(follow)),
-    deleteFollow: follow => dispatch(deleteFollow(follow))
+    deleteFollow: follow => dispatch(deleteFollow(follow)),
 })
 
 export default withRouter(connect(msp, mdp)(BusinessFeed));

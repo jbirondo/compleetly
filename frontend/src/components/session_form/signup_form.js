@@ -17,12 +17,10 @@ class SignupForm extends React.Component {
    }
 
    // componentWillReceiveProps(nextProps) {
-   //    debugger
    //    this.setState({ errors: nextProps.errors })
    // }
 
    // componentDidUpdate(banana) {
-   //    // debugger
    //    this.setState({ errors: banana.errors})
    // }
 
@@ -33,7 +31,6 @@ class SignupForm extends React.Component {
    }}
 
    handleSubmit(e) {
-      // debugger;
       e.preventDefault();
       let user = {
          firstName: this.state.firstName,

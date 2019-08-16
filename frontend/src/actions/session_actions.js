@@ -28,10 +28,8 @@ export const receiveCurrentUser = currentUser => ({
 });
 
 export const fetchUser = user => dispatch => {
-    // debugger;
     return (
     APIUtil.fetchUser(user).then(res => {
-        // debugger;
         dispatch(receiveCurrentUser(res.data))
     }).catch(err => {
         dispatch(receiveErrors(err.response.data))

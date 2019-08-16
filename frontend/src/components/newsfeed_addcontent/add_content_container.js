@@ -3,7 +3,6 @@ import AddContent from './add_content';
 
 
 const mstp = state => {
-   // debugger
    return {
       currentUser: state.session.user
    }

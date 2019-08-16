@@ -6,7 +6,6 @@ import { logout } from '../../actions/session_actions'
 
 
 const mstp = state => {
-    // debugger
     return {
     isAuthenticated: state.session.isAuthenticated,
     currentUser: state.session.user
@@ -14,7 +13,6 @@ const mstp = state => {
 }
 
 const mdtp = dispatch => {
-    // debugger
     return {
    openModal: modal => dispatch(openModal(modal)),
    logout: () => dispatch(logout())

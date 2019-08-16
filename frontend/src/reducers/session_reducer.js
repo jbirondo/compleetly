@@ -2,7 +2,7 @@ import { RECEIVE_USER_LOGOUT,
    RECEIVE_CURRENT_USER,
    // RECEIVE_USER_SIGN_UP,
 } from '../actions/session_actions';
-import { RECEIVE_NEW_READ_LATER } from '../actions/read_later_actions';
+import { RECEIVE_NEW_READ_LATER, DELETE_READ_LATER } from '../actions/read_later_actions';
 import { RECEIVE_NEW_FOLLOW, DELETE_FOLLOW } from '../actions/follow_actions';
 import merge from 'lodash/merge'
 // import { STATES } from 'mongoose';
@@ -37,16 +37,13 @@ export default function (state = initialState, action) {
       case DELETE_FOLLOW:
          let oFollows = state.user.followedSources;
          let nFollows = [];
-         // debugger;
          for (let i = 0; i < oFollows.length; i++) {
             if (state.user.followedSources[i] !== action.follow.data._id) {
                nFollows.push(state.user.followedSources[i]);
             }
          }
          newState = merge({}, state);
-         // debugger;
          newState['user'].followedSources = nFollows;
-         // debugger;
          return newState;
 
       case RECEIVE_NEW_FOLLOW:
@@ -60,10 +57,20 @@ export default function (state = initialState, action) {
          let reads;
          newState = merge({}, state)
          reads = newState.user.readArray
-         // debugger
          reads.push(action.readLater.data)
          newState.user.readArray = reads
          return newState
+      case DELETE_READ_LATER:
+         let oReads = state.user.readArray;
+         let nReads = [];
+         for (let i = 0; i < oReads.length; i++) {
+            if (state.user.readArray[i]._id !== action.readLater.data._id) {
+               nReads.push(state.user.readArray[i]);
+            }
+         }
+         newState = merge({}, state);
+         newState['user'].readArray = nReads;
+         return newState;
       default:
          return state;
    }

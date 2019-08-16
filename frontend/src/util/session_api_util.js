@@ -9,18 +9,15 @@ export const setAuthToken = token => {
 };
 
 export const fetchUser = (userData) => {
-   // debugger;
    return axios.get(`/api/users/${userData.id}`, userData)
 }
 
 export const login = (userData) => {
-   // debugger;
    // console.log(userData)
    return axios.post('/api/users/login', userData)
 }
 
 export const signup = (userData) => {
-   // debugger;
    // console.log(userData)
    return axios.post('/api/users/register', userData)
 }

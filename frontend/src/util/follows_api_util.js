@@ -9,13 +9,11 @@ import axios from 'axios';
 // };
 
 export const createFollow = (followData) => {
-    // debugger;
     // console.log(userData)
     return axios.post(`/api/users/${followData.currentUserId}/follow`, followData)
 }
 
 export const deleteFollow = (followData) => {
-    // debugger
     // return axios.delete(`/api/users/${followData.currentUserId}/follow`, {data: {followId: `ObjectId("${followData.followId}")`} })
     return axios.delete(`/api/users/${followData.currentUserId}/follow`, { data: { followId: followData.followId } })
 }
@@ -30,7 +28,6 @@ export const deleteFollow = (followData) => {
 // }
 
 // export const signup = (userData) => {
-//     // debugger;
 //     // console.log(userData)
 //     return axios.post('/api/users/register', userData)
 // }

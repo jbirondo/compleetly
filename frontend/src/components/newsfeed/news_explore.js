@@ -15,7 +15,6 @@ class NewsFeed extends React.Component {
         this.state = {
             articles: []
         }
-        // debugger
     };
 
     componentDidMount() {
@@ -40,15 +39,12 @@ class NewsFeed extends React.Component {
     
     
     render() {
-        // debugger;
-        // debugger
         // if (!this.props.user) {
         //     return null
         // }
 
         let articles;
         articles = this.state.articles.map((article, i) => {
-            // debugger
             let image;
             if (article.urlToImage) {
                 image = <img alt={article.title} className='news-explore-img' src={article.urlToImage} />
