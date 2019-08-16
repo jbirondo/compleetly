@@ -3,7 +3,6 @@ import { withRouter, Link } from 'react-router';
 import axios from 'axios';
 import { connect } from 'react-redux'
 import { createFollow } from '../../../actions/follow_actions'
-
 // const NewsAPI = require('newsapi');
 // const newsapi = new NewsAPI('c74b69f1594f4080902981643aa178df');
 

@@ -6,6 +6,7 @@ const jwt = require('jsonwebtoken');
 const passport = require('passport');
 const User = require("../../models/User");
 const Follow = require("../../models/Follow");
+const ReadLater = require("../../models/ReadLater");
 const validateRegisterInput = require('../../validation/register');
 const validateLoginInput = require('../../validation/login');
 
@@ -22,6 +23,7 @@ router.get('/:userId', (req, res) => {
     // const user = req.params.userId;
     User.findOne({_id: req.params.userId})
         .then(async user => {
+            let readLater = await ReadLater.find({reader: user.id})
             await Follow.find({follower: user.id})
                 .then(follows => {
                     const payload = {
@@ -30,7 +32,8 @@ router.get('/:userId', (req, res) => {
                         lastName: user.lastName,
                         email: user.email,
                         followedSources: user.followedSources,
-                        sourcesArray: follows
+                        sourcesArray: follows,
+                        readArray: readLater
                     }
                     res.json(payload)
                 })
@@ -56,6 +59,28 @@ router.post('/:userId/follow', (req, res) => {
             })
             .catch(err => console.log(err)); 
         })
+})
+
+router.post('/:userId/read_later', (req, res) => {
+    // debugger
+    const userId = req.body.reader
+    User.findOne({ _id: userId })
+        .then(user => {
+            // debugger
+            const newReadLater = new ReadLater({
+                readLaterURL: req.body.readLaterURL,
+                readLaterDescription: req.body.readLaterDescription,
+                reader: user.id
+            })
+            newReadLater.save()
+                .then(async readLater => {
+                    // debugger;
+                    user.readLater.push(newReadLater);
+                    await user.save();
+                    res.json(readLater);
+                })
+                .catch(err => console.log(err));
+            })
 })
 
 router.post('/register', (req, res) => {
@@ -87,14 +112,15 @@ router.post('/register', (req, res) => {
 
                         newUser.save()
                         .then(user => {
-                            // debugger;
                             const payload = {
                                 id: user.id,
                                 firstName: user.firstName,
                                 lastName: user.lastName,
                                 email: user.email,
-                                followedSources: user.followedSources
+                                followedSources: user.followedSources,
+                                readLater: user.readLater
                             }
+                            // debugger
                             jwt.sign(
                                 payload,
                                 keys.secretOrKey,
@@ -135,6 +161,7 @@ router.post('/login', (req, res) => {
 
         .then(async isMatch => {
             if (isMatch) {
+                let readLater = await ReadLater.find({ reader: user.id });
                 await Follow.find({ follower: user.id }).then(follows => {
                     
                     const payload = {
@@ -143,9 +170,9 @@ router.post('/login', (req, res) => {
                         lastName: user.lastName,
                         email: user.email,
                         followedSources: user.followedSources,
-                        sourcesArray: follows
+                        sourcesArray: follows,
+                        readLater: readLater
                     }
-
                     jwt.sign(
                         payload,
                         keys.secretOrKey,

@@ -25,6 +25,12 @@ const UserSchema = new Schema({
          ref: 'follows'
       }
    ],
+   readLater: [
+      {
+         type: Schema.Types.ObjectId,
+         ref: 'readlaters'
+      }
+   ],
    date: {
       type: Date, 
       default: Date.now

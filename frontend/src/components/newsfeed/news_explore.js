@@ -1,5 +1,7 @@
 import React from 'react';
 import { withRouter } from 'react-router';
+import { connect } from 'react-redux'
+import { createReadLater } from "../../actions/read_later_actions"
 import axios from 'axios';
 // import { link } from 'fs';
 // import { link } from 'fs';
@@ -13,6 +15,7 @@ class NewsFeed extends React.Component {
         this.state = {
             articles: []
         }
+        // debugger
     };
 
     componentDidMount() {
@@ -38,9 +41,14 @@ class NewsFeed extends React.Component {
     
     render() {
         // debugger;
+        // debugger
+        // if (!this.props.user) {
+        //     return null
+        // }
+
         let articles;
         articles = this.state.articles.map((article, i) => {
-            
+            // debugger
             let image;
             if (article.urlToImage) {
                 image = <img alt={article.title} className='news-explore-img' src={article.urlToImage} />
@@ -82,6 +90,10 @@ class NewsFeed extends React.Component {
                         {author}
                         {description}
                     </div>
+                    <button onClick={() => this.props.createReadLater({ 
+                        readLaterURL: article.url,
+                        readLaterDescription: article.description,
+                        reader: this.props.user.id})}>Read Later</button>
                 </li>
             )
         })
@@ -134,4 +146,13 @@ class NewsFeed extends React.Component {
 
 };
 
-export default withRouter(NewsFeed);
+const msp = state => {
+    return {
+        user: state.session.user
+    }
+}
+
+const mdp = dispatch => ({
+    createReadLater: readLater => dispatch(createReadLater(readLater)),
+})
+export default withRouter(connect(msp,mdp)(NewsFeed));
