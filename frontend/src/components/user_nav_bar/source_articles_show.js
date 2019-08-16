@@ -6,7 +6,10 @@ import { fetchArticles } from '../../actions/source_articles_actions';
 class SourceArticlesShow extends React.Component {
     constructor(props) {
         super(props);
-        this.articles = null;
+        // this.articles = null;
+        this.state = {
+            articles: []
+        }
     }
 
     componentDidMount() {
@@ -28,12 +31,15 @@ class SourceArticlesShow extends React.Component {
             'apiKey=0fe3c7ee9aa4446d94b11b44f28c4b74';
             const req = new Request(url);
             // debugger;
-            this.props.fetchArticles(req)
+            this.props.fetchArticles(req).then(res => {
+                // debugger;
+                this.setState({articles: Object.values(this.props.articles)})})
         }
     }
 
     componentDidUpdate(prevProps) {
         // debugger;
+        // this.articles = null;
         if (this.props.match.params.source !== prevProps.match.params.source) {
             const sourceName = this.props.location.state.source.source
             // `sources=buzzfeed&` +
@@ -42,7 +48,8 @@ class SourceArticlesShow extends React.Component {
                 'apiKey=0fe3c7ee9aa4446d94b11b44f28c4b74';
             const req = new Request(url);
             // debugger;
-            this.props.fetchArticles(req)
+            this.props.fetchArticles(req).then(res =>
+                this.setState({ articles: Object.values(this.props.articles)}))
         }
         // this.props.history.push('/newsfeed')
     }
@@ -66,27 +73,29 @@ class SourceArticlesShow extends React.Component {
         //     return null;
         // }
 
-        this.articles = Object.values(this.props.articles);
+        // this.articles = Object.values(this.props.articles);
+        let articles;
+        articles = this.state.articles;
         // debugger;
-        if (this.articles.length === 0 || !this.articles) {
+        if (this.state.articles.length === 0) {
             return null;
         }
         
-        if (this.articles.length > 0) {
-            this.articles = this.articles.map((article, i) => 
+        if (articles.length > 0) {
+            articles = articles.map((article, i) => 
             <li key={i}>{article.title} {article.author} {article.description}</li>
             )
         }
         // debugger;
-        const header = (this.articles[0]._self.props.articles[0].source) ? (<h3>{this.articles[0]._self.props.articles[0].source.name}</h3>) :
-            (<h3>{this.articles[0]._self.props.articles[0].name}</h3>)
-        
+        // const header = (this.state.articles[0]._self.props.articles[0].source) ? (<h3>{this.state.articles[0]._self.props.articles[0].source.name}</h3>) :
+        //     (<h3>{this.state.articles[0]._self.props.articles[0].name}</h3>)
+        const header = <h3>{this.state.articles[0].source.name}</h3>
         return(
             
             <div>
                 {header}
                 
-                {this.articles}
+                {articles}
             </div>
         )
     }

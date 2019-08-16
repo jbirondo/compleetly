@@ -3,6 +3,7 @@ import { withRouter } from 'react-router';
 import { connect } from 'react-redux';
 import { fetchCategories } from '../../../actions/source_articles_actions';
 import { createFollow, deleteFollow } from '../../../actions/follow_actions';
+import Articles from './articles';
 
 // const NewsAPI = require('newsapi');
 // const newsapi = new NewsAPI('c74b69f1594f4080902981643aa178df');
@@ -10,69 +11,36 @@ import { createFollow, deleteFollow } from '../../../actions/follow_actions';
 class GeneralFeed extends React.Component {
     constructor(props) {
         super(props);
-        this.articles = null;
-        // this.state = {
-        //     articles: []
-        // }
+        this.state = {
+            articles: []
+        }
     };
 
     componentDidMount() {
         // this.getArticles();
+        // this.articles = null;
         const url = 'https://newsapi.org/v2/sources?' +
             'country=us&' +
             'category=general&' +
             'apiKey=0fe3c7ee9aa4446d94b11b44f28c4b74';
         const req = new Request(url);
-        this.props.fetchCategories(req);
-    }
-
-
-    componentDidUpdate() {
-        this.articles = null;  
+        this.props.fetchCategories(req).then(res =>
+            this.setState({articles: this.props.articles}));
     }
 
     render() {
 
-        //     this.articles = this.articles.map((article, i) => {
-        //         return <li key={i}>{article.name} {article.url}
-        //             <button onClick={() => this.props.createFollow({ source: article.id, followName: article.name, followURL: article.url, currentUserId: this.props.currentUserId })}>Follow ME!</button>
-        //         </li>
-        //     })
-        // }
-        // debugger
-        // let articles;
-        this.articles = Object.values(this.props.articles);
-        let followName = []; // ['bloomberg', 'nbc', 'cnbc']
-        let follows = [];
+        let articles;
+        if ((this.state.articles.length === 0) || !this.props.follows) {
+            return null;
+        } else {
+            articles = <Articles articles={this.state.articles} propFollows={this.props.follows} />
+        }
 
-        if (this.articles.length > 0 && this.articles) {
-            this.articles = this.articles.map((article, i) => {
-                // debugger;
-                Object.values(this.props.follows).forEach(follow => followName.push(follow.followName));
-
-                Object.values(this.props.follows).forEach(follow => follows.push(follow));
-
-                follows.forEach(follow => {
-                    if (follow.followName.includes(article.name)) {
-                        article.followId = follow._id;
-                    }
-                })
-
-                if (!!followName.includes(article.name)) {
-                    return <li key={i}>{article.name} {article.url}
-                        <button onClick={() => this.props.deleteFollow({ followId: article.followId, currentUserId: this.props.currentUserId })}>Unfollow</button>
-                    </li>
-                } else {
-                    return <li key={i}>{article.name} {article.url}
-                        <button onClick={() => this.props.createFollow({ source: article.id, followName: article.name, followURL: article.url, currentUserId: this.props.currentUserId })}>Follow!</button>
-                    </li>
-                }
-            });
-        };
-
-        return (
+        return ( // article componenet that only receives articles as props, only render this component if I have these props. have render component do NO fetching logic
+            // only pass articles to render component when I have successfully fetched
             <div>
-                {this.articles}
+                {articles}
             </div>
         )
     }
