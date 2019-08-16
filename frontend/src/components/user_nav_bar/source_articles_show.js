@@ -18,8 +18,9 @@ class SourceArticlesShow extends React.Component {
         //     this.setState({ articles: res.data.sources }
         // )
         if (this.props.location.state) {
-            debugger;
-            const sourceName = this.props.match.params.source
+            // debugger;
+            // const sourceName = this.props.match.params.source
+            const sourceName = this.props.location.state.source.source
             // `sources=buzzfeed&` +
             const url = 'https://newsapi.org/v2/top-headlines?' +
             `sources=${sourceName}&` +
@@ -30,7 +31,18 @@ class SourceArticlesShow extends React.Component {
         }
     }
 
-    componentDidUpdate() {
+    componentDidUpdate(prevProps) {
+        // debugger;
+        if (this.props.match.params.source !== prevProps.match.params.source) {
+            const sourceName = this.props.location.state.source.source
+            // `sources=buzzfeed&` +
+            const url = 'https://newsapi.org/v2/top-headlines?' +
+                `sources=${sourceName}&` +
+                'apiKey=c74b69f1594f4080902981643aa178df';
+            const req = new Request(url);
+            // debugger;
+            this.props.fetchArticles(req)
+        }
         // this.props.history.push('/newsfeed')
     }
     
@@ -48,16 +60,23 @@ class SourceArticlesShow extends React.Component {
         // if (!this.props.location) {
         //     return null;
         // }
+        // if (this.props.follows)
+        // if (Object.values(this.props.articles).length === 0) {
+        //     return null;
+        // }
 
         let articles = Object.values(this.props.articles);
-        debugger;
+        // debugger;
+        if (articles.length === 0) {
+            return null;
+        }
         
         if (articles.length > 0) {
             articles = articles.map((article, i) => 
                 <li key={i}>{article.title} {article.author} {article.description}</li>
             )
         }
-            
+        // debugger;
         return(
             <div>
                 <h3>{this.props.location.state.source.followName}</h3>
@@ -79,7 +98,7 @@ const msp = (state, ownProps) => {
 
     return {
         articles: state.entities.articles,
-        // source:
+        follows: state.entities.follows
         // follows: follows 
     }
 };
