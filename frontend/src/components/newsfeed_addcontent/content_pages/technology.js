@@ -18,7 +18,7 @@ class TechnologyFeed extends React.Component {
         const url = 'https://newsapi.org/v2/sources?' +
             'country=us&' +
             'category=technology&' +
-            'apiKey=c74b69f1594f4080902981643aa178df';
+            'apiKey=0fe3c7ee9aa4446d94b11b44f28c4b74';
         const req = new Request(url);
         this.props.fetchCategories(req);
     }
