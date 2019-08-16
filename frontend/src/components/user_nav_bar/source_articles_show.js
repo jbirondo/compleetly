@@ -6,6 +6,7 @@ import { fetchArticles } from '../../actions/source_articles_actions';
 class SourceArticlesShow extends React.Component {
     constructor(props) {
         super(props);
+        this.articles = null;
     }
 
     componentDidMount() {
@@ -65,23 +66,27 @@ class SourceArticlesShow extends React.Component {
         //     return null;
         // }
 
-        let articles = Object.values(this.props.articles);
+        this.articles = Object.values(this.props.articles);
         // debugger;
-        if (articles.length === 0) {
+        if (this.articles.length === 0 || !this.articles) {
             return null;
         }
         
-        if (articles.length > 0) {
-            articles = articles.map((article, i) => 
-                <li key={i}>{article.title} {article.author} {article.description}</li>
+        if (this.articles.length > 0) {
+            this.articles = this.articles.map((article, i) => 
+            <li key={i}>{article.title} {article.author} {article.description}</li>
             )
         }
         // debugger;
+        const header = (this.articles[0]._self.props.articles[0].source) ? (<h3>{this.articles[0]._self.props.articles[0].source.name}</h3>) :
+            (<h3>{this.articles[0]._self.props.articles[0].name}</h3>)
+        
         return(
+            
             <div>
-                <h3>{this.props.location.state.source.followName}</h3>
+                {header}
                 
-                {articles}
+                {this.articles}
             </div>
         )
     }
