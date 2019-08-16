@@ -33,34 +33,43 @@ class GeneralFeed extends React.Component {
     }
 
     render() {
+
+        //     this.articles = this.articles.map((article, i) => {
+        //         return <li key={i}>{article.name} {article.url}
+        //             <button onClick={() => this.props.createFollow({ source: article.id, followName: article.name, followURL: article.url, currentUserId: this.props.currentUserId })}>Follow ME!</button>
+        //         </li>
+        //     })
+        // }
         // debugger
-        let articles;
-        articles = this.state.articles.map((article, i) => {
-            // debugger;
-            let followName = []; // ['bloomberg', 'nbc', 'cnbc']
-            Object.values(this.props.entities.follows).forEach(follow => followName.push(follow.followName));
+        // let articles;
+        this.articles = Object.values(this.props.articles);
+        let followName = []; // ['bloomberg', 'nbc', 'cnbc']
+        let follows = [];
 
-            let follows = [];
-            Object.values(this.props.entities.follows).forEach(follow => follows.push(follow));
+        if (this.articles.length > 0 && this.articles) {
+            this.articles = this.articles.map((article, i) => {
+                // debugger;
+                Object.values(this.props.follows).forEach(follow => followName.push(follow.followName));
 
-            follows.forEach(follow => {
-                if (follow.followName.includes(article.name)) {
-                    article.followId = follow._id;
+                Object.values(this.props.follows).forEach(follow => follows.push(follow));
+
+                follows.forEach(follow => {
+                    if (follow.followName.includes(article.name)) {
+                        article.followId = follow._id;
+                    }
+                })
+
+                if (!!followName.includes(article.name)) {
+                    return <li key={i}>{article.name} {article.url}
+                        <button onClick={() => this.props.deleteFollow({ followId: article.followId, currentUserId: this.props.currentUserId })}>Unfollow</button>
+                    </li>
+                } else {
+                    return <li key={i}>{article.name} {article.url}
+                        <button onClick={() => this.props.createFollow({ source: article.id, followName: article.name, followURL: article.url, currentUserId: this.props.currentUserId })}>Follow!</button>
+                    </li>
                 }
-            })
-
-            // debugger;
-            if (!!followName.includes(article.name)) {
-                return (<li key={i}>{article.name} {article.url}
-                    <button onClick={() => this.props.deleteFollow({ followId: article.followId, currentUserId: this.props.currentUserId })}>UNFOLLOW ME</button>
-                </li>)
-            } else {
-                return (<li key={i}>{article.name} {article.url}
-                    <button onClick={() => this.props.createFollow({ followName: article.name, followURL: article.url, currentUserId: this.props.currentUserId })}>Follow ME!</button>
-                </li>)
-            }
-        })
-
+            });
+        };
 
         return (
             <div>
@@ -68,8 +77,7 @@ class GeneralFeed extends React.Component {
             </div>
         )
     }
-
-};
+}
 
 const msp = state => ({
     // errors: state.errors.follows // don't have error reducers set up

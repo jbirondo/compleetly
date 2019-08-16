@@ -14,10 +14,9 @@ const initialState = {
 }
 
 export default function (state = initialState, action) {
-   // debugger;
+
    let newState;
    Object.freeze(state);
-   let newState;
    switch (action.type) {
       case RECEIVE_USER_LOGOUT:
          return {
@@ -49,7 +48,7 @@ export default function (state = initialState, action) {
          newState['user'].followedSources = nFollows;
          // debugger;
          return newState;
-         
+
       case RECEIVE_NEW_FOLLOW:
          let oSources;
          newState = merge({}, state)

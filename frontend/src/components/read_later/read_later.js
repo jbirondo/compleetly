@@ -22,7 +22,7 @@ class ReadLater extends React.Component {
     renderReadLater() {
         let please;
         if (this.props.readArray){
-            debugger
+            // debugger
           
             please = this.props.readArray.map(source =>   
                 <li key={source._id}><a href={source.readLaterURL}>{source.readLaterURL.slice(0, 20)} {source.readLaterDescription.slice(0, 150)}</a></li>
