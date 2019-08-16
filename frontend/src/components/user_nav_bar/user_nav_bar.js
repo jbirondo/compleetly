@@ -28,19 +28,30 @@ class UserNavBar extends React.Component {
             </ul>
         )
     }
+    // renderReadLater() {
+    //     return (
+    //         <ul>    
+    //             {this.props.readLater.map(source =>   
+    //                 <li key={source._id}><a href={source.readLaterURL}>{source.readLaterURL}</a></li>
+    //         )}
+    //         </ul>
+    //     )
+    // }
 
     render() {
         if (!this.props.follows) {
             return null;
         }
+        // debugger
         return (
             <div className="user-bar-container" >
                 <Link to={`/newsfeed`}>Today</Link>
                 <Link to={`/${this.props.currentUserId}/read_later`}>Read later</Link>
                 <Link to={`/${this.props.currentUserId}/filters`}>Filters</Link>
+                <Link to={`/${this.props.currentUserId}/read_later`}>Read Later</Link>
                 <div>Feeds <Link to={`/${this.props.currentUserId}/organize`}>⚙︎</Link></div>
                 {this.renderFollows()}
-                  
+                
                 <Link to={`/newsfeed/add`}>+ ADD CONTENT</Link>
             </div>
         );
@@ -51,15 +62,23 @@ class UserNavBar extends React.Component {
 const mstp = state => {
     const user = state.session.user;
     let follows;
+    // debugger;
+    let readLater;
     if (!user.sourcesArray) {
         follows = user.followedSources.map(id => state.entities.follows[id] )
     }
+    // debugger
+    // if (!user.readLater) {
+    //     readLater = user.readLater.map(id => state.entities.readLater[id] )
+    // }
+
 
     return {
         isAuthenticated: state.session.isAuthenticated,
         currentUserId: state.session.user.id,
         currentUser: state.session.user,
-        follows: follows
+        follows: follows,
+        readLater: readLater
     }
 }
 
