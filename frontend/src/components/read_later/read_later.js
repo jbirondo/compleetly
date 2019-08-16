@@ -5,6 +5,7 @@ class ReadLater extends React.Component {
     constructor(props) {
         super(props);
 
+        this.disableWarning = null;
     }
 
     componentDidMount() {

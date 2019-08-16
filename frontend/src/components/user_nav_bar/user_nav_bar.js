@@ -33,6 +33,7 @@ class UserNavBar extends React.Component {
                         article.followId = follow._id;
                     }
                 })
+                return [];
             });
         };
             // <Link to={`/sources/articles`}><li key={source._id}>{source.followName}</li></Link>

@@ -8,6 +8,7 @@ import { withRouter, Link } from 'react-router-dom';
 class AddContent extends React.Component {
     constructor(props) {
         super(props);
+        this.disableWarning = null;
         // this.state = {
         //     articles: []
         // }
