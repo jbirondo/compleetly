@@ -1,6 +1,6 @@
 import React from 'react';
-import { withRouter, Link } from 'react-router';
-import axios from 'axios';
+import { withRouter } from 'react-router';
+// import axios from 'axios';
 import { connect } from 'react-redux'
 import { fetchCategories } from '../../../actions/source_articles_actions';
 import { createFollow, deleteFollow } from '../../../actions/follow_actions';

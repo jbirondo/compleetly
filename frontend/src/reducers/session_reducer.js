@@ -39,7 +39,7 @@ export default function (state = initialState, action) {
          let nFollows = [];
          // debugger;
          for (let i = 0; i < oFollows.length; i++) {
-            if (state.user.followedSources[i] != action.follow.data._id) {
+            if (state.user.followedSources[i] !== action.follow.data._id) {
                nFollows.push(state.user.followedSources[i]);
             }
          }

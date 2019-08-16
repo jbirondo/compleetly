@@ -1,6 +1,5 @@
 import React from 'react';
 import { withRouter, Link } from 'react-router-dom';
-import axios from 'axios';
 
 
 // const NewsAPI = require('newsapi');

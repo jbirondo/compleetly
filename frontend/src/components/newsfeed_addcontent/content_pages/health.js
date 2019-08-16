@@ -1,6 +1,5 @@
 import React from 'react';
 import { withRouter } from 'react-router';
-import axios from 'axios';
 import { connect } from 'react-redux';
 import { fetchCategories } from '../../../actions/source_articles_actions';
 import { createFollow, deleteFollow } from '../../../actions/follow_actions';
@@ -88,8 +87,6 @@ class HealthFeed extends React.Component {
 
 const msp = state => ({
     // errors: state.errors.follows // don't have error reducers set up
-    currentUserId: state.session.user.id,
-    currentUser: state.session.user,
     follows: state.entities.follows,
     articles: state.entities.articles,
     currentUserId: state.session.user.id, 

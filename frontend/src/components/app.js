@@ -1,8 +1,6 @@
 import React from 'react';
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
-import { Route, Switch } from 'react-router-dom';
-import LoginFormContainer from './session_form/loginform_container';
-import SignUpFormContainer from './session_form/signup_form_container';
+import { Switch } from 'react-router-dom';
 import NewsFeed from './newsfeed/news_explore';
 import NewsFeedAddContent from './newsfeed_addcontent/add_content_container';
 import TechnologyFeed from './newsfeed_addcontent/content_pages/technology';
@@ -15,8 +13,6 @@ import BusinessFeed from './newsfeed_addcontent/content_pages/business';
 import UserNavBar from "./user_nav_bar/user_nav_bar";
 import SourceArticlesShow from './user_nav_bar/source_articles_show';
 import ReadLater from "./read_later/read_later";
-// import NavBarContainer from './nav/navbar_container';
-
 import NavBarContainer from './nav_bar/nav_bar_container';
 import Modal from './modal/modal'
 import MainPage from './main/main_page';
