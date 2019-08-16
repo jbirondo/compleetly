@@ -44,12 +44,13 @@ router.post('/:userId/follow', (req, res) => {
            const newFollow = new Follow({
                followName: req.body.followName,
                followURL: req.body.followURL,
-               follower: req.params.userId
+               follower: req.params.userId,
+               source: req.body.source
            })
+        //    debugger;
            
            newFollow.save()
             .then(async follow => {
-                // debugger;
                 user.followedSources.push(follow);
                 await user.save();
                 res.json(follow);

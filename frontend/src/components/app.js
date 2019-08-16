@@ -12,7 +12,8 @@ import HealthFeed from './newsfeed_addcontent/content_pages/health';
 import GeneralFeed from './newsfeed_addcontent/content_pages/general';
 import EntertainmentFeed from './newsfeed_addcontent/content_pages/entertainment';
 import BusinessFeed from './newsfeed_addcontent/content_pages/business';
-import UserNavBar from "./user_nav_bar/user_nav_bar"
+import UserNavBar from "./user_nav_bar/user_nav_bar";
+import SourceArticlesShow from './user_nav_bar/source_articles_show';
 // import NavBarContainer from './nav/navbar_container';
 
 import NavBarContainer from './nav_bar/nav_bar_container';
@@ -29,6 +30,7 @@ const App = () => (
       <Switch>
          <ProtectedRoute exact path="/newsfeed" component={NewsFeed} />
          <ProtectedRoute exact path="/newsfeed/add" component={NewsFeedAddContent} />
+         <ProtectedRoute exact path="/:source/articles" component={SourceArticlesShow} />
          <ProtectedRoute exact path="/newsfeed/technology" component={TechnologyFeed} />
          <ProtectedRoute exact path="/newsfeed/science" component={ScienceFeed} />
          <ProtectedRoute exact path="/newsfeed/sports" component={SportsFeed} />

@@ -1,27 +1,30 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { Link } from 'react-router-dom'
-import { receiveCurrentUser } from '../../actions/session_actions';
+import { withRouter, Link } from 'react-router-dom'
+import { fetchUser } from '../../actions/session_actions';
+// import SourceArticlesShow from './source_articles_show'
 // import Follow from "../../../../models/Follow"
 class UserNavBar extends React.Component {
     constructor(props) {
         super(props);
-
     }
 
     componentDidMount() {
-        // debugger;
-        this.props.receiveCurrentUser(this.props.currentUser);
+        this.props.fetchUser(this.props.currentUser);
     }
 
     renderFollows() {
-        // debugger
 
+            // <Link to={`/sources/articles`}><li key={source._id}>{source.followName}</li></Link>
+                    // <button onClick={() => this.props.history.push(`/sources/articles`)}>{source.followName}</button>  
         return (
             <ul>    
-                {this.props.follows.map(source =>   
-                    <li key={source._id}><a href={source.followURL}>{source.followName}</a></li>
-            )}
+                {this.props.follows.map(source =>
+                <li key={source._id}>
+                    {/* <SourceArticlesShow source={source} /> */}
+                    <Link to={ { pathname: `/${source.followName}/articles`, state: {source: source} }}>{source.followName}</Link>
+                </li>
+                )}
             </ul>
         )
     }
@@ -32,7 +35,7 @@ class UserNavBar extends React.Component {
         }
         return (
             <div className="user-bar-container" >
-                <Link to={`/${this.props.currentUserId}/today`}>Today</Link>
+                <Link to={`/newsfeed`}>Today</Link>
                 <Link to={`/${this.props.currentUserId}/read_later`}>Read later</Link>
                 <Link to={`/${this.props.currentUserId}/filters`}>Filters</Link>
                 <div>Feeds <Link to={`/${this.props.currentUserId}/organize`}>⚙︎</Link></div>
@@ -48,7 +51,6 @@ class UserNavBar extends React.Component {
 const mstp = state => {
     const user = state.session.user;
     let follows;
-    // debugger;
     if (!user.sourcesArray) {
         follows = user.followedSources.map(id => state.entities.follows[id] )
     }
@@ -62,7 +64,7 @@ const mstp = state => {
 }
 
 const mdtp = dispatch => ({
-    receiveCurrentUser: user => dispatch(receiveCurrentUser(user)), 
+    fetchUser: user => dispatch(fetchUser(user)), 
 })
 
-export default connect(mstp, mdtp)(UserNavBar);
+export default withRouter(connect(mstp, mdtp)(UserNavBar));

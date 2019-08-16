@@ -34,7 +34,7 @@ export const fetchUser = user => dispatch => {
         // debugger;
         dispatch(receiveCurrentUser(res.data))
     }).catch(err => {
-        dispatch(receiveErrors(err))
+        dispatch(receiveErrors(err.response.data))
     })
 )};
 
