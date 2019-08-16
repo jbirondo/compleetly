@@ -28,7 +28,6 @@ class LoginForm extends React.Component {
             email: this.state.email,
             password: this.state.password
         }
-        // debugger;
 
         // this.props.closeModal();
         // if(this.props.errors.length === 0) {
@@ -46,7 +45,6 @@ class LoginForm extends React.Component {
     }
 
     renderErrors() {
-        // debugger;
         return (
             <ul>
                 {Object.keys(this.props.errors).map((error, i) => (

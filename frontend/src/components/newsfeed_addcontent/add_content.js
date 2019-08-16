@@ -70,7 +70,6 @@ class AddContent extends React.Component {
         //     <li key={article.id}>{article.title}</li>
         // ))
         // console.log(articles)
-        // debugger
         
 
         return (

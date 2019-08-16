@@ -3,7 +3,6 @@ import UserDropdown from '../dropdown/user_dropdown';
 import './navbar.css';
 
 export default ({ isAuthenticated, currentUser, logout, openModal }) => {
-    // debugger
     const display = isAuthenticated ? (
         <div className='nav-bar-logged-in'>
            {/* <h1 className='nav-bar-current-user'>{currentUser.firstName}</h1>

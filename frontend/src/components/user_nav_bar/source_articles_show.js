@@ -20,7 +20,6 @@ class SourceArticlesShow extends React.Component {
         //     this.setState({ articles: res.data.sources }
         // )
         if (this.props.location.state) {
-            // debugger;
             // const sourceName = this.props.match.params.source
             const sourceName = this.props.location.state.source.source
             // `sources=buzzfeed&` +
@@ -28,13 +27,11 @@ class SourceArticlesShow extends React.Component {
             `sources=${sourceName}&` +
             'apiKey=c74b69f1594f4080902981643aa178df';
             const req = new Request(url);
-            // debugger;
             this.props.fetchArticles(req)
         }
     }
 
     componentDidUpdate(prevProps) {
-        // debugger;
         if (this.props.match.params.source !== prevProps.match.params.source) {
             const sourceName = this.props.location.state.source.source
             // `sources=buzzfeed&` +
@@ -42,7 +39,6 @@ class SourceArticlesShow extends React.Component {
                 `sources=${sourceName}&` +
                 'apiKey=0fe3c7ee9aa4446d94b11b44f28c4b74';
             const req = new Request(url);
-            // debugger;
             this.props.fetchArticles(req)
         }
         // this.props.history.push('/newsfeed')
@@ -54,11 +50,9 @@ class SourceArticlesShow extends React.Component {
         // if (!source) {
             //     return null;
             // }
-            // debugger;
             // if(!this.props.source || !this.props.articles) {
                 //     return null;
                 // }
-                // debugger;
         // if (!this.props.location) {
         //     return null;
         // }
@@ -68,7 +62,6 @@ class SourceArticlesShow extends React.Component {
         // }
 
         this.articles = Object.values(this.props.articles);
-        // debugger;
         if (this.articles.length === 0 || !this.articles) {
             return null;
         }
@@ -83,7 +76,6 @@ class SourceArticlesShow extends React.Component {
             })}>Read Later</button></li >
             )
         }
-        // debugger;
         const header = (this.articles[0]._self.props.articles[0].source) ? (<h3>{this.articles[0]._self.props.articles[0].source.name}</h3>) :
             (<h3>{this.articles[0]._self.props.articles[0].name}</h3>)
         

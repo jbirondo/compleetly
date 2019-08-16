@@ -23,7 +23,6 @@ class ReadLater extends React.Component {
     renderReadLater() {
         let please;
         if (this.props.readArray){
-            // debugger
           
             please = this.props.readArray.map(source =>   
                 <li key={source._id}><a href={source.readLaterURL}>{source.readLaterURL.slice(0, 20)} {source.readLaterDescription.slice(0, 150)}</a>
@@ -44,7 +43,6 @@ class ReadLater extends React.Component {
     }
 
     render() {
-        // debugger
 
         if (!this.props.readArray) {
             return null
@@ -72,7 +70,6 @@ class ReadLater extends React.Component {
 
 const mstp = state => {
 
-    // debugger
     return {
         isAuthenticated: state.session.isAuthenticated,
         currentUserId: state.session.user.id,

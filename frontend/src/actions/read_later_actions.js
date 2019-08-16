@@ -6,7 +6,6 @@ export const DELETE_READ_LATER = 'DELETE_READ_LATER';
 
 
 export const createReadLater = readLater => dispatch => {
-    // debugger    
     return APIUtil.createReadLater(readLater).then(readLater => (
         dispatch({ type: RECEIVE_NEW_READ_LATER, readLater })))
         .catch(err => dispatch({ type: RECEIVE_READ_LATER_ERRORS, err })
@@ -17,7 +16,6 @@ export const deleteReadLater = readLater => dispatch => {
     return (
         APIUtil.deleteReadLater(readLater)
             .then(readLater => {
-                // debugger
                 return dispatch({ type: DELETE_READ_LATER, readLater })
             })
             .catch(err => dispatch({ type: RECEIVE_READ_LATER_ERRORS, err })

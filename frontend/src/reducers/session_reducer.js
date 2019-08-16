@@ -37,16 +37,13 @@ export default function (state = initialState, action) {
       case DELETE_FOLLOW:
          let oFollows = state.user.followedSources;
          let nFollows = [];
-         // debugger;
          for (let i = 0; i < oFollows.length; i++) {
             if (state.user.followedSources[i] !== action.follow.data._id) {
                nFollows.push(state.user.followedSources[i]);
             }
          }
          newState = merge({}, state);
-         // debugger;
          newState['user'].followedSources = nFollows;
-         // debugger;
          return newState;
 
       case RECEIVE_NEW_FOLLOW:
@@ -64,11 +61,9 @@ export default function (state = initialState, action) {
          newState.user.readArray = reads
          return newState
       case DELETE_READ_LATER:
-         // debugger
          let oReads = state.user.readArray;
          let nReads = [];
          for (let i = 0; i < oReads.length; i++) {
-            // debugger;
             if (state.user.readArray[i]._id !== action.readLater.data._id) {
                nReads.push(state.user.readArray[i]);
             }

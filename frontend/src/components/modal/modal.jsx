@@ -9,7 +9,6 @@ function Modal({ modal, closeModal }) {
     if (!modal) {
         return null;
     }
-    // debugger
     let component;
     switch (modal) {
         case 'login':
@@ -21,7 +20,6 @@ function Modal({ modal, closeModal }) {
         default:
             return null;
     }
-    // debugger
     return (
         <div className="modal-background" onClick={closeModal}>
             <div className="modal-child" onClick={e => e.stopPropagation()}>
@@ -32,7 +30,6 @@ function Modal({ modal, closeModal }) {
 }
 
 const mapStateToProps = state => {
-    // debugger
     return {
         modal: state.ui.modal
     };

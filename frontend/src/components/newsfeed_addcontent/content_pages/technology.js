@@ -36,16 +36,13 @@ class TechnologyFeed extends React.Component {
         //         </li>
         //     })
         // }
-        // debugger
         // let articles;
         this.articles = Object.values(this.props.articles);
         let followName = []; // ['bloomberg', 'nbc', 'cnbc']
         let follows = [];
 
         if (this.articles.length > 0 && this.articles) {
-            // debugger;
             this.articles = this.articles.map((article, i) => {
-                // debugger;
                 Object.values(this.props.follows).forEach(follow => followName.push(follow.followName));
 
                 Object.values(this.props.follows).forEach(follow => follows.push(follow));

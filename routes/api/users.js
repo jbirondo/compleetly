@@ -19,7 +19,6 @@ router.get('/current', passport.authenticate('jwt', {session: false}), (req, res
 });
 
 router.get('/:userId', (req, res) => {
-    // debugger;
     // const user = req.params.userId;
     User.findOne({_id: req.params.userId})
         .then(async user => {
@@ -50,7 +49,6 @@ router.post('/:userId/follow', (req, res) => {
                follower: req.params.userId,
                source: req.body.source
            })
-        //    debugger;
            
            newFollow.save()
             .then(async follow => {
@@ -63,11 +61,9 @@ router.post('/:userId/follow', (req, res) => {
 })
 
 router.post('/:userId/read_later', (req, res) => {
-    // debugger
     const userId = req.body.reader
     User.findOne({ _id: userId })
         .then(user => {
-            // debugger
             const newReadLater = new ReadLater({
                 readLaterURL: req.body.readLaterURL,
                 readLaterDescription: req.body.readLaterDescription,
@@ -75,7 +71,6 @@ router.post('/:userId/read_later', (req, res) => {
             })
             newReadLater.save()
                 .then(async readLater => {
-                    // debugger;
                     user.readLater.push(newReadLater);
                     await user.save();
                     res.json(readLater);
@@ -101,12 +96,10 @@ router.delete('/:userId/follow', (req, res) => {
         }
     })
     
-    // debugger;
 }) 
 //splice
 
 router.delete('/:userId/read_later', (req, res) => {
-    // debugger
     ReadLater.findOneAndDelete({ _id: req.body.readLaterId })
         .then(readLater => {
             readLater.delete()
@@ -124,7 +117,6 @@ router.delete('/:userId/read_later', (req, res) => {
             }
         })
 
-    // debugger;
 }) 
 
 router.post('/register', (req, res) => {
@@ -150,7 +142,6 @@ router.post('/register', (req, res) => {
 
                 bcrypt.genSalt(10, (err, salt) => {
                     bcrypt.hash(newUser.password, salt, (err, hash) => {
-                        // debugger;
                         if (err) throw err;
                         newUser.password = hash;
 
@@ -164,13 +155,11 @@ router.post('/register', (req, res) => {
                                 followedSources: user.followedSources,
                                 readLater: user.readLater
                             }
-                            // debugger
                             jwt.sign(
                                 payload,
                                 keys.secretOrKey,
                                 { expiresIn: 3600 },
                                 (err, token) => {
-                                    // debugger;
                                     res.json({
                                         success: true,
                                         token: 'Bearer ' + token

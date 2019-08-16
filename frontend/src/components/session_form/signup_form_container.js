@@ -6,7 +6,6 @@ import { closeModal, openModal } from '../../actions/modal_actions';
 
 
 const mapStateToProps = (state) => {
-    // debugger
     return {
         // signedIn: state.session.isSignedIn,
         errors: state.errors.session,
