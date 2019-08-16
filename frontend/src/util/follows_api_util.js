@@ -14,6 +14,12 @@ export const createFollow = (followData) => {
     return axios.post(`/api/users/${followData.currentUserId}/follow`, followData)
 }
 
+export const deleteFollow = (followData) => {
+    // debugger
+    // return axios.delete(`/api/users/${followData.currentUserId}/follow`, {data: {followId: `ObjectId("${followData.followId}")`} })
+    return axios.delete(`/api/users/${followData.currentUserId}/follow`, { data: { followId: followData.followId } })
+}
+
 
 // export const getUserTweets = id => {
 //     return axios.get(`/api/tweets/user/${id}`)

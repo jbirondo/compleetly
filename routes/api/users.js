@@ -38,7 +38,7 @@ router.get('/:userId', (req, res) => {
 })
 
 router.post('/:userId/follow', (req, res) => {
-    const userId = req.body.currentUserId
+    const userId = req.body.currentUserId;
     User.findOne({_id: userId})
         .then(user => {
            const newFollow = new Follow({
@@ -57,6 +57,26 @@ router.post('/:userId/follow', (req, res) => {
             .catch(err => console.log(err)); 
         })
 })
+
+router.delete('/:userId/follow', (req, res) => {
+    Follow.findOne({_id: req.body.followId})
+        .then(follow => {
+            follow.delete()
+        }
+    );
+    User.findOne({_id: req.params.userId})
+        .then(user => {
+            for (let index = 0; index < user.followedSources.length; index++) {
+                const element = user.followedSources[index];
+                if (element == req.body.followId) {
+                    user.followedSources.splice(index, 1);
+                    user.save()
+                }
+            }
+        })
+    // debugger;
+}) 
+//splice
 
 router.post('/register', (req, res) => {
     const { errors, isValid } = validateRegisterInput(req.body);
