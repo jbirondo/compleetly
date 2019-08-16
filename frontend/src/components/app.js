@@ -4,7 +4,7 @@ import { Route, Switch } from 'react-router-dom';
 import LoginFormContainer from './session_form/loginform_container';
 import SignUpFormContainer from './session_form/signup_form_container';
 import NewsFeed from './newsfeed/news_explore';
-import NewsFeedAddContent from './newsfeed_addcontent/add_content';
+import NewsFeedAddContent from './newsfeed_addcontent/add_content_container';
 import TechnologyFeed from './newsfeed_addcontent/content_pages/technology';
 import SportsFeed from './newsfeed_addcontent/content_pages/sports';
 import ScienceFeed from './newsfeed_addcontent/content_pages/science';
