@@ -7,7 +7,7 @@ import axios from 'axios';
 // import { link } from 'fs';
 import './newsfeed.css';
 // const NewsAPI = require('newsapi');
-// const newsapi = new NewsAPI('c74b69f1594f4080902981643aa178df');
+// const newsapi = new NewsAPI('0fe3c7ee9aa4446d94b11b44f28c4b74');
 
 class NewsFeed extends React.Component {
     constructor(props) {
@@ -25,7 +25,7 @@ class NewsFeed extends React.Component {
     getArticles() {
         const url = 'https://newsapi.org/v2/top-headlines?' +
         'country=us&' +
-        'apiKey=c74b69f1594f4080902981643aa178df';
+        'apiKey=0fe3c7ee9aa4446d94b11b44f28c4b74';
         const req = new Request(url);
         axios(req).then(res => {
             this.setState({articles: res.data.articles})
@@ -64,7 +64,6 @@ class NewsFeed extends React.Component {
             }
 
             let description;
-
             if (article.description === null) {
                 description = <p className='news-explore-content'>{article.content}</p>
             } else if (article.description.length > 100) {
@@ -86,7 +85,7 @@ class NewsFeed extends React.Component {
                         {image}
                     </div>
                     <div className='title-author-desc-div'>
-                        <h2 className='news-exlore-title'>{article.title}</h2>
+                        <h2 className='news-explore-title'>{article.title}</h2>
                         {author}
                         {description}
                     </div>
@@ -103,7 +102,7 @@ class NewsFeed extends React.Component {
         
         // var url = 'https://newsapi.org/v2/top-headlines?' +
         //     'country=us&' +
-        //     'apiKey=c74b69f1594f4080902981643aa178df';
+        //     'apiKey=0fe3c7ee9aa4446d94b11b44f28c4b74';
         // var req = new Request(url);
         // fetch(req)
         //     .then(function (response) {

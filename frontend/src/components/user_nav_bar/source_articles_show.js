@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom' 
 import { fetchArticles } from '../../actions/source_articles_actions';
+import './source_articles_show.css';
 
 class SourceArticlesShow extends React.Component {
     constructor(props) {
@@ -13,7 +14,7 @@ class SourceArticlesShow extends React.Component {
         // const url = 'https://newsapi.org/v2/sources?' +
         // 'country=us&' +
         // 'category=technology&' +
-        // 'apiKey=c74b69f1594f4080902981643aa178df';
+        // 'apiKey=0fe3c7ee9aa4446d94b11b44f28c4b74';
         // const req = new Request(url);
         // axios(req).then(res => {
         //     this.setState({ articles: res.data.sources }
@@ -25,7 +26,7 @@ class SourceArticlesShow extends React.Component {
             // `sources=buzzfeed&` +
             const url = 'https://newsapi.org/v2/top-headlines?' +
             `sources=${sourceName}&` +
-            'apiKey=c74b69f1594f4080902981643aa178df';
+            'apiKey=0fe3c7ee9aa4446d94b11b44f28c4b74';
             const req = new Request(url);
             // debugger;
             this.props.fetchArticles(req)
@@ -39,7 +40,7 @@ class SourceArticlesShow extends React.Component {
             // `sources=buzzfeed&` +
             const url = 'https://newsapi.org/v2/top-headlines?' +
                 `sources=${sourceName}&` +
-                'apiKey=c74b69f1594f4080902981643aa178df';
+                'apiKey=0fe3c7ee9aa4446d94b11b44f28c4b74';
             const req = new Request(url);
             // debugger;
             this.props.fetchArticles(req)
@@ -73,16 +74,56 @@ class SourceArticlesShow extends React.Component {
         }
         
         if (this.articles.length > 0) {
-            this.articles = this.articles.map((article, i) => 
-            <li key={i}>{article.title} {article.author} {article.description}</li>
-            )
+            
+            
+            this.articles = this.articles.map((article, i) => {
+                let image;
+                if (article.urlToImage) {
+                    image = <img alt={article.title} className='news-explore-img' src={article.urlToImage} />
+                } else {
+                    image = <img alt='stock-photograph' className='news-explore-img' src='https://images.unsplash.com/photo-1504465039710-0f49c0a47eb7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=675&q=80' />
+                }
+    
+                let author;
+                if (article.author) {
+                    author = <h3 className='news-explore-author'>by {article.author}</h3>
+                } else {
+                    author = <div></div>
+                }
+    
+                let description;
+                if (article.description === null) {
+                    description = <p className='news-explore-content'>{article.content}</p>
+                } else if (article.description.length > 100) {
+                    description = <p className='news-explore-content'>{article.description}</p>
+                } else if (article.content === null) {
+                    description = <p className='news-explore-content'>{article.description}</p>
+                } else if (article.content.includes('+')) {
+                    description = <p className='news-explore-content'>{article.content.slice(0, -14)}</p>
+                } else {
+                    description = <p className='news-explore-content'>{article.content}</p>
+                }            
+
+                return (
+                    <li key={i} className='news-explore-li'>
+                        <div className='img-div'>
+                            {image}
+                        </div>
+                        <div className='title-author-desc-div'>
+                            <h2 className='article-title'>{article.title}</h2>
+                            {author}
+                            {description}
+                        </div>
+                    </li>
+                )
+            })
         }
         // debugger;
-        const header = (this.articles[0]._self.props.articles[0].source) ? (<h3>{this.articles[0]._self.props.articles[0].source.name}</h3>) :
-            (<h3>{this.articles[0]._self.props.articles[0].name}</h3>)
+        const header = (this.articles[0]._self.props.articles[0].source) ? (<a className='source-title' target='_blank' href={this.props.location.state.source.followURL}>{this.articles[0]._self.props.articles[0].source.name}</a>) :
+            (<a className='source-title' target='_blank' href={this.props.location.state.source.followURL}>{this.articles[0]._self.props.articles[0].name}</a>)
         
         return(
-            
+      
             <div>
                 {header}
                 

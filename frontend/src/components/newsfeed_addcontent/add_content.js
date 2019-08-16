@@ -1,14 +1,14 @@
 import React from 'react';
 import { withRouter, Link } from 'react-router-dom';
-import axios from 'axios';
 
 
 // const NewsAPI = require('newsapi');
-// const newsapi = new NewsAPI('c74b69f1594f4080902981643aa178df');
+// const newsapi = new NewsAPI('0fe3c7ee9aa4446d94b11b44f28c4b74');
 
 class AddContent extends React.Component {
     constructor(props) {
         super(props);
+        this.disableWarning = null;
         // this.state = {
         //     articles: []
         // }
@@ -21,7 +21,7 @@ class AddContent extends React.Component {
     // getArticles() {
     //     const url = 'https://newsapi.org/v2/top-headlines?' +
     //         'country=us&' +
-    //         'apiKey=c74b69f1594f4080902981643aa178df';
+    //         'apiKey=0fe3c7ee9aa4446d94b11b44f28c4b74';
     //     const req = new Request(url);
     //     axios(req).then(res => {
     //         this.setState({ articles: res.data.articles })
@@ -39,7 +39,7 @@ class AddContent extends React.Component {
         // articles = this.state.articles.map((article, i) => <li key={i}>{article.title} {article.author}{article.content}</li>)
         // var url = 'https://newsapi.org/v2/top-headlines?' +
         //     'country=us&' +
-        //     'apiKey=c74b69f1594f4080902981643aa178df';
+        //     'apiKey=0fe3c7ee9aa4446d94b11b44f28c4b74';
         // var req = new Request(url);
         // fetch(req)
         //     .then(function (response) {
