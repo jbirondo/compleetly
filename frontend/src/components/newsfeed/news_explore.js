@@ -81,6 +81,7 @@ class NewsFeed extends React.Component {
 
             return (
                 <li key={i} className='news-explore-li'>
+                    <a target='_blank' href={article.url} className='a-tag'>
                     <div className='img-div'>
                         {image}
                     </div>
@@ -89,6 +90,7 @@ class NewsFeed extends React.Component {
                         {author}
                         {description}
                     </div>
+                    </a>
                     <button onClick={() => this.props.createReadLater({ 
                         readLaterURL: article.url,
                         readLaterDescription: article.description,

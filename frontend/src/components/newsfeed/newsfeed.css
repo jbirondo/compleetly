@@ -11,6 +11,17 @@
    border-bottom: rgb(212, 212, 212) solid 1px;
 }
 
+.a-tag{
+   text-decoration: none;
+}
+
+.news-explore-title{
+   color: black;
+}
+
+.news-explore-title:hover{
+   text-decoration: underline;
+}
 
 
 .news-exlore-li:first-child{
@@ -49,5 +60,7 @@
 }
 
 .title-author-desc-div{
-   margin-left: 10px;
+   margin-left: 140px;
+   width: 530px;
+   margin-right: 20px;
 }

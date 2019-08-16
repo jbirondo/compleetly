@@ -25,7 +25,7 @@ class ReadLater extends React.Component {
             // debugger
           
             please = this.props.readArray.map(source =>   
-                <li key={source._id}><a href={source.readLaterURL}>{source.readLaterURL.slice(0, 20)} {source.readLaterDescription.slice(0, 150)}</a></li>
+                <li key={source._id}><a target='_blank' href={source.readLaterURL}>{source.readLaterURL.slice(0, 20)} {source.readLaterDescription.slice(0, 150)}</a></li>
             )
         }
         

@@ -106,14 +106,16 @@ class SourceArticlesShow extends React.Component {
 
                 return (
                     <li key={i} className='news-explore-li'>
-                        <div className='img-div'>
-                            {image}
-                        </div>
-                        <div className='title-author-desc-div'>
-                            <h2 className='article-title'>{article.title}</h2>
-                            {author}
-                            {description}
-                        </div>
+                        <a target='_blank' href={article.url} className='a-tag'>
+                            <div className='img-div'>
+                                {image}
+                            </div>
+                            <div className='title-author-desc-div-show'>
+                                <h2 className='article-title'>{article.title}</h2>
+                                {author}
+                                {description}
+                            </div>
+                        </a>
                     </li>
                 )
             })
@@ -126,7 +128,7 @@ class SourceArticlesShow extends React.Component {
       
             <div>
                 {header}
-                
+                <p className='bottom-border'></p>
                 {this.articles}
             </div>
         )
