@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { deleteReadLater } from '../../actions/read_later_actions'
 import { fetchUser } from '../../actions/session_actions';
 class ReadLater extends React.Component {
     constructor(props) {
@@ -25,7 +26,12 @@ class ReadLater extends React.Component {
             // debugger
           
             please = this.props.readArray.map(source =>   
-                <li key={source._id}><a href={source.readLaterURL}>{source.readLaterURL.slice(0, 20)} {source.readLaterDescription.slice(0, 150)}</a></li>
+                <li key={source._id}><a href={source.readLaterURL}>{source.readLaterURL.slice(0, 20)} {source.readLaterDescription.slice(0, 150)}</a>
+                    <button onClick={() => this.props.deleteReadLater({
+                        reader: this.props.currentUserId,
+                        readLaterId: source._id
+                    })}>Delete</button>
+                </li>
             )
         }
         
@@ -77,7 +83,7 @@ const mstp = state => {
 
 const mdtp = dispatch => ({
     fetchUser: user => dispatch(fetchUser(user)),
-
+    deleteReadLater: readLater => dispatch(deleteReadLater(readLater))
 })
 
 export default connect(mstp, mdtp)(ReadLater);

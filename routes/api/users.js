@@ -105,6 +105,28 @@ router.delete('/:userId/follow', (req, res) => {
 }) 
 //splice
 
+router.delete('/:userId/read_later', (req, res) => {
+    // debugger
+    ReadLater.findOneAndDelete({ _id: req.body.readLaterId })
+        .then(readLater => {
+            readLater.delete()
+            res.json(readLater);
+        })
+    User.findOne({ _id: req.params.userId })
+        .then(user => {
+            for (let index = 0; index < user.readLater.length; index++) {
+                const element = user.readLater[index];
+                if (element == req.body.readlaterId) {
+                    user.readLater.splice(index, 1);
+                    user.readArray.splice(index, 1)
+                    user.save();
+                }
+            }
+        })
+
+    // debugger;
+}) 
+
 router.post('/register', (req, res) => {
     const { errors, isValid } = validateRegisterInput(req.body);
 

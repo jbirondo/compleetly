@@ -1,15 +1,15 @@
-import { RECEIVE_NEW_READ_LATER } from '../actions/read_later_actions'
+import { RECEIVE_NEW_READ_LATER, DELETE_READ_LATER } from '../actions/read_later_actions'
 import { RECEIVE_CURRENT_USER } from '../actions/session_actions';
 import merge from 'lodash/merge';
 
 export default function (state = {}, action) {
+    let newState
     switch (action.type) {
         case RECEIVE_NEW_READ_LATER:
             // debugger
             return merge({}, state, { [action.readLater.data._id]: action.readLater.data });
         case RECEIVE_CURRENT_USER:
             let tempState;
-            let newState;
             newState = merge({}, state);
             tempState = {};
             // debugger;
@@ -22,7 +22,10 @@ export default function (state = {}, action) {
             }
             // debugger;
             return merge({}, newState, tempState)
-
+        case DELETE_READ_LATER:
+            newState = merge({}, state);
+            delete newState[action.readLater.data._id];
+            return newState;
         default:
             return state;
     }
