@@ -4,6 +4,7 @@ import axios from 'axios';
 import { connect } from 'react-redux';
 import { fetchCategories } from '../../../actions/source_articles_actions';
 import { createFollow, deleteFollow } from '../../../actions/follow_actions';
+import { createReadLater } from "../../../actions/read_later_actions"
 
 // const NewsAPI = require('newsapi');
 // const newsapi = new NewsAPI('c74b69f1594f4080902981643aa178df');
@@ -67,12 +68,23 @@ class BusinessFeed extends React.Component {
                 if (!!followName.includes(article.name)) {
                     return <li key={i}>{article.name} {article.url}
                         <button onClick={() => this.props.deleteFollow({ followId: article.followId, currentUserId: this.props.currentUserId })}>Unfollow</button>
+                        {/* <button onClick={() => this.props.createReadLater({
+                            readLaterURL: article.url,
+                            readLaterDescription: article.description,
+                            reader: this.props.user.id
+                        })}>Read Later</button> */}
                     </li>
                 } else {
                     return <li key={i}>{article.name} {article.url}
                         <button onClick={() => this.props.createFollow({ source: article.id, followName: article.name, followURL: article.url, currentUserId: this.props.currentUserId })}>Follow!</button>
+                        {/* <button onClick={() => this.props.createReadLater({
+                            readLaterURL: article.url,
+                            readLaterDescription: article.description,
+                            reader: this.props.currentUserId */}
+                        {/* })}>Read Later</button> */}
                     </li>
                 }
+
             });
         };
 
@@ -95,7 +107,8 @@ const msp = state => ({
 const mdp = dispatch => ({
     fetchCategories: req => dispatch(fetchCategories(req)),
     createFollow: follow => dispatch(createFollow(follow)),
-    deleteFollow: follow => dispatch(deleteFollow(follow))
+    deleteFollow: follow => dispatch(deleteFollow(follow)),
+    createReadLater: readLater => dispatch(createReadLater(readLater)),
 })
 
 export default withRouter(connect(msp, mdp)(BusinessFeed));

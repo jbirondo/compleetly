@@ -60,7 +60,6 @@ export default function (state = initialState, action) {
          let reads;
          newState = merge({}, state)
          reads = newState.user.readArray
-         // debugger
          reads.push(action.readLater.data)
          newState.user.readArray = reads
          return newState
