@@ -46,8 +46,9 @@ class UserNavBar extends React.Component {
                     return (
                         <li className='user-nav-feed-follow-item' key={source._id}>
                             {/* <SourceArticlesShow source={source} /> */}
-                            <Link to={ { pathname: `/${source.followName}/articles`, state: {source: source} }}>{source.followName}</Link>
+                        < Link to = { { pathname: `/${source.followName}/articles`, state: {source: source} }}>{source.followName}</Link>
                                 <button className='user-nav-unfollow-btn' onClick={() => this.props.deleteFollow({ followId: source._id,   currentUserId: this.props.currentUserId })}>Unfollow</button>
+                            
                                 {/* followId: article.followId, */}
                         </li>
                 )})} 
@@ -72,8 +73,8 @@ class UserNavBar extends React.Component {
             <div className="user-bar-container" >
                 <div className='user-nav-bar-elements-container'>
                     <Link to={`/newsfeed`}><div className='user-nav-today'>Today</div></Link>
-                    <Link to={`/${this.props.currentUserId}/read_later`}><div className='user-nav-today'>Read later</div></Link>
-                    <Link to={`/${this.props.currentUserId}/filters`}><div className='user-nav-today'>Filters</div></Link>
+                    <Link to={`/${this.props.currentUserId}/read_later`}><div className='user-nav-read-later'>Read later</div></Link>
+                    <Link to={`/${this.props.currentUserId}/filters`}><div className='user-nav-filter'>Filters</div></Link>
                     
                     <div className='user-nav-feeds'>
                         <div className='user-nav-feeds-title'>Feeds
