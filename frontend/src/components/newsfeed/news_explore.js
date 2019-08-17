@@ -86,10 +86,12 @@ class NewsFeed extends React.Component {
                         {author}
                         {description}
                     </div>
-                    <button onClick={() => this.props.createReadLater({ 
+                    <button onClick={() => this.props.createReadLater({
                         readLaterURL: article.url,
+                        readLaterName: article.source.name,
                         readLaterDescription: article.description,
-                        reader: this.props.user.id})}>Read Later</button>
+                        reader: this.props.user.id
+                    })}>Read Later</button>
                 </li>
             )
         })

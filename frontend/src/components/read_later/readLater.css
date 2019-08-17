@@ -66,12 +66,12 @@
 }
 
 .read-later-li {
+    white-space: nowrap; 
     align-items: center;
     border-bottom: 1px solid transparent;
     border-left: 1px solid transparent;
     border-right: 1px solid transparent;
-    border-top: 1px solid #efefef;
-    display: flex;
+    display: block;
     display: -webkit-flex;
     height: 31px;
     margin-bottom: -1px;
@@ -81,6 +81,11 @@
     box-sizing: border-box;
     font-size: 12px;
     font-family: sans-serif;
+    width: 100%;
+}
+
+.read-later-li:hover {
+    background: #DCDCDC;
 }
 
 .read-later-a-tag {
@@ -97,6 +102,7 @@
     box-sizing: border-box;
     white-space: nowrap;
     text-rendering: optimizeLegibility;
+    width: 98%;
 }
 
 .read-later-a-tag:visited {
@@ -104,5 +110,26 @@
 }
 
 .read-later-ul {
-    border-top: 1px grey;
+    border-top: 1px ;
+    margin-left: 30px;
+    margin-right: 40px;
+}
+
+.read-later-li:first-child {
+    border-top: 1px solid grey;
+}
+
+.read-later-delete-button {
+    
+    border: none;
+}
+
+.read-later-li-a-tag-div-name {
+    float: left;
+}
+
+.read-later-li-a-tag-div-description {
+    overflow: hidden;
+    text-overflow: ellipsis; 
+    margin-left: 10%;
 }

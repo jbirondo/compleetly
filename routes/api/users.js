@@ -64,9 +64,11 @@ router.post('/:userId/read_later', (req, res) => {
     const userId = req.body.reader
     User.findOne({ _id: userId })
         .then(user => {
+            // debugger
             const newReadLater = new ReadLater({
                 readLaterURL: req.body.readLaterURL,
                 readLaterDescription: req.body.readLaterDescription,
+                readLaterName: req.body.readLaterName,
                 reader: user.id
             })
             newReadLater.save()

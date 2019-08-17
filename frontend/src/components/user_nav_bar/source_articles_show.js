@@ -80,10 +80,12 @@ class SourceArticlesShow extends React.Component {
         }
         
         if (articles.length > 0) {
+            // debugger
             articles = articles.map((article, i) => 
             <li key={i}>{article.title} {article.author} {article.description}
                     <button onClick={() => this.props.createReadLater({
                         readLaterURL: article.url,
+                        readLaterName: article.source.name,
                         readLaterDescription: article.description,
                         reader: this.props.user.id
                     })}>Read Later</button></li >

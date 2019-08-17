@@ -7,12 +7,12 @@ class ReadLater extends React.Component {
     constructor(props) {
         super(props);
         this.state = { read: false };
-        this.addReadClass = this.addReadClass.bind(this);
+        // this.addReadClass = this.addReadClass.bind(this);
         this.disableWarning = null;
     }
-    addReadClass() {
-        this.setState({ read: !this.state.read });
-    }
+    // addReadClass() {
+    //     this.setState({ read: !this.state.read });
+    // }
 
     componentDidMount() {
         this.props.fetchUser(this.props.currentUser);
@@ -29,22 +29,28 @@ class ReadLater extends React.Component {
     renderReadLater() {
         let please;
         if (this.props.readArray){
-          
-            please = this.props.readArray.map(source =>   
+            please = this.props.readArray.map(source => 
                 <li key={source._id} 
                     className="read-later-li">
                     <a 
                         // onClick={this.addReadClass}
                         target="_blank"
-                        className={this.state.read ? "read-later-a-tag has-been-read" : "read-later-a-tag"}
+                        className="read-later-a-tag"
                         href={source.readLaterURL}>
-                        {source.readLaterURL.slice(0, 20)} {source.readLaterDescription.slice(0, 150)}
+                        <div 
+                            className="read-later-li-a-tag-div-name">
+                            {source.readLaterName}
+                        </div>
+                        <div 
+                            className="read-later-li-a-tag-div-description">
+                            {source.readLaterDescription}
+                        </div>
                     </a>
                     <button onClick={() => this.props.deleteReadLater({
                         reader: this.props.currentUserId,
                         readLaterId: source._id
                     })}
-                    className="w3-button w3-black">X</button>
+                    className="read-later-delete-button w3-button w3-black">X</button>
                 </li>
             )
         }
