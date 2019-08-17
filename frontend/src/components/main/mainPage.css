@@ -1,0 +1,164 @@
+.main-page-header {
+    font-size: 2.4rem;
+    margin-top: 0;
+    text-align: left;
+    margin-bottom: 0;
+    text-transform: none;
+    font-weight: bold;
+    letter-spacing: -.04em;
+    line-height: 1.25em;    
+    color: #333333;
+    font-family: sans-serif;
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+    text-rendering: optimizeLegibility;
+    margin-block-start: 0.67em;
+    margin-block-end: 0.67em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    display: block;
+    -webkit-font-smoothing: antialiased;
+    width: 410px;
+}
+
+.main-page-sub-header {
+    -webkit-font-smoothing: antialiased;
+    line-height: 1.5;
+    margin-bottom: 2rem;
+    margin-top: 1.5rem;
+    max-width: 540px;
+    color: #757575;
+    font-family: sans-serif;
+    font-size: 1.25rem;
+    font-weight: normal;
+    letter-spacing: 0;
+    text-transform: none;
+    box-sizing: border-box;
+    display: block;
+    text-align: left;
+}
+
+.main-page-header-container {
+    width: 50%;
+    float: left;
+    position: relative;
+    min-height: 1px;
+    padding-left: 12px;
+    padding-right: 12px;
+    padding-bottom: 50px;
+    box-sizing: border-box;
+    display: block;
+    background: rgba(0, 0, 0, 0.05);
+    color: inherit;
+    -webkit-font-smoothing: antialiased;
+    margin-bottom: 3rem;
+    margin: 0px;
+    font-size: 12px;
+    font-family: sans-serif;
+    
+}
+
+.main-page-sign-up-button {
+    min-width: 240px;
+    background-color: #2bb24c;
+    color: white;
+    font-size: 13px;
+    line-height: 28px;
+    padding-left: 12px;
+    padding-right: 12px;
+    text-transform: uppercase;
+    text-decoration: none;
+    -webkit-font-smoothing: antialiased;
+    font-family: sans-serif;
+    font-weight: 700;
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-top: 12px;
+    padding-bottom: 10px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    cursor: pointer;
+    text-align: center;
+    vertical-align: top;
+    box-sizing: border-box;
+    letter-spacing: 0;
+    box-shadow: none;
+    outline: 0;
+    transition: background-color 0.2s linear, color 0.2s linear;
+    display: inline-block;
+    margin-right: 0 !important;
+}
+
+.main-page-landing-img {
+    min-height: 304px;
+    width: 100%;
+    box-sizing: border-box;
+    color: inherit;
+    margin: 0px;
+    font-size: 12px;
+    font-family: sans-serif;
+}
+
+.main-page-landing-img-container {
+    box-shadow: 0 3px 20px rgba(0, 0, 0, 0.2);
+    display: block;
+    height: auto;
+    margin-top: 3rem;
+    width: 840px;
+    margin: 0px;
+    font-size: 12px;
+    font-family: sans-serif;
+    box-sizing: border-box;
+}
+
+.main-page-container {
+    margin: 0px;
+    font-size: 12px;
+    font-family: sans-serif;
+    color: #333333;
+    background-color: #FFF;
+    -webkit-font-smoothing: antialiased;
+    display: block;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center
+}
+
+.main-page-section-kicker {
+    color: rgba(0, 0, 0, 0.54);
+    font-size: 0.75rem;
+    font-weight: normal;
+    letter-spacing: normal;
+    margin-bottom: 0.25rem;
+    text-align: center;
+    text-transform: uppercase;
+    line-height: 1em;
+    box-sizing: border-box;
+    display: block;
+}
+
+.main-page-section-header{
+    font-size: 2rem;
+    letter-spacing: -.04em;
+    line-height: 1.25em;
+    text-align: center;
+}
+
+.main-page-section-features-container {
+    padding-top: 30px;
+}
+
+.main-page-section-features-grid-container {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    background-color: #2196F3;
+    margin-left: -12px;
+    margin-right: -12px;
+}
+
+.main-page-section-feature-grid-item {
+    background: red;
+}
