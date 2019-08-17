@@ -1,0 +1,57 @@
+.user-bar-container {
+    position: absolute;
+    height: 98.9vh;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 51px;
+    padding-right: 23px;
+    padding-left: 17px;
+    background: #d9d9d9;
+    width: 100px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-content: center;
+}
+
+.user-nav-today{
+    padding: 8px;
+    width: 100%;
+    text-align: left;
+}
+
+.user-nav-feeds-title{
+    display: flex;
+    justify-content: space-between;
+}
+
+.user-nav-settings{
+    
+}
+
+.user-nav-feed-follow-item{
+    display: flex;
+    justify-content: space-between;
+    padding: 4px;
+}
+
+.user-nav-bar-elements-container{
+    /* display: flex;
+    flex-direction: row;
+    justify-content: center; */
+}
+
+.user-nav-unfollow-btn {}
+
+.user-nav-feeds{
+    display: block;
+    flex-direction: row;
+    height: auto;
+    padding: 8px
+}
+
+.user-nav-add-content{
+    position: absolute;
+    bottom: 0;
+}

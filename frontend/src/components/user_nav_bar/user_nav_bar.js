@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { withRouter, Link } from 'react-router-dom'
 import { fetchUser } from '../../actions/session_actions';
 import {deleteFollow} from '../../actions/follow_actions';
+import './user_nav_bar.css'
 // import SourceArticlesShow from './source_articles_show'
 // import Follow from "../../../../models/Follow"
 class UserNavBar extends React.Component {
@@ -43,10 +44,10 @@ class UserNavBar extends React.Component {
                 {this.props.follows.map(source => {
                     // debugger
                     return (
-                        <li key={source._id}>
+                        <li className='user-nav-feed-follow-item' key={source._id}>
                             {/* <SourceArticlesShow source={source} /> */}
                             <Link to={ { pathname: `/${source.followName}/articles`, state: {source: source} }}>{source.followName}</Link>
-                                <button onClick={() => this.props.deleteFollow({ followId: source._id,   currentUserId: this.props.currentUserId })}>Unfollow</button>
+                                <button className='user-nav-unfollow-btn' onClick={() => this.props.deleteFollow({ followId: source._id,   currentUserId: this.props.currentUserId })}>Unfollow</button>
                                 {/* followId: article.followId, */}
                         </li>
                 )})} 
@@ -69,14 +70,19 @@ class UserNavBar extends React.Component {
         }
         return (
             <div className="user-bar-container" >
-                <Link to={`/newsfeed`}>Today</Link>
-                <Link to={`/${this.props.currentUserId}/read_later`}>Read later</Link>
-                <Link to={`/${this.props.currentUserId}/filters`}>Filters</Link>
-                <Link to={`/${this.props.currentUserId}/read_later`}>Read Later</Link>
-                <div>Feeds <Link to={`/${this.props.currentUserId}/organize`}>⚙︎</Link></div>
-                {this.renderFollows()}
-                
-                <Link to={`/newsfeed/add`}>+ ADD CONTENT</Link>
+                <div className='user-nav-bar-elements-container'>
+                    <Link to={`/newsfeed`}><div className='user-nav-today'>Today</div></Link>
+                    <Link to={`/${this.props.currentUserId}/read_later`}><div className='user-nav-today'>Read later</div></Link>
+                    <Link to={`/${this.props.currentUserId}/filters`}><div className='user-nav-today'>Filters</div></Link>
+                    
+                    <div className='user-nav-feeds'>
+                        <div className='user-nav-feeds-title'>Feeds
+                            <Link to={`/${this.props.currentUserId}/organize`}><div className='user-nav-settings'>⚙︎</div></Link>
+                        </div>
+                        {this.renderFollows()}
+                    </div>
+                    <Link to={`/newsfeed/add`}><div className='user-nav-add-content'>+ ADD CONTENT</div></Link>
+                </div>
             </div>
         );
     }
