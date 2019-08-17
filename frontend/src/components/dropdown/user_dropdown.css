@@ -10,6 +10,7 @@
     background: transparent;
     border: none;
     height: 40px;
+    margin-top: -6px;
 }
 
 .li-dropdown:first-child {
@@ -49,7 +50,7 @@
     background-color: white;
     border-radius: 3px;
     right: 90px;
-    top: 10px;
+    top: 7px;
     margin: 5px 120px 15px 5px;
     width: 255px;
     /* left: 10px; */

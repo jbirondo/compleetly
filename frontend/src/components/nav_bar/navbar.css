@@ -1,10 +1,32 @@
-.nav-bar-logged-in{
-   display: block;
-   height: 60px;
+.upper-nav-bar{
+   display: flex;
+   justify-content: flex-end;
+   height: 50px;
    border-bottom: rgb(185, 185, 185) solid 1px;
 }
 
-.nav-bar-logged-in:focus{
-   outline: none;
+
+.sign-in-nav-bar{
+   padding-right: 60px;
 }
 
+/* .nav-bar-sign-up-btn{
+} */
+
+/* .nav-bar-log-in-btn{
+
+} */
+
+.nav-bar-btn {
+    margin: 8px 7px 8px 17px;
+    border-radius: 4px;
+    padding: 0px 12px;
+    font-weight: 600;
+    color: white;
+    background-color: #2bb24c;
+}
+
+
+.nav-bar-btn:hover{
+   background-color: #279e45;
+}
