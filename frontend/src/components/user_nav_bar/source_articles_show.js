@@ -2,11 +2,8 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom' 
 import { fetchArticles } from '../../actions/source_articles_actions';
-<<<<<<< HEAD
 import { createReadLater } from "../../actions/read_later_actions"
-=======
 import './source_articles_show.css';
->>>>>>> styling
 
 class SourceArticlesShow extends React.Component {
     constructor(props) {
@@ -83,26 +80,24 @@ class SourceArticlesShow extends React.Component {
             return null;
         }
         
-<<<<<<< HEAD
-        if (articles.length > 0) {
-            articles = articles.map((article, i) => 
-            <li key={i}>{article.title} {article.author} {article.description}
-                    <button onClick={() => this.props.createReadLater({
-                        readLaterURL: article.url,
-                        readLaterDescription: article.description,
-                        reader: this.props.user.id
-                    })}>Read Later</button></li >
-            )
-        }
+        // if (articles.length > 0) {
+        //     articles = articles.map((article, i) => 
+        //     <li key={i}>{article.title} {article.author} {article.description}
+        //             <button onClick={() => this.props.createReadLater({
+        //                 readLaterURL: article.url,
+        //                 readLaterDescription: article.description,
+        //                 reader: this.props.user.id
+        //             })}>Read Later</button></li >
+        //     )
+        // }
         // debugger;
         // const header = (this.state.articles[0]._self.props.articles[0].source) ? (<h3>{this.state.articles[0]._self.props.articles[0].source.name}</h3>) :
         //     (<h3>{this.state.articles[0]._self.props.articles[0].name}</h3>)
-        const header = <h3>{this.state.articles[0].source.name}</h3>
-=======
-        if (this.articles.length > 0) {
+        // const header = <h3>{this.state.articles[0].source.name}</h3>
+        if (articles.length > 0) {
             
             
-            this.articles = this.articles.map((article, i) => {
+            articles = articles.map((article, i) => {
                 let image;
                 if (article.urlToImage) {
                     image = <img alt={article.title} className='news-explore-img' src={article.urlToImage} />
@@ -124,8 +119,9 @@ class SourceArticlesShow extends React.Component {
                     description = <p className='news-explore-content'>{article.description}</p>
                 } else if (article.content === null) {
                     description = <p className='news-explore-content'>{article.description}</p>
-                } else if (article.content.includes('+')) {
-                    description = <p className='news-explore-content'>{article.content.slice(0, -14)}</p>
+                //     debugger;
+                // } else if (article.content.includes('+')) {
+                //     description = <p className='news-explore-content'>{article.content.slice(0, -14)}</p>
                 } else {
                     description = <p className='news-explore-content'>{article.content}</p>
                 }            
@@ -140,28 +136,30 @@ class SourceArticlesShow extends React.Component {
                                 <h2 className='article-title'>{article.title}</h2>
                                 {author}
                                 {description}
+                                
                             </div>
                         </a>
+                        <button onClick={() => this.props.createReadLater({
+                            readLaterURL: article.url,
+                            readLaterDescription: article.description,
+                            reader: this.props.user.id
+                        })}>Read Later</button>
                     </li>
                 )
             })
         }
         // debugger;
-        const header = (this.articles[0]._self.props.articles[0].source) ? (<a className='source-title' target='_blank' href={this.props.location.state.source.followURL}>{this.articles[0]._self.props.articles[0].source.name}</a>) :
-            (<a className='source-title' target='_blank' href={this.props.location.state.source.followURL}>{this.articles[0]._self.props.articles[0].name}</a>)
-        
->>>>>>> styling
+        // const header = (this.articles[0]._self.props.articles[0].source) ? (<a className='source-title' target='_blank' href={this.props.location.state.source.followURL}>{this.articles[0]._self.props.articles[0].source.name}</a>) :
+        //     (<a className='source-title' target='_blank' href={this.props.location.state.source.followURL}>{this.articles[0]._self.props.articles[0].name}</a>)
+        const header = <a className='source-title' target='_blank' href={this.props.location.state.source.followURL}><h3>{this.state.articles[0].source.name}</h3></a>
         return(
       
             <div>
                 {header}
-<<<<<<< HEAD
                 
-                {articles}
-=======
+                {/* {articles} */}
                 <p className='bottom-border'></p>
-                {this.articles}
->>>>>>> styling
+                {articles}
             </div>
         )
     }
