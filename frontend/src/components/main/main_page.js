@@ -35,10 +35,10 @@ class MainPage extends React.Component {
                 Discover insightful sources
               </h2>
               <div className="main-page-section-features-grid-container">
-                <div classname="main-page-section-feature-grid-item">
-                  <div classname="main-page-section-feature-grid-item-picture-1">
+                <div className="main-page-section-feature-grid-item">
+                  <div className="main-page-section-feature-grid-item-picture-1">
                   </div>
-                  <div classname="main-page-section-feature-grid-item-content-1">
+                  <div className="main-page-section-feature-grid-item-content-1">
                     <div className="grid-item-header-1">
                       Publications
                     </div>
@@ -47,10 +47,10 @@ class MainPage extends React.Component {
                     </div>
                   </div>
                 </div>
-                <div classname="main-page-section-feature-grid-item">
-                  <div classname="main-page-section-feature-grid-item-picture-2">
+                <div className="main-page-section-feature-grid-item">
+                  <div className="main-page-section-feature-grid-item-picture-2">
                   </div>
-                  <div classname="main-page-section-feature-grid-item-content-2">
+                  <div className="main-page-section-feature-grid-item-content-2">
                     <div className="grid-item-header-2">
                       Blogs
                     </div>
@@ -59,10 +59,10 @@ class MainPage extends React.Component {
                     </div>
                   </div>
                 </div>
-                <div classname="main-page-section-feature-grid-item">
-                  <div classname="main-page-section-feature-grid-item-picture-3">
+                <div className="main-page-section-feature-grid-item">
+                  <div className="main-page-section-feature-grid-item-picture-3">
                   </div>
-                  <div classname="main-page-section-feature-grid-item-content-3">
+                  <div className="main-page-section-feature-grid-item-content-3">
                     <div className="grid-item-header-3">
                       YouTube Channels
                     </div>
@@ -71,10 +71,10 @@ class MainPage extends React.Component {
                     </div>
                   </div>
                 </div>
-                <div classname="main-page-section-feature-grid-item">
-                  <div classname="main-page-section-feature-grid-item-picture-4">
+                <div className="main-page-section-feature-grid-item">
+                  <div className="main-page-section-feature-grid-item-picture-4">
                   </div>
-                  <div classname="main-page-section-feature-grid-item-content-4">
+                  <div className="main-page-section-feature-grid-item-content-4">
                     <div className="grid-item-header-4">
                       Keyword Alerts
                     </div>
@@ -83,10 +83,10 @@ class MainPage extends React.Component {
                     </div>
                   </div>
                 </div>
-                <div classname="main-page-section-feature-grid-item">
-                  <div classname="main-page-section-feature-grid-item-picture-5">
+                <div className="main-page-section-feature-grid-item">
+                  <div className="main-page-section-feature-grid-item-picture-5">
                   </div>
-                  <div classname="main-page-section-feature-grid-item-content-5">
+                  <div className="main-page-section-feature-grid-item-content-5">
                     <div className="grid-item-header-5">
                       Tweets
                     </div>
@@ -95,10 +95,10 @@ class MainPage extends React.Component {
                     </div>
                   </div>
                 </div>
-                <div classname="main-page-section-feature-grid-item">
-                  <div classname="main-page-section-feature-grid-item-picture-6">
+                <div className="main-page-section-feature-grid-item">
+                  <div className="main-page-section-feature-grid-item-picture-6">
                   </div>
-                  <div classname="main-page-section-feature-grid-item-content-6">
+                  <div className="main-page-section-feature-grid-item-content-6">
                     <div className="grid-item-header-6">
                       RSS Feeds
                     </div>

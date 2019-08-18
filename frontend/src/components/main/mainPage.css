@@ -160,5 +160,10 @@
 }
 
 .main-page-section-feature-grid-item {
-    background: red;
+    background-color: red;
+}
+
+.main-page-section-feature-grid-item-picture-1 {
+    background-image: url(data:image/svg+xml;charset%3DUS-ASCII,%3C%3Fxml%20version%3D%221.0%22%20enc…ath%3E%20%20%20%20%20%20%20%20%3C%2Fg%3E%20%20%20%20%3C%2Fg%3E%3C%2Fsvg%3E);
+    background-repeat: no-repeat;
 }
