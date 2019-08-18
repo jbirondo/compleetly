@@ -3,6 +3,12 @@ import { openModal } from '../../actions/modal_actions'
 import {connect} from 'react-redux';
 import './mainPage.css'
 import landing from "./landing.png"
+import nyticon from './new-york-times-icon.png'
+import tcicon from './techcrunch-icon.png'
+import yticon from './youtube-icon.png'
+import gicon from './google-icon.png'
+import ticon from './twitter-icon.png'
+import rssicon from './rss-feed-icon.png'
 
 class MainPage extends React.Component {
     constructor(props){
@@ -36,8 +42,7 @@ class MainPage extends React.Component {
               </h2>
               <div className="main-page-section-features-grid-container">
                 <div className="main-page-section-feature-grid-item">
-                  <div className="main-page-section-feature-grid-item-picture-1">
-                  </div>
+                  <img src={nyticon} className="main-page-section-feature-grid-item-picture-1" />
                   <div className="main-page-section-feature-grid-item-content-1">
                     <div className="grid-item-header-1">
                       Publications
@@ -48,8 +53,7 @@ class MainPage extends React.Component {
                   </div>
                 </div>
                 <div className="main-page-section-feature-grid-item">
-                  <div className="main-page-section-feature-grid-item-picture-2">
-                  </div>
+                  <img src={tcicon} className="main-page-section-feature-grid-item-picture-2"/>
                   <div className="main-page-section-feature-grid-item-content-2">
                     <div className="grid-item-header-2">
                       Blogs
@@ -60,8 +64,7 @@ class MainPage extends React.Component {
                   </div>
                 </div>
                 <div className="main-page-section-feature-grid-item">
-                  <div className="main-page-section-feature-grid-item-picture-3">
-                  </div>
+                  <img src={yticon}className="main-page-section-feature-grid-item-picture-3"/>
                   <div className="main-page-section-feature-grid-item-content-3">
                     <div className="grid-item-header-3">
                       YouTube Channels
@@ -72,8 +75,7 @@ class MainPage extends React.Component {
                   </div>
                 </div>
                 <div className="main-page-section-feature-grid-item">
-                  <div className="main-page-section-feature-grid-item-picture-4">
-                  </div>
+                  <img src={gicon} className="main-page-section-feature-grid-item-picture-4"/>
                   <div className="main-page-section-feature-grid-item-content-4">
                     <div className="grid-item-header-4">
                       Keyword Alerts
@@ -84,8 +86,7 @@ class MainPage extends React.Component {
                   </div>
                 </div>
                 <div className="main-page-section-feature-grid-item">
-                  <div className="main-page-section-feature-grid-item-picture-5">
-                  </div>
+                  <img src={ticon} className="main-page-section-feature-grid-item-picture-5"/>
                   <div className="main-page-section-feature-grid-item-content-5">
                     <div className="grid-item-header-5">
                       Tweets
@@ -96,8 +97,7 @@ class MainPage extends React.Component {
                   </div>
                 </div>
                 <div className="main-page-section-feature-grid-item">
-                  <div className="main-page-section-feature-grid-item-picture-6">
-                  </div>
+                  <img src={rssicon} className="main-page-section-feature-grid-item-picture-6"/>
                   <div className="main-page-section-feature-grid-item-content-6">
                     <div className="grid-item-header-6">
                       RSS Feeds
