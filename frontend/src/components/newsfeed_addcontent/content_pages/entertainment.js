@@ -5,7 +5,7 @@ import { fetchCategories } from '../../../actions/source_articles_actions';
 import { createFollow, deleteFollow } from '../../../actions/follow_actions';
 import Articles from './articles';
 // const NewsAPI = require('newsapi');
-// const newsapi = new NewsAPI('c74b69f1594f4080902981643aa178df');
+// const newsapi = new NewsAPI('0fe3c7ee9aa4446d94b11b44f28c4b74');
 
 class EntertainmentFeed extends React.Component {
     constructor(props) {

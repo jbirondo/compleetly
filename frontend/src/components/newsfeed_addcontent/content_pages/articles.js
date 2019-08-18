@@ -11,9 +11,12 @@ const Articles = ({createFollow, deleteFollow, articles, propFollows, currentUse
 
     dispArticles = articles.map((article, i) => {
         // debugger;
-        Object.values(propFollows).forEach(follow => followName.push(follow.followName));
+        Object.values(propFollows).forEach(follow => {
+            followName.push(follow.followName);
+            follows.push(follow)
+        });
 
-        Object.values(propFollows).forEach(follow => follows.push(follow));
+        // Object.values(propFollows).forEach(follow => follows.push(follow));
 
         follows.forEach(follow => {
             if (follow.followName.includes(article.name)) {

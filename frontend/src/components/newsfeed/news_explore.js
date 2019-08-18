@@ -7,7 +7,7 @@ import axios from 'axios';
 // import { link } from 'fs';
 import './newsfeed.css';
 // const NewsAPI = require('newsapi');
-// const newsapi = new NewsAPI('c74b69f1594f4080902981643aa178df');
+// const newsapi = new NewsAPI('0fe3c7ee9aa4446d94b11b44f28c4b74');
 
 class NewsFeed extends React.Component {
     constructor(props) {
@@ -60,7 +60,6 @@ class NewsFeed extends React.Component {
             }
 
             let description;
-
             if (article.description === null) {
                 description = <p className='news-explore-content'>{article.content}</p>
             } else if (article.description.length > 100) {
@@ -78,14 +77,16 @@ class NewsFeed extends React.Component {
 
             return (
                 <li key={i} className='news-explore-li'>
+                    <a target='_blank' href={article.url} className='a-tag'>
                     <div className='img-div'>
                         {image}
                     </div>
                     <div className='title-author-desc-div'>
-                        <h2 className='news-exlore-title'>{article.title}</h2>
+                        <h2 className='news-explore-title'>{article.title}</h2>
                         {author}
                         {description}
                     </div>
+                    </a>
                     <button onClick={() => this.props.createReadLater({ 
                         readLaterURL: article.url,
                         readLaterDescription: article.description,
@@ -99,7 +100,7 @@ class NewsFeed extends React.Component {
         
         // var url = 'https://newsapi.org/v2/top-headlines?' +
         //     'country=us&' +
-        //     'apiKey=c74b69f1594f4080902981643aa178df';
+        //     'apiKey=0fe3c7ee9aa4446d94b11b44f28c4b74';
         // var req = new Request(url);
         // fetch(req)
         //     .then(function (response) {

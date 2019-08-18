@@ -26,7 +26,7 @@ class ReadLater extends React.Component {
         if (this.props.readArray){
           
             please = this.props.readArray.map(source =>   
-                <li key={source._id}><a href={source.readLaterURL}>{source.readLaterURL.slice(0, 20)} {source.readLaterDescription.slice(0, 150)}</a>
+                <li key={source._id}><a target='_blank' href={source.readLaterURL}>{source.readLaterURL.slice(0, 20)} {source.readLaterDescription.slice(0, 150)}</a>
                     <button onClick={() => this.props.deleteReadLater({
                         reader: this.props.currentUserId,
                         readLaterId: source._id

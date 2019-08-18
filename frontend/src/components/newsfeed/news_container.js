@@ -2,7 +2,7 @@ import { connect } from 'react-redux';
 import News from './news_explore';
 import { createReadLater } from "../../../actions/read_later_actions"
 const NewsAPI = require('newsapi');
-const newsapi = new NewsAPI('c74b69f1594f4080902981643aa178df')
+const newsapi = new NewsAPI('0fe3c7ee9aa4446d94b11b44f28c4b74')
 
 const msp = state => {
     return {

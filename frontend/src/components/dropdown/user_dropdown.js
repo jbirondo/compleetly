@@ -17,7 +17,7 @@ class userDropdown extends React.Component {
     render() {
         return (
             <div className="user-dropdown-button">
-                <button onClick={this.addHiddenClass}><h3 className="nav-bar-welcome-message">{this.props.currentUser.firstName[0]}</h3></button>
+                <button className='dropdown-btn' onClick={this.addHiddenClass}><h3 className="nav-bar-welcome-message">{this.props.currentUser.firstName[0]}</h3></button>
                 <ul className={this.state.hidden ? 'user-dropdown-menu hide' : 'user-dropdown-menu'}>
                     <li className='li-dropdown'>
                         {/* <div>{this.props.currentUser.firstName[0]}</div> */}
