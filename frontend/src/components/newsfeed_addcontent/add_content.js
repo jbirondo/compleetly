@@ -17,13 +17,13 @@ class AddContent extends React.Component {
         return (
             <div>
                 {/* {articles} */}
-                <Link to='/newsfeed/technology'>CLICK ME FOR TECHNOLOGY ARTICLES</Link>
-                <Link to='/newsfeed/sports'>CLICK ME FOR SPORTS ARTICLES</Link>
-                <Link to='/newsfeed/science'>CLICK ME FOR SCIENCE ARTICLES</Link>
-                <Link to='/newsfeed/health'>CLICK ME FOR HEALTH ARTICLES</Link>
-                <Link to='/newsfeed/general'>CLICK ME FOR GENERAL ARTICLES</Link>
-                <Link to='/newsfeed/entertainment'>CLICK ME FOR ENTERTAINMENT ARTICLES</Link>
-                <Link to='/newsfeed/business'>CLICK ME FOR BUSINESS ARTICLES</Link>
+                <Link className='add-content-selectors' to='/newsfeed/technology'>CLICK ME FOR TECHNOLOGY ARTICLES</Link>
+                <Link className='add-content-selectors' to='/newsfeed/sports'>CLICK ME FOR SPORTS ARTICLES</Link>
+                <Link className='add-content-selectors' to='/newsfeed/science'>CLICK ME FOR SCIENCE ARTICLES</Link>
+                <Link className='add-content-selectors' to='/newsfeed/health'>CLICK ME FOR HEALTH ARTICLES</Link>
+                <Link className='add-content-selectors' to='/newsfeed/general'>CLICK ME FOR GENERAL ARTICLES</Link>
+                <Link className='add-content-selectors' to='/newsfeed/entertainment'>CLICK ME FOR ENTERTAINMENT ARTICLES</Link>
+                <Link className='add-content-selectors' to='/newsfeed/business'>CLICK ME FOR BUSINESS ARTICLES</Link>
             </div>
         )
     }
