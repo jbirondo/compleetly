@@ -1,0 +1,87 @@
+.add-content-page-container{
+    align-content: center;
+    text-align: center;
+    /* width: 600px; */
+}
+
+.rss-icon-container {
+    /* display: flex; */
+    /* flex-direction: column; */
+    /* width: 150px; */
+    /* justify-content: center; */
+    /* align-content: center; */
+    /* text-align: center; */
+    
+}
+
+.category-image-title-container {
+
+}
+
+.category-title-container {
+    
+}
+
+.add-content-rss-sources-item {
+    margin-top: 23px;
+    /* height:22px; */
+    /* width: 22px; */
+}
+
+.add-content-rss-sources-item-image {
+    /* margin-top: 23px; */
+    height:22px;
+    width: 22px;
+}
+
+.add-content-discover-header {
+    margin-top: 63px;
+}
+
+.add-content-tech-image {
+    width: 175px;
+    height: 200px;
+    border-radius: 6px;
+}
+.add-content-sports-image {
+    width: 175px;
+    height: 200px;
+    border-radius: 6px;
+}
+.add-content-science-image {
+    width: 175px;
+    height: 200px;
+    border-radius: 6px;
+}
+.add-content-health-image {
+    width: 175px;
+    height: 200px;
+    border-radius: 6px;
+}
+.add-content-general-image {
+    width: 175px;
+    height: 200px;
+    border-radius: 6px;
+}
+.add-content-entertainment-image {
+    width: 175px;
+    height: 200px;
+    border-radius: 6px;
+}
+.add-content-business-image {
+    width: 175px;
+    height: 200px;
+    border-radius: 6px;
+}
+
+.add-content-categories-container {
+    /* width: 600px; */
+    /* position: fixed; */
+    margin-top: 45px;
+}
+
+.category-title {
+    position: absolute;
+    justify-content:center;
+    align-content: center;
+}
