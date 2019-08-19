@@ -1,0 +1,139 @@
+.read-later-header {
+    margin-bottom: 3rem;
+    margin-top: 3rem;
+    text-align: left;
+    text-transform: none;
+    font-weight: bold;
+    letter-spacing: -.04em;
+    font-size: 26px;
+    line-height: 40px;
+    margin-top: 1.5rem;
+    box-sizing: border-box;
+    color: #333333;
+    font-family: sans-serif;
+}
+
+.empty-read-later-header {
+    color: #333333;
+    font-family: sans-serif;
+    font-size: 1.25rem;
+    font-weight: bold;
+    letter-spacing: -.04em;
+    line-height: 1.25em;
+    margin-bottom: 1.5rem;
+    margin-top: 3rem;
+    text-transform: none;
+}
+
+.empty-read-later-msg {
+    color: #757575;
+    font-size: 0.875rem;
+    line-height: 1.5;
+    margin-bottom: 1.5rem;
+    margin-top: 1.5rem;
+    font-family: sans-serif;
+}
+
+.empty-read-later-container {
+    margin-top: 6rem;
+    max-width: 408px;
+    padding: 0 1rem;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.read-later-latest-header {
+    margin: 0px;
+    font-size: 12px;
+    font-family: sans-serif;
+    display: block;
+    margin-block-start: 1.33em;
+    margin-block-end: 1.33em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    clear: both;
+    color: #757575;
+    font-size: 0.75rem;
+    font-weight: bold;
+    letter-spacing: 0;
+    line-height: 1em;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+    margin-top: 2rem;
+}
+
+.read-later-li {
+    white-space: nowrap; 
+    align-items: center;
+    border-bottom: 1px solid transparent;
+    border-left: 1px solid transparent;
+    border-right: 1px solid transparent;
+    display: block;
+    display: -webkit-flex;
+    height: 31px;
+    margin-bottom: -1px;
+    border: 1px solid transparent;
+    cursor: pointer;
+    text-rendering: optimizeLegibility;
+    box-sizing: border-box;
+    font-size: 12px;
+    font-family: sans-serif;
+    width: 100%;
+}
+
+.read-later-li:hover {
+    background: #DCDCDC;
+}
+
+.read-later-a-tag {
+    -webkit-font-smoothing: auto;
+    font-weight: normal;
+    display: inline;
+    font-size: 13px;
+    line-height: normal;
+    padding-right: 0.5rem;
+    color: inherit;
+    text-decoration: none;
+    cursor: pointer;
+    outline: 0;
+    box-sizing: border-box;
+    white-space: nowrap;
+    text-rendering: optimizeLegibility;
+    width: 98%;
+}
+
+.read-later-a-tag:visited {
+    color: grey;
+}
+
+.read-later-ul {
+    border-top: 1px ;
+    margin-right: 40px;
+}
+
+.read-later-li:first-child {
+    border-top: 1px solid grey;
+}
+
+.read-later-delete-button {
+    
+    border: none;
+}
+
+.read-later-li-a-tag-div-name {
+    float: left;
+}
+
+.read-later-li-a-tag-div-description {
+    overflow: hidden;
+    text-overflow: ellipsis; 
+    margin-left: 10%;
+}
+
+.read-later-container {
+    margin-left: 3%;
+}

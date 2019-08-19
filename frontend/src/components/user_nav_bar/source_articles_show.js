@@ -89,6 +89,18 @@ class SourceArticlesShow extends React.Component {
         //                 reader: this.props.user.id
         //             })}>Read Later</button></li >
         //     )
+        // // }
+        // if (articles.length > 0) {
+        //     // debugger
+        //     articles = articles.map((article, i) => 
+        //     <li key={i}>{article.title} {article.author} {article.description}
+        //             <button onClick={() => this.props.createReadLater({
+        //                 readLaterURL: article.url,
+        //                 readLaterName: article.source.name,
+        //                 readLaterDescription: article.description,
+        //                 reader: this.props.user.id
+        //             })}>Read Later</button></li >
+        //     )
         // }
         // debugger;
         // const header = (this.state.articles[0]._self.props.articles[0].source) ? (<h3>{this.state.articles[0]._self.props.articles[0].source.name}</h3>) :
@@ -141,9 +153,16 @@ class SourceArticlesShow extends React.Component {
                         </a>
                         <button onClick={() => this.props.createReadLater({
                             readLaterURL: article.url,
+                            readLaterName: article.source.name,
                             readLaterDescription: article.description,
                             reader: this.props.user.id
                         })}>Read Later</button>
+                        {/* <button onClick={() => this.props.createReadLater({
+                            readLaterURL: article.url,
+                            readLaterDescription: article.description,
+                            reader: this.props.user.id
+                        })}>Read Later</button> */}
+
                     </li>
                 )
             })
