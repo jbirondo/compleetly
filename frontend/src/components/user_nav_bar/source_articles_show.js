@@ -140,7 +140,7 @@ class SourceArticlesShow extends React.Component {
 
                 return (
                     <li key={i} className='news-explore-li'>
-                        <a target='_blank' href={article.url} className='a-tag'>
+                        <a target='_blank' rel="noopener noreferrer" href={article.url} className='a-tag'>
                             <div className='img-div'>
                                 {image}
                             </div>
@@ -170,7 +170,7 @@ class SourceArticlesShow extends React.Component {
         // debugger;
         // const header = (this.articles[0]._self.props.articles[0].source) ? (<a className='source-title' target='_blank' href={this.props.location.state.source.followURL}>{this.articles[0]._self.props.articles[0].source.name}</a>) :
         //     (<a className='source-title' target='_blank' href={this.props.location.state.source.followURL}>{this.articles[0]._self.props.articles[0].name}</a>)
-        const header = <a className='source-title' target='_blank' href={this.props.location.state.source.followURL}><h3>{this.state.articles[0].source.name}</h3></a>
+        const header = <a className='source-title' target='_blank' rel="noopener noreferrer" href={this.props.location.state.source.followURL}><h3>{this.state.articles[0].source.name}</h3></a>
         return(
       
             <div>

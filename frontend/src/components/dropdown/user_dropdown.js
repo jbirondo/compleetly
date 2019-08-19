@@ -1,7 +1,9 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { logout } from '../../actions/session_actions'
-import './user_dropdown.css'
+import './user_dropdown.css'; 
+import {Link} from 'react-router-dom';
+
 
 class userDropdown extends React.Component {
     constructor(props) {
@@ -24,13 +26,14 @@ class userDropdown extends React.Component {
                         <h3>{this.props.currentUser.firstName} {this.props.currentUser.lastName}</h3>
                         {/* <div>{this.props.currentUser.email}</div> */}
                     </li> 
-                    <li className='li-dropdown'>Settings</li>
+                    {/* <li className='li-dropdown'>Settings</li>
                     <li className='li-dropdown'>Organized Sources</li>
                     <li className='li-dropdown'>Mobile Apps</li>
                     <li className='li-dropdown'>Browser Add-ons</li>
                     <li className='li-dropdown'>Support</li>
                     <li className='li-dropdown'>Privacy</li>
-                    <li className='li-dropdown'>Terms &amp; Policy</li>
+                    <li className='li-dropdown'>Terms &amp; Policy</li> */}
+                    <li className='li-dropdown'><Link className='link-nav' to='./newsfeed'>Today's News</Link></li>
                     <li className='li-dropdown'><button className="logout-button" onClick={this.props.logout}>Logout</button></li>
                 </ul>
             </div>

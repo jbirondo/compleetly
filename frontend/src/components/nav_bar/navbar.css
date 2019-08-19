@@ -4,8 +4,16 @@
    height: 50px;
    border-bottom: rgb(185, 185, 185) solid 1px;
    z-index: -1;
+   
 }
 
+#upper-nav-sticky{
+   position: fixed;
+   top: 0;
+   width: 100%;
+   background-color: white;
+   z-index: 1;
+}
 
 .sign-in-nav-bar{
    padding-right: 60px;
@@ -17,6 +25,22 @@
 /* .nav-bar-log-in-btn{
 
 } */
+
+
+.logo-logged-out{
+   width: 40px;
+   height: 40px;
+   margin-right: 67%;
+   margin-top: 6px;
+}
+
+.logo-logged-in{
+   width: 40px;
+   height: 40px;
+   margin-right: 66%;
+   margin-top: 3px;
+}
+
 
 .nav-bar-btn {
     margin: 8px 7px 8px 17px;

@@ -13,6 +13,11 @@
     margin-top: -6px;
 }
 
+.link-nav{
+    text-decoration: none;
+    color: black;
+}
+
 .li-dropdown:first-child {
     border-bottom: 1px #bbbbbb solid;
     padding: 1px 0px 1px 12px;
@@ -62,8 +67,8 @@
 
 
 .nav-bar-welcome-message{
-   padding: 10px 14px;
-   background-color: rgb(101, 186, 255);
+   padding: 10px 13px;
+   background-color: #64b631;
    border-radius: 50%;
 }
 
