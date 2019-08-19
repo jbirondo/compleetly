@@ -5,10 +5,21 @@
    padding: 30px;
    margin: 0 auto;
    width: 75%;
+   position: sticky;
+   margin-top: -240px;
 }
 
-.input-btns{
+.sessionForm-div{
+   text-align: center;
+}
+
+.input-btns {
    color: rgb(139, 139, 139);
+   /* border-radius: 3px; */
+   /* margin-bottom: 3px; */
+   border: 1px solid gray;
+   padding: 4px;
+   background-color: #eaeaea;
 }
 
 .input-top{
@@ -19,16 +30,38 @@
 .input-bottom{
    border-bottom-left-radius: 3px;
    border-bottom-right-radius: 3px;
+   margin-bottom: 5px;
 }
 
 .sessionForm-submit{
    background-color: green;
    border-radius: 5px;
    color: white;
-   padding: 3px;
+   padding: 4px 14px;
+   margin-top: 9px;
 }
 
 .sessionForm-greeting{
-   text-size: 16px;
+   margin: 0px;
    font-weight: 600;
+}
+
+
+.log-in-btns {
+    display: block;
+    /* margin: 0px 42px; */
+    margin-left: 20%;
+}
+
+.errors-li {
+    /* text-decoration: none; */
+    list-style-type: none;
+    /* size: 12px; */
+    font-size: 12px;
+    margin-bottom: 1px;
+    color: #dc0404;
+}
+
+.errors-li:first-child{
+   margin-top: 7px;
 }

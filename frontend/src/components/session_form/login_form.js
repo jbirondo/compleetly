@@ -48,7 +48,7 @@ class LoginForm extends React.Component {
         return (
             <ul>
                 {Object.keys(this.props.errors).map((error, i) => (
-                    <li key={`error-${i}`}>
+                    <li key={`error-${i}`} className='errors-li'>
                         {this.props.errors[error]}
                     </li>
                 ))}
@@ -64,7 +64,7 @@ class LoginForm extends React.Component {
         return (
           <div>
                 <form className="sessionForm" onSubmit={this.handleSubmit}>
-              <div>
+                <div className='sessionForm-div'>
                 <br/>
                 <h2 className='sessionForm-greeting'>Log in to compleetly</h2>
                 <br/>
@@ -73,14 +73,14 @@ class LoginForm extends React.Component {
                     value={this.state.email}
                     onChange={this.update("email")}
                     placeholder="Email"
-                    className="input-btns input-top"
+                    className="input-btns input-top log-in-btns"
                 />
                 <input
                     type="text"
                     value={this.state.password}
                     onChange={this.update("password")}
                     placeholder="Password"
-                    className="input-btns input-bottom"
+                    className="input-btns input-bottom log-in-btns"
                 />
                 <input className='sessionForm-submit' type="submit" value="Login" />
                 {this.renderErrors()}
