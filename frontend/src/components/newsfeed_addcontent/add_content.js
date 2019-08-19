@@ -12,7 +12,6 @@ class AddContent extends React.Component {
   
     };
 
-
     render() {
 
         return (
