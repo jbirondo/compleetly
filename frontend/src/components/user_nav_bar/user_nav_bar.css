@@ -2,7 +2,7 @@
     font: 1em sans-serif;
     font-size: 13px;
     position: fixed;
-    height: 98.9vh;
+    height: 100%;
     top: 0;
     left: 0;
     right: 0;
@@ -15,6 +15,7 @@
     flex-direction: row;
     justify-content: center;
     align-content: center;
+    z-index: 2;
 }
 
 .user-nav-today{
