@@ -10,6 +10,7 @@ import business from './business.png';
 import rss from '../main/icons/rss-feed-icon.png';
 import './add_content.css';
 
+
 // const NewsAPI = require('newsapi');
 // const newsapi = new NewsAPI('0fe3c7ee9aa4446d94b11b44f28c4b74');
 
@@ -17,26 +18,48 @@ class AddContent extends React.Component {
     constructor(props) {
         super(props);
         this.disableWarning = null;
-  
     };
 
     render() {
 
         return (
             <div className='add-content-page-container'>
-                <div className='rss-icon-container'>
-                    
-                    <div className="add-content-rss-sources-item" ><img alt=" " src={rss} className="add-content-rss-sources-item-image" /> Sources to Follow</div>
+                <div className='add-content-feed-container'>
+                    <img alt=" " src={rss} className="add-content-rss-sources-item" />
+                    Feed
                 </div>
                 <div className='add-content-discover-header'>Discover the best sources for any topic</div>
-                <div className='add-content-categories-container'>
-                    <Link to='/newsfeed/technology'><img className='add-content-tech-image' alt=' ' src={tech} /><div className='category-title'>Tech></div></Link>
-                    <Link to='/newsfeed/sports'><img className='add-content-sports-image' alt=' ' src={sports} />Sports</Link>
-                    <Link to='/newsfeed/science'><img className='add-content-science-image' alt=' ' src={science} />Science</Link>
-                    <Link to='/newsfeed/health'><img className='add-content-health-image' alt=' ' src={health} />Health</Link>
-                    <Link to='/newsfeed/general'><img className='add-content-general-image' alt=' ' src={general} />General</Link>
-                    <Link to='/newsfeed/entertainment'><img className='add-content-entertainment-image' alt=' ' src={entertainment} />Entertainment</Link>
-                    <Link to='/newsfeed/business'><div className='category-title-container'><img className='add-content-business-image' alt=' ' src={business} /><div className='category-title'>Business</div></div></Link>
+                {/* {articles} */}
+                <div className='add-content-links-container'>
+                    <Link to='/newsfeed/technology' className='tech-content-categories-container-link'>
+                        <img className='add-content-tech-image' alt=' ' src={tech} />
+                        <div className='tech-image-title'>Tech</div>
+                    </Link>
+                    <Link to='/newsfeed/sports' className='sports-content-categories-container-link'>
+                        <img className='add-content-tech-image' alt=' ' src={sports} />
+                        <div className='sports-image-title'>Sports</div>
+                    </Link>
+                    <Link to='/newsfeed/science' className='science-content-categories-container-link'>
+                        <img className='add-content-tech-image' alt=' ' src={science} />
+                        <div className='science-image-title'>Science</div>
+                    </Link>
+                    <Link to='/newsfeed/health' className='health-content-categories-container-link'>
+                        <img className='add-content-tech-image' alt=' ' src={health} />
+                        <div className='health-image-title'>Health</div>
+                    </Link>
+                    <Link to='/newsfeed/general' className='general-content-categories-container-link'>
+                        <img className='add-content-tech-image' alt=' ' src={general} />
+                        <div className='general-image-title'>General</div>
+                    </Link>
+                    <Link to='/newsfeed/entertainment' className='entertainment-content-categories-container-link'>
+                        <img className='add-content-tech-image' alt=' ' src={entertainment} />
+                        <div className='entertainment-image-title'>Entertainment</div>
+                    </Link>
+                    <Link to='/newsfeed/business' className='business-content-categories-container-link'>
+                        <img className='add-content-tech-image' alt=' ' src={business} />
+                        <div className='business-image-title'>Business</div>
+                    </Link>
+                    
                 </div>
             </div>
         )

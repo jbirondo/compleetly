@@ -1,87 +1,253 @@
 .add-content-page-container{
-    align-content: center;
+    display: block;
+    flex-wrap: wrap;
+    /* display: flex-wrap; */
+    /* flex-direction: row; */
+    justify-content: center;
+    align-items: center;
     text-align: center;
-    /* width: 600px; */
+    width: 100%;
+    /* height: 100%; */
+    /* align-content: space-around; */
 }
 
-.rss-icon-container {
-    /* display: flex; */
-    /* flex-direction: column; */
-    /* width: 150px; */
-    /* justify-content: center; */
-    /* align-content: center; */
-    /* text-align: center; */
-    
-}
-
-.category-image-title-container {
-
-}
-
-.category-title-container {
-    
-}
-
-.add-content-rss-sources-item {
-    margin-top: 23px;
-    /* height:22px; */
-    /* width: 22px; */
-}
-
-.add-content-rss-sources-item-image {
-    /* margin-top: 23px; */
-    height:22px;
-    width: 22px;
+.add-content-feed-container {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    margin-top: 36px;
 }
 
 .add-content-discover-header {
-    margin-top: 63px;
+    color: #757575;
+    line-height: 1.5;
+    margin-bottom: 1.5rem;
+    margin-top: 1.5rem;
+    font-size: 1.25rem;
+    font-weight: 300;
+}
+
+.rss-icon-container {
+
+}
+
+.add-content-rss-sources-item {
+    height: 25px;
+    width: 25px;
+    margin-right: 6px;
+    /* align-content: center;
+    justify-content: center; */
 }
 
 .add-content-tech-image {
-    width: 175px;
-    height: 200px;
-    border-radius: 6px;
-}
-.add-content-sports-image {
-    width: 175px;
-    height: 200px;
-    border-radius: 6px;
-}
-.add-content-science-image {
-    width: 175px;
-    height: 200px;
-    border-radius: 6px;
-}
-.add-content-health-image {
-    width: 175px;
-    height: 200px;
-    border-radius: 6px;
-}
-.add-content-general-image {
-    width: 175px;
-    height: 200px;
-    border-radius: 6px;
-}
-.add-content-entertainment-image {
-    width: 175px;
-    height: 200px;
-    border-radius: 6px;
-}
-.add-content-business-image {
-    width: 175px;
-    height: 200px;
-    border-radius: 6px;
+    width: 165px;
+    height: 190px;
+    border-radius: 4px;
+    box-shadow: 4px 4px 9px 0px rgba(3, 3, 3, 0.3);
+    /* padding: 6px; */
 }
 
-.add-content-categories-container {
-    /* width: 600px; */
-    /* position: fixed; */
-    margin-top: 45px;
-}
 
-.category-title {
+
+.tech-image-title {
+     position: absolute;
+    top: 17%;
+    /* left: 50%; */
+    /* margin-right: -50%; */
+    /* transform: translate(-50%, -50%); */
+    font-size: 26px;
+    color: white;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: 0.4s;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+.sports-image-title {
+     position: absolute;
+    top: 17%;
+    /* left: 50%; */
+    /* margin-right: -50%; */
+    /* transform: translate(-50%, -50%); */
+    font-size: 26px;
+    color: white;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: 0.4s;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+.science-image-title {
+     position: absolute;
+    top: 17%;
+    /* left: 50%; */
+    /* margin-right: -50%; */
+    /* transform: translate(-50%, -50%); */
+    font-size: 26px;
+    color: white;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: 0.4s;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+.health-image-title {
+     position: absolute;
+    top: 17%;
+    /* left: 50%; */
+    /* margin-right: -50%; */
+    /* transform: translate(-50%, -50%); */
+    font-size: 26px;
+    color: white;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: 0.4s;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+.general-image-title {
+     position: absolute;
+    top: 17%;
+    /* left: 50%; */
+    /* margin-right: -50%; */
+    /* transform: translate(-50%, -50%); */
+    font-size: 26px;
+    color: white;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: 0.4s;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+.entertainment-image-title {
+     position: absolute;
+    top: 17%;
+    /* left: 50%; */
+    /* margin-right: -50%; */
+    /* transform: translate(-50%, -50%); */
+    font-size: 26px;
+    color: white;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: 0.4s;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+.business-image-title {
     position: absolute;
-    justify-content:center;
-    align-content: center;
+    top: 17%;
+    /* left: 50%; */
+    /* margin-right: -50%; */
+    /* transform: translate(-50%, -50%); */
+    font-size: 26px;
+    color: white;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: 0.4s;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+
+.tech-image-title:hover { opacity: 1.0 }
+.sports-image-title:hover { opacity: 1.0 }
+.science-image-title:hover { opacity: 1.0 }
+.health-image-title:hover { opacity: 1.0 }
+.general-image-title:hover { opacity: 1.0 }
+.entertainment-image-title:hover { opacity: 1.0 }
+.business-image-title:hover { opacity: 1.0 }
+
+.add-content-links-container {
+  margin-top: 75px;
+    /* line-height: 1;
+    -webkit-column-count: 3;
+    -webkit-column-gap: 0px;
+    -moz-colummn-count: 4;
+    -moz-column-gap: 0px;
+    column-count: 4;
+    column-gap: 0px; */
+    display: grid;
+    grid-template-columns: 200px 200px 200px 200px;
+    grid-template-rows: 1fr 1fr;
+    column-gap: 0rem;
+    row-gap: 1rem;
+    justify-content: center;
+}
+
+
+.tech-content-categories-container-link {
+    width: 165px;
+    height: 190px;
+    position: relative;
+    opacity: 1;
+    transition: 0.5s;
+}
+
+.tech-content-categories-container-link:hover {
+    transform: scale(1.02);
+    opacity: 0.8;
+}
+
+.sports-content-categories-container-link {
+    width: 165px;
+    height: 190px;
+    position: relative;
+    opacity: 1;
+    transition: 0.5s;
+}
+.sports-content-categories-container-link:hover {
+    transform: scale(1.02);
+    opacity: 0.8;
+}
+.science-content-categories-container-link {
+    width: 165px;
+    height: 190px;
+    position: relative;
+    opacity: 1;
+    transition: 0.5s;
+}
+.science-content-categories-container-link:hover {
+    transform: scale(1.02);
+    opacity: 0.8;
+}
+.health-content-categories-container-link {
+    width: 165px;
+    height: 190px;
+    position: relative;
+    opacity: 1;
+    transition: 0.5s;
+}
+.health-content-categories-container-link:hover {
+    transform: scale(1.02);
+    opacity: 0.8;
+}
+.general-content-categories-container-link {
+    width: 165px;
+    height: 190px;
+    position: relative;
+    opacity: 1;
+    transition: 0.5s;
+}
+.general-content-categories-container-link:hover {
+    transform: scale(1.02);
+    opacity: 0.8;
+}
+.entertainment-content-categories-container-link {
+    width: 165px;
+    height: 190px;
+    position: relative;
+    opacity: 1;
+    transition: 0.5s;
+}
+.entertainment-content-categories-container-link:hover {
+    transform: scale(1.02);
+    opacity: 0.8;
+}
+.business-content-categories-container-link {
+    width: 165px;
+    height: 190px;
+    position: relative;
+    opacity: 1;
+    transition: 0.5s;
+}
+.business-content-categories-container-link:hover {
+    transform: scale(1.02);
+    opacity: 0.8;
 }
