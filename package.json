@@ -4,6 +4,7 @@
   "description": "Interest based news feed Shows the complete article",
   "main": "index.js",
   "scripts": {
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix frontend && npm run build --prefix frontend",
     "frontend-install": "npm install --prefix frontend",
     "frontend": "npm start --prefix frontend",
     "dev:debug": "concurrently \"npm run server:debug\" \"npm run frontend\"",
