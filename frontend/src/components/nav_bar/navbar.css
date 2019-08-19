@@ -18,6 +18,22 @@
 
 } */
 
+
+.logo-logged-out{
+   width: 40px;
+   height: 40px;
+   margin-right: 67%;
+   margin-top: 6px;
+}
+
+.logo-logged-in{
+   width: 40px;
+   height: 40px;
+   margin-right: 66%;
+   margin-top: 3px;
+}
+
+
 .nav-bar-btn {
     margin: 8px 7px 8px 17px;
     border-radius: 4px;

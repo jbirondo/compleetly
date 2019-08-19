@@ -35,6 +35,7 @@ class ReadLater extends React.Component {
                     <a 
                         // onClick={this.addReadClass}
                         target="_blank"
+                        rel="noopener noreferrer"
                         className="read-later-a-tag"
                         href={source.readLaterURL}>
                         <div 

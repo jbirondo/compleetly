@@ -77,7 +77,7 @@ class NewsFeed extends React.Component {
 
             return (
                 <li key={i} className='news-explore-li'>
-                    <a target='_blank' href={article.url} className='a-tag'>
+                    <a target='_blank' rel="noopener noreferrer" href={article.url} className='a-tag'>
                     <div className='img-div'>
                         {image}
                     </div>
