@@ -11,6 +11,10 @@ const ReadLaterSchema = new Schema({
         type: String,
         required: true
     },
+    readLaterName: {
+        type: String,
+        required: true
+    },
     date: {
         type: Date,
         default: Date.now
