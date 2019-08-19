@@ -10,9 +10,9 @@ const users = require("./routes/api/users");
 // const follows = require("./routes/api/follows?");
 
 if (process.env.NODE_ENV === 'production') {
-   app.use(express.static('frontend/build'));
+   app.use(express.static('frontend/app'));
    app.get('/', (req, res) => {
-      res.sendFile(path.resolve(__dirname, 'frontend', 'build', 'index.html'));
+      res.sendFile(path.resolve(__dirname, 'frontend', 'app', 'index.html'));
    })
 }
 
