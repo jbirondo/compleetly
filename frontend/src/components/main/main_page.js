@@ -2,13 +2,31 @@ import React from 'react';
 import { openModal } from '../../actions/modal_actions'
 import {connect} from 'react-redux';
 import './mainPage.css'
+
 import landing from "./landing.png"
-import nyticon from './icons/new-york-times-icon.png'
-import tcicon from './icons/techcrunch-icon.png'
-import yticon from './icons/youtube-icon.png'
-import gicon from './icons/google-icon.png'
-import ticon from './icons/twitter-icon.png'
-import rssicon from './icons/rss-feed-icon.png'
+
+import newyorktimes from './icons/new-york-times-icon.png'
+import techcrunch from './icons/techcrunch-icon.png'
+import youtube from './icons/youtube-icon.png'
+import google from './icons/google-icon.png'
+import twitter from './icons/twitter-icon.png'
+import rss from './icons/rss-feed-icon.png'
+
+import organize from './icons/organize-icon.png'
+import read from './icons/read-icon.png'
+import search from './icons/search-icon.png'
+import readlater from './icons/read-later-icon.png'
+import share from './icons/share-icon.png'
+import discover from './icons/discover-icon.png'
+
+import sharedfeeds from './icons/shared-feeds-icon.png'
+import sharedboards from './icons/shared-boards-icon.png'
+import evernote from './icons/evernote-icon.png'
+import onenote from './icons/one-note-365-icon.png'
+import trello from './icons/trello-icon.png'
+import slack from './icons/slack-icon.png'
+
+
 
 class MainPage extends React.Component {
     constructor(props){
@@ -18,6 +36,7 @@ class MainPage extends React.Component {
     render() {
         return (
           <div className="main-page-container">
+
               <div className="main-page-header-container">
                 <h1 className="main-page-header">
                   Where readers become leaders
@@ -30,19 +49,23 @@ class MainPage extends React.Component {
                   Get started for free
                 </button>
               </div>
-            <div className="main-page-landing-img-container">
-              <img src={landing} className="main-page-landing-img" alt=""/> 
-            </div>
-            <div className="main-page-section-features-container">
-              <div className="main-page-section-kicker">
-                The best of the web
+
+              <div className="main-page-landing-img-container">
+                <img src={landing} className="main-page-landing-img" alt=""/> 
               </div>
-              <h2 className="main-page-section-header">
-                Discover insightful sources
-              </h2>
+
+
+
+            <div className="main-page-section-features-container feature-1">
+                <div className="main-page-section-kicker">
+                  The best of the web
+                </div>
+                <h2 className="main-page-section-header">
+                  Discover insightful sources
+                </h2>
               <div className="main-page-section-features-grid-container">
                 <div className="main-page-section-feature-grid-item">
-                  <img src={nyticon} className="main-page-section-feature-grid-item-picture-1" />
+                  <img alt=" " src={newyorktimes} className="main-page-section-feature-grid-item-picture-1" />
                   <div className="main-page-section-feature-grid-item-content-1">
                     <div className="grid-item-header-1">
                       Publications
@@ -53,7 +76,7 @@ class MainPage extends React.Component {
                   </div>
                 </div>
                 <div className="main-page-section-feature-grid-item">
-                  <img src={tcicon} className="main-page-section-feature-grid-item-picture-2"/>
+                  <img alt=" " src={techcrunch} className="main-page-section-feature-grid-item-picture-2"/>
                   <div className="main-page-section-feature-grid-item-content-2">
                     <div className="grid-item-header-2">
                       Blogs
@@ -64,7 +87,7 @@ class MainPage extends React.Component {
                   </div>
                 </div>
                 <div className="main-page-section-feature-grid-item">
-                  <img src={yticon}className="main-page-section-feature-grid-item-picture-3"/>
+                  <img alt=" " src={youtube}className="main-page-section-feature-grid-item-picture-3"/>
                   <div className="main-page-section-feature-grid-item-content-3">
                     <div className="grid-item-header-3">
                       YouTube Channels
@@ -75,7 +98,7 @@ class MainPage extends React.Component {
                   </div>
                 </div>
                 <div className="main-page-section-feature-grid-item">
-                  <img src={gicon} className="main-page-section-feature-grid-item-picture-4"/>
+                  <img alt=" " src={google} className="main-page-section-feature-grid-item-picture-4"/>
                   <div className="main-page-section-feature-grid-item-content-4">
                     <div className="grid-item-header-4">
                       Keyword Alerts
@@ -86,7 +109,7 @@ class MainPage extends React.Component {
                   </div>
                 </div>
                 <div className="main-page-section-feature-grid-item">
-                  <img src={ticon} className="main-page-section-feature-grid-item-picture-5"/>
+                  <img alt=" " src={twitter} className="main-page-section-feature-grid-item-picture-5"/>
                   <div className="main-page-section-feature-grid-item-content-5">
                     <div className="grid-item-header-5">
                       Tweets
@@ -97,7 +120,7 @@ class MainPage extends React.Component {
                   </div>
                 </div>
                 <div className="main-page-section-feature-grid-item">
-                  <img src={rssicon} className="main-page-section-feature-grid-item-picture-6"/>
+                  <img alt=" " src={rss} className="main-page-section-feature-grid-item-picture-6"/>
                   <div className="main-page-section-feature-grid-item-content-6">
                     <div className="grid-item-header-6">
                       RSS Feeds
@@ -109,156 +132,177 @@ class MainPage extends React.Component {
                 </div>
               </div>
             </div>
-            <div className="main-page-section-features-container">
+
+
+
+            <div className="main-page-section-features-container feature-2">
               <div className="main-page-section-kicker">
-                The best of the web
+                Cut the noise
               </div>
               <h2 className="main-page-section-header">
-                Discover insightful sources
+                Never miss important stories
               </h2>
               <div className="main-page-section-features-grid-container">
                 <div className="main-page-section-feature-grid-item">
-                  <img src={nyticon} className="main-page-section-feature-grid-item-picture-1" />
+                  <img alt=" " src={organize} className="main-page-section-feature-grid-item-picture-1" />
                   <div className="main-page-section-feature-grid-item-content-1">
                     <div className="grid-item-header-1">
-                      Publications
+                      Organize
                     </div>
                     <div className="grid-item-description-1">
-                      Don't miss a beat from New York Times or any other industry journal you trust
+                      Let the web work for you by arranging the content you rely on into easy-to-read feeds.
                     </div>
                   </div>
                 </div>
                 <div className="main-page-section-feature-grid-item">
-                  <img src={tcicon} className="main-page-section-feature-grid-item-picture-2" />
+                  <img alt=" " src={read} className="main-page-section-feature-grid-item-picture-2" />
                   <div className="main-page-section-feature-grid-item-content-2">
                     <div className="grid-item-header-2">
-                      Blogs
+                      Read
                     </div>
                     <div className="grid-item-description-2">
-                      Dive deeper by following blogs from the latest movers, shakers, and thinkers
-                    </div>
+                      Feedly offers a clean, minimalist reading experience optimized for productivity.                    </div>
                   </div>
                 </div>
                 <div className="main-page-section-feature-grid-item">
-                  <img src={yticon} className="main-page-section-feature-grid-item-picture-3" />
+                  <img alt=" " src={search} className="main-page-section-feature-grid-item-picture-3" />
                   <div className="main-page-section-feature-grid-item-content-3">
                     <div className="grid-item-header-3">
-                      YouTube Channels
+                      Search
                     </div>
                     <div className="grid-item-description-3">
-                      See new videos from the YouTube channels you follow
+                      Delve into the specific articles that interest you within your Feedly or within a specific publication.
                     </div>
                   </div>
                 </div>
                 <div className="main-page-section-feature-grid-item">
-                  <img src={gicon} className="main-page-section-feature-grid-item-picture-4" />
+                  <img alt=" " src={readlater} className="main-page-section-feature-grid-item-picture-4" />
                   <div className="main-page-section-feature-grid-item-content-4">
                     <div className="grid-item-header-4">
-                      Keyword Alerts
+                      Read Later
                     </div>
                     <div className="grid-item-description-4">
-                      Monitor news about your company, your product, your craft, and your competitors
+                      Save articles and easily get back to them. Tag with Feedly or use favorite web services like Evernote, Pocket, and Instapaper.
                     </div>
                   </div>
                 </div>
                 <div className="main-page-section-feature-grid-item">
-                  <img src={ticon} className="main-page-section-feature-grid-item-picture-5" />
+                  <img alt=" " src={share} className="main-page-section-feature-grid-item-picture-5" />
                   <div className="main-page-section-feature-grid-item-content-5">
                     <div className="grid-item-header-5">
-                      Tweets
+                      Share
                     </div>
                     <div className="grid-item-description-5">
-                      Follow your favorite twitter influencer or hashtag and never miss crucial updates
+                      Easily share articles to Facebook, Twitter, LinkedIn, Pinterest, email, and more. Schedule posts with Hootsuite or Buffer.
                     </div>
                   </div>
                 </div>
                 <div className="main-page-section-feature-grid-item">
-                  <img src={rssicon} className="main-page-section-feature-grid-item-picture-6" />
+                  <img alt=" " src={discover} className="main-page-section-feature-grid-item-picture-6" />
                   <div className="main-page-section-feature-grid-item-content-6">
                     <div className="grid-item-header-6">
-                      RSS Feeds
+                      Discover
                     </div>
                     <div className="grid-item-description-6">
-                      Follow anyone on the Web who publishes an RSS feed
+                      Discover fresh, authoritative voices on niche and broad topics alike. Channel the mainstream or pull from the diamonds in the rough.
                     </div>
                   </div>
                 </div>
               </div>
             </div>
-            <div className="main-page-section-features-container">
+
+
+
+            <div className="main-page-section-features-container feature-3">
               <div className="main-page-section-kicker">
-                The best of the web
+                Smarter together
               </div>
               <h2 className="main-page-section-header">
-                Discover insightful sources
+                Collaborate with your teammates
               </h2>
               <div className="main-page-section-features-grid-container">
                 <div className="main-page-section-feature-grid-item">
-                  <img src={nyticon} className="main-page-section-feature-grid-item-picture-1" />
+                  <img alt=" " src={sharedfeeds} className="main-page-section-feature-grid-item-picture-1" />
                   <div className="main-page-section-feature-grid-item-content-1">
                     <div className="grid-item-header-1">
-                      Publications
+                      Shared Feeds
                     </div>
                     <div className="grid-item-description-1">
-                      Don't miss a beat from New York Times or any other industry journal you trust
+                      Choose to share what you read with colleagues and networks. Discover what other thought leaders and teammates read.
                     </div>
                   </div>
                 </div>
                 <div className="main-page-section-feature-grid-item">
-                  <img src={tcicon} className="main-page-section-feature-grid-item-picture-2" />
+                  <img alt=" " src={sharedboards} className="main-page-section-feature-grid-item-picture-2" />
                   <div className="main-page-section-feature-grid-item-content-2">
                     <div className="grid-item-header-2">
-                      Blogs
+                      Shared Boards
                     </div>
                     <div className="grid-item-description-2">
-                      Dive deeper by following blogs from the latest movers, shakers, and thinkers
+                      Work with your teammates to curate, comment, and prioritize the best articles about specific topics and ideas.
                     </div>
                   </div>
                 </div>
                 <div className="main-page-section-feature-grid-item">
-                  <img src={yticon} className="main-page-section-feature-grid-item-picture-3" />
+                  <img alt=" " src={evernote} className="main-page-section-feature-grid-item-picture-3" />
                   <div className="main-page-section-feature-grid-item-content-3">
                     <div className="grid-item-header-3">
-                      YouTube Channels
+                      Evernote Business
                     </div>
                     <div className="grid-item-description-3">
-                      See new videos from the YouTube channels you follow
+                      Streamline your curation efforts by saving articles to shared Evernote business notebooks.
                     </div>
                   </div>
                 </div>
                 <div className="main-page-section-feature-grid-item">
-                  <img src={gicon} className="main-page-section-feature-grid-item-picture-4" />
+                  <img alt=" " src={onenote} className="main-page-section-feature-grid-item-picture-4" />
                   <div className="main-page-section-feature-grid-item-content-4">
                     <div className="grid-item-header-4">
-                      Keyword Alerts
+                      OneNote 365
                     </div>
                     <div className="grid-item-description-4">
-                      Monitor news about your company, your product, your craft, and your competitors
+                      Fuel your thoughts, ideas, and to-do's with articles to give you a leg up at work, home, and school.
                     </div>
                   </div>
                 </div>
                 <div className="main-page-section-feature-grid-item">
-                  <img src={ticon} className="main-page-section-feature-grid-item-picture-5" />
+                  <img alt=" " src={trello} className="main-page-section-feature-grid-item-picture-5" />
                   <div className="main-page-section-feature-grid-item-content-5">
                     <div className="grid-item-header-5">
-                      Tweets
+                      Trello
                     </div>
                     <div className="grid-item-description-5">
-                      Follow your favorite twitter influencer or hashtag and never miss crucial updates
+                      Enrich your projects, cards, and teams with timely content.
                     </div>
                   </div>
                 </div>
                 <div className="main-page-section-feature-grid-item">
-                  <img src={rssicon} className="main-page-section-feature-grid-item-picture-6" />
+                  <img alt=" " src={slack} className="main-page-section-feature-grid-item-picture-6" />
                   <div className="main-page-section-feature-grid-item-content-6">
                     <div className="grid-item-header-6">
-                      RSS Feeds
+                      Slack
                     </div>
                     <div className="grid-item-description-6">
-                      Follow anyone on the Web who publishes an RSS feed
+                      Empower your teams with articles as they happen and spark insightful conversations.
                     </div>
                   </div>
                 </div>
+              </div>
+            </div >
+
+            <div className="main-page-footer-container">
+              <h2 className="main-page-footer-header">
+                Where readers become leaders
+                <div className="main-page-footer-subheader">
+                  Keep up with all the topics that matter to you. All in one place.
+                </div>
+              </h2>
+              <button className="main-page-sign-up-button footer-button"
+                onClick={() => this.props.openModal("signup")}>
+                Get started for free
+                </button>
+              <div className="main-page-footer-top-link">
+                Discover Feedly's top blogs and websites
               </div>
             </div>
           </div>
