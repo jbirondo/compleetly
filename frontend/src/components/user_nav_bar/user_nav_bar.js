@@ -3,6 +3,12 @@ import { connect } from 'react-redux';
 import { withRouter, Link } from 'react-router-dom'
 import { fetchUser } from '../../actions/session_actions';
 import {deleteFollow} from '../../actions/follow_actions';
+
+import todayicon from './icons/logo-icon.png'
+import readlatericon from './icons/read-later-icon.png'
+import filtericon from './icons/filter-icon.png'
+import plusicon from './icons/plus-icon.jpg'
+
 import './user_nav_bar.css'
 // import SourceArticlesShow from './source_articles_show'
 // import Follow from "../../../../models/Follow"
@@ -47,10 +53,16 @@ class UserNavBar extends React.Component {
                 {this.props.follows.map(source => {
                     // debugger
                     return (
-                        <li className='user-nav-feed-follow-item' key={source._id}>
+                        <li className='user-nav-feed-follow-item-container' key={source._id}>
                             {/* <SourceArticlesShow source={source} /> */}
-                        < Link to = { { pathname: `/${source.followName}/articles`, state: {source: source} }}>{source.followName}</Link>
-                                <button className='user-nav-unfollow-btn' onClick={() => this.props.deleteFollow({ followId: source._id,   currentUserId: this.props.currentUserId })}>Unfollow</button>
+                            < Link to = { { pathname: `/${source.followName}/articles`, state: {source: source} }}
+                                    className='user-nav-feed-follow-item'>
+                                    {source.followName}
+                            </Link>
+                            <button className='user-nav-unfollow-btn' 
+                            onClick={() => this.props.deleteFollow({ followId: source._id,   currentUserId: this.props.currentUserId })}>
+                                X
+                            </button>
                             
                                 {/* followId: article.followId, */}
                         </li>
@@ -75,17 +87,33 @@ class UserNavBar extends React.Component {
         return (
             <div className="user-bar-container" >
                 <div className='user-nav-bar-elements-container'>
-                    <Link to={`/newsfeed`}><div className='user-nav-today'>Today</div></Link>
-                    <Link to={`/${this.props.currentUserId}/read_later`}><div className='user-nav-read-later'>Read later</div></Link>
-                    <Link to={`/${this.props.currentUserId}/filters`}><div className='user-nav-filter'>Filters</div></Link>
-                    
+                    <Link to={`/newsfeed`} className='user-nav-today-container element-container'>
+                        <img className ='icon-user-nav-today' src={todayicon}/>
+                        <div className='title-user-nav-today'>Today</div>
+                    </Link>
+                    <Link to={`/${this.props.currentUserId}/read_later`} className='user-nav-read-later-container element-container'>
+                        <img className ='icon-user-nav-read-later' src={readlatericon}/>
+                        <div className='title-user-nav-read-later'>Read later</div>
+                    </Link>
+                    <Link to={`/${this.props.currentUserId}/filters`} className='user-nav-filter-container element-container'>
+                        <img className ='icon-user-nav-filter' src={filtericon}/>
+                        <div className='title-user-nav-filter'>Filters</div>
+                    </Link>
+                
                     <div className='user-nav-feeds'>
                         <div className='user-nav-feeds-title'>Feeds
-                            <Link to={`/${this.props.currentUserId}/organize`}><div className='user-nav-settings'>⚙︎</div></Link>
+                            {/* <Link to={`/${this.props.currentUserId}/organize`}><div className='user-nav-settings'>⚙︎</div></Link> */}
                         </div>
                         {this.renderFollows()}
                     </div>
-                    <Link to={`/newsfeed/add`}><div className='user-nav-add-content'>+ ADD CONTENT</div></Link>
+                    <div className="add-content-container">
+                        <Link to={`/newsfeed/add`} className='user-nav-add-content'>
+                            <img src={plusicon} className="plus-icon icon-user"/>
+                            <div className="no-underline"> 
+                                ADD CONTENT
+                            </div>
+                        </Link>
+                    </div>
                 </div>
             </div>
         );

@@ -120,7 +120,7 @@
 }
 
 .read-later-delete-button {
-    
+    background: inherit;
     border: none;
 }
 
