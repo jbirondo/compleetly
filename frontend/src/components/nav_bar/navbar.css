@@ -7,6 +7,14 @@
    
 }
 
+#upper-nav-sticky{
+   position: fixed;
+   top: 0;
+   width: 100%;
+   background-color: white;
+   z-index: 1;
+}
+
 .sign-in-nav-bar{
    padding-right: 60px;
 }

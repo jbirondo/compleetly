@@ -13,6 +13,7 @@ class LoginForm extends React.Component {
 
         this.handleSubmit = this.handleSubmit.bind(this);
         this.renderErrors = this.renderErrors.bind(this);
+        this.demoLogin = this.demoLogin.bind(this);
     }
 
     update(field) {
@@ -43,6 +44,13 @@ class LoginForm extends React.Component {
 
         // }
     }
+
+
+    demoLogin(e) {
+        e.preventDefault();
+        this.props.login({ email: 'demo@demo.com', password: '123456' });
+    }
+
 
     renderErrors() {
         return (
@@ -83,6 +91,8 @@ class LoginForm extends React.Component {
                     className="input-btns input-bottom log-in-btns"
                 />
                 <input className='sessionForm-submit' type="submit" value="Login" />
+                <br/>
+                <button onClick={this.demoLogin} className='sessionForm-submit' >Demo Login</button>
                 {this.renderErrors()}
               </div>
             </form>

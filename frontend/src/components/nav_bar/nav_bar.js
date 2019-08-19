@@ -20,7 +20,7 @@ export default ({ isAuthenticated, currentUser, logout, openModal }) => {
     )
 
     return (
-        <div className='upper-nav-sticky'>
+        <div id='upper-nav-sticky'>
             {display}
         </div>
     )
