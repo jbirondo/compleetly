@@ -135,5 +135,8 @@
 }
 
 .read-later-container {
-    margin-left: 3%;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    margin-left: calc(48% - 337px);
 }

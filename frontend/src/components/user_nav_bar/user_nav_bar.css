@@ -1,7 +1,7 @@
 .user-bar-container {
     font: 1em sans-serif;
     font-size: 13px;
-    position: absolute;
+    position: fixed;
     height: 98.9vh;
     top: 0;
     left: 0;

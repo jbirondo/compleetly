@@ -22,25 +22,31 @@ const App = () => (
    <div>
       <Modal />
       <NavBarContainer />
-      <AuthRoute path="/" component={MainPage} />
-      <ProtectedRoute path="/" component={UserNavBar} />
-      <Switch>
-         <ProtectedRoute exact path="/:user_id/read_later" component={ReadLater} />
-         <ProtectedRoute exact path="/newsfeed" component={NewsFeed} />
-         <ProtectedRoute exact path="/newsfeed/add" component={NewsFeedAddContent} />
-         <ProtectedRoute exact path="/:source/articles" component={SourceArticlesShow} />
-         <ProtectedRoute exact path="/newsfeed/technology" component={TechnologyFeed} />
-         <ProtectedRoute exact path="/newsfeed/science" component={ScienceFeed} />
-         <ProtectedRoute exact path="/newsfeed/sports" component={SportsFeed} />
-         <ProtectedRoute exact path="/newsfeed/health" component={HealthFeed} />
-         <ProtectedRoute exact path="/newsfeed/general" component={GeneralFeed} />
-         <ProtectedRoute exact path="/newsfeed/entertainment" component={EntertainmentFeed} />
-         <ProtectedRoute exact path="/newsfeed/business" component={BusinessFeed} />
-         {/* <AuthRoute exact path="/login" component={LoginFormContainer} /> */}
-         {/* <AuthRoute exact path="/signup" component={SignUpFormContainer} /> */}
-         {/* <AuthRoute exact path="/login" component={LoginFormContainer} />
-         <AuthRoute exact path="/signup" component={SignUpFormContainer} /> */}
-      </Switch>
+      <div className="main-page-container">
+         <div>
+            <AuthRoute path="/" component={MainPage} />
+            <ProtectedRoute path="/" component={UserNavBar} />
+         </div>
+         <div>
+            <Switch>
+               <ProtectedRoute exact path="/:user_id/read_later" component={ReadLater} />
+               <ProtectedRoute exact path="/newsfeed" component={NewsFeed} />
+               <ProtectedRoute exact path="/newsfeed/add" component={NewsFeedAddContent} />
+               <ProtectedRoute exact path="/:source/articles" component={SourceArticlesShow} />
+               <ProtectedRoute exact path="/newsfeed/technology" component={TechnologyFeed} />
+               <ProtectedRoute exact path="/newsfeed/science" component={ScienceFeed} />
+               <ProtectedRoute exact path="/newsfeed/sports" component={SportsFeed} />
+               <ProtectedRoute exact path="/newsfeed/health" component={HealthFeed} />
+               <ProtectedRoute exact path="/newsfeed/general" component={GeneralFeed} />
+               <ProtectedRoute exact path="/newsfeed/entertainment" component={EntertainmentFeed} />
+               <ProtectedRoute exact path="/newsfeed/business" component={BusinessFeed} />
+               {/* <AuthRoute exact path="/login" component={LoginFormContainer} /> */}
+               {/* <AuthRoute exact path="/signup" component={SignUpFormContainer} /> */}
+               {/* <AuthRoute exact path="/login" component={LoginFormContainer} />
+               <AuthRoute exact path="/signup" component={SignUpFormContainer} /> */}
+            </Switch>
+         </div>
+      </div>
    </div>
 );
 
