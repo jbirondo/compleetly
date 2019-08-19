@@ -27,7 +27,7 @@
     transition: 0.4s;
 }
 
-.user-nav-today:hover {
+.user-nav-today-container:hover {
     background-color:rgba(0, 0, 0, 0.1)
     /* opacity: 0.6;
     transform: scale(1.02);
@@ -43,14 +43,14 @@
     transition: 0.4s; */
 }
 
-.user-nav-read-later:hover {
+.user-nav-read-later-container:hover {
     background-color:rgba(0, 0, 0, 0.1)
     /* opacity: 0.6;
     transform: scale(1.02);
     box-shadow: 6px 6px 6px 0px rgba(0, 0, 0, 0.3); */
     /* border-radius: 12px; */
 }
-.user-nav-filter:hover {
+.user-nav-filter-container:hover {
     background-color:rgba(0, 0, 0, 0.1)
     /* opacity: 0.6;
     transform: scale(1.02);
@@ -80,7 +80,7 @@
     transition: 0.4s;
     /* width: 100% */
 }
-.user-nav-feed-follow-item:hover {
+.user-nav-feed-follow-item-container:hover {
     background-color:rgba(0, 0, 0, 0.1)
     /* opacity: 0.6;
     transform: scale(1.02);
@@ -195,6 +195,10 @@ div[class^="title-user"] {
 .user-nav-unfollow-btn {
     background: inherit;
     border: none;
+}
+
+.user-nav-unfollow-btn:hover {
+    background-color:rgba(0, 0, 0, 0.1);
 }
 
 .add-content-container{
