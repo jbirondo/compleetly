@@ -1,7 +1,7 @@
 .user-bar-container {
     font: 1em sans-serif;
     font-size: 13px;
-    position: absolute;
+    position: fixed;
     height: 98.9vh;
     top: 0;
     left: 0;
@@ -71,10 +71,6 @@
     font-size: 19px;
 }
 
-.user-nav-settings{
-    
-}
-
 .user-nav-feed-follow-item{
     display: flex;
     justify-content: space-between;
@@ -96,10 +92,9 @@
     flex-direction: row;
     justify-content: center; */
     width: 100%;
+    margin: 50px 5px 5px 5px;
     
 }
-
-.user-nav-unfollow-btn {}
 
 .user-nav-feeds {
     display: block;
@@ -124,9 +119,106 @@
     opacity: 1;
     transition: 0.4s;
     width: 100%;
-    align-content: center;
-    align-items: center;
+    /* align-content: center; */
+    /* align-items: center; */
     text-align: center;
-    /* opacity: 1;
-    transition: 0.4s; */
+    vertical-align: middle;
+    color: rgba(0, 0, 0, 0.7);
+    font-family: sans-serif;
+    font-size: 12px;
+    line-height: 1rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    justify-content: center;
+    display: flex;
+    padding: 7% 0%;
+    border-top: 1px solid rgba(0, 0, 0, 0.07);
+}
+
+img[class^="icon-user"] {
+    height: 20px;
+    width: 20px;
+    filter: grayscale(100%);
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-right: 12px;
+}
+
+.element-container{
+    display: flex;
+    align-content: flex-start;
+    text-decoration: none;
+    color: rgba( 0, 0, 0, 0.7 );
+}
+
+div[class^="title-user"] {
+    cursor: pointer;
+    text-align: left;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    max-width: 180px;
+    overflow: hidden;
+    font-family: sans-serif;
+    font-size: 13px;
+    color: inherit;
+    -webkit-font-smoothing: antialiased;
+    font-weight: bold;
+    line-height: 28px;
+}
+
+.user-nav-feed-follow-item {
+    cursor: pointer;
+    text-align: left;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    max-width: 160px;
+    overflow: hidden;
+    font-family: sans-serif;
+    font-size: 13px;
+    color: inherit;
+    -webkit-font-smoothing: antialiased;
+    font-weight: bold;
+    line-height: 28px;
+    text-decoration: none;
+}
+
+.user-nav-feed-follow-item-container {
+    display:flex
+}
+
+.user-nav-feed-follow-item-container {
+    justify-content: space-between;
+    margin-left: 8px;
+}
+
+.user-nav-unfollow-btn {
+    background: inherit;
+    border: none;
+}
+
+.add-content-container{
+    padding: 11px 17px 10px 11px;
+    display:flex;
+    justify-content: center;
+}
+
+.plus-icon {
+    height: 20px;
+    width: 20px;
+    filter: grayscale(100%);
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-right: 12px;
+}
+
+.no-underline{
+    text-decoration: none;
+}
+
+.user-nav-feeds-title{
+    margin-top: 24px;
+    text-transform: uppercase;
+    font-size: 11px;
+    opacity: 0.7;
+    -webkit-font-smoothing: antialiased;
 }

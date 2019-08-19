@@ -135,7 +135,7 @@ class NewsFeed extends React.Component {
         // console.log(articles)
         return (
             
-            <div>
+            <div className="today-container">
                 <h1 className='today-header'>Today</h1>
                 <h3 className='desc-header'>The insights you need to get the inside edge</h3>
                 {articles}
