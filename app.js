@@ -5,6 +5,9 @@ const mongoose = require('mongoose');
 const db = require('./config/keys').mongoURI;
 const bodyParser = require("body-parser");
 const passport = require('passport')
+// const favicon = require('express-favicon');
+
+// app.use(favicon(__dirname + '/public/favicon.png'));
 
 const users = require("./routes/api/users");
 // const follows = require("./routes/api/follows?");
