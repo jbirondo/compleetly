@@ -13,10 +13,6 @@
     margin-top: -6px;
 }
 
-.link-nav{
-    text-decoration: none;
-    color: black;
-}
 
 .li-dropdown:first-child {
     border-bottom: 1px #bbbbbb solid;
@@ -26,6 +22,12 @@
 .li-dropdown {
     text-align: left;
     padding: 5px 0px 5px 12px;
+}
+
+.link-nav{
+    text-decoration: none;
+    color: black;
+    /* padding: 5px 0px 5px 12px; */
 }
 
 .li-dropdown:hover{
