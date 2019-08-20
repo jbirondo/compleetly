@@ -36,7 +36,7 @@
 .articles-li-url{
     margin-bottom: 8px;
     color: #6b6b6b;
-    margin-top: -10px;
+    margin-top: -8px;
 }
 
 .articles-li-btn {
@@ -46,9 +46,42 @@
     color: green;
     border: green solid 1px;
     border-radius: 3px;
-    font-weight: 700;
+    font-weight: 800;
     padding: 3px 9px;
 }
+
+.articles-li-btn:focus{
+    outline: none;
+}
+
+.unfollow-btn {
+    float: right;
+    margin-top: 22px;
+    margin-right: 5px;
+    color: green;
+    border: green solid 1px;
+    border-radius: 3px;
+    font-weight: 600;
+    padding: 3px 9px;
+}
+
+.unfollow-btn:focus{
+    outline: none;
+}
+
+.unfollow-btn:hover:before{
+    content: 'UNFOLLOW';
+    font-weight: 800;
+    padding: 6px 0px;
+}
+
+.unfollow-btn:hover span{
+    display: none;
+}
+
+/* .articles-li-btn:focus{
+    outline: none;
+} */
 
 .add-content-feed-container {
     border-bottom: 1px solid rgba(0, 0, 0, 0.05);
