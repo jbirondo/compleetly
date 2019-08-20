@@ -60,11 +60,20 @@ class NewsFeed extends React.Component {
                 image = <img alt='stock-photograph' className='news-explore-img' src='https://images.unsplash.com/photo-1560177112-fbfd5fde9566?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80' />
             }
 
+            let compName;
+            if (article.source.name && article.author) {
+                compName = ` | ${article.source.name}`;
+            } else if (article.source.name) {
+                compName = `by ${article.source.name}`
+            } else {
+                compName = '';
+            }
+
             let author;
             if (article.author) {
-                author = <h3 className='news-explore-author'>by {article.author}</h3>
+                author = <h3 className='news-explore-author'>by {article.author} {compName}</h3>
             } else {
-                author = <div></div>
+                author = <h3 className='news-explore-author'>{compName}</h3>
             }
 
             let description;
