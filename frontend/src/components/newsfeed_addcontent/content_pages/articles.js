@@ -15,6 +15,8 @@ const Articles = ({createFollow, deleteFollow, articles, propFollows, currentUse
             followName.push(follow.followName);
             follows.push(follow)
         });
+    
+    
 
         // Object.values(propFollows).forEach(follow => follows.push(follow));
 
@@ -25,12 +27,23 @@ const Articles = ({createFollow, deleteFollow, articles, propFollows, currentUse
         })
 
         if (!!followName.includes(article.name)) {
-            return <li key={i}>{article.name} {article.url}
-                <button onClick={() => deleteFollow({ followId: article.followId, currentUserId: currentUserId })}>Unfollow</button>
+            return <li key={i} className='articles-li'>
+                <button className='unfollow-btn' onClick={() => deleteFollow({ followId: article.followId, currentUserId: currentUserId })}><span>FOLLOWING</span></button>
+                <a target='_blank' rel="noopener noreferrer" href={article.url} className='a-tag'>
+                <h2 className='articles-li-title'>{article.name}</h2>
+                <p className='articles-li-url'>{article.url}</p>
+                <p className='articles-li-description'>{article.description}</p>
+                </a>
             </li>
         } else {
-            return <li key={i}>{article.name} {article.url}
-                <button onClick={() => createFollow({ source: article.id, followName: article.name, followURL: article.url, currentUserId: currentUserId })}>Follow!</button>
+            // debugger;
+            return <li key={i} className='articles-li'>
+            <button className='articles-li-btn' onClick={() => createFollow({ source: article.id, followName: article.name, followURL: article.url, currentUserId: currentUserId })}>FOLLOW</button>
+                <a target='_blank' rel="noopener noreferrer" href={article.url} className='a-tag'>
+                <h2 className='articles-li-title'>{article.name}</h2>
+                <p className='articles-li-url'>{article.url}</p>
+                <p className='articles-li-description'>{article.description}</p>
+                </a>
             </li>
         }
         

@@ -20,7 +20,8 @@
 }
 
 .news-explore-title:hover{
-   text-decoration: underline;
+   /* text-decoration: underline;  */
+   transform: scale(1.005); 
 }
 
 

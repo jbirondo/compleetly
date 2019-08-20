@@ -26,7 +26,7 @@ class AddContent extends React.Component {
         return (
             <div className='add-content-page-container'>
                 <div className='add-content-feed-container'>
-                    <img alt=" " src={rss} className="add-content-rss-sources-item" />
+                    <img alt="" src={rss} className="add-content-rss-sources-item" />
                     Feed
                 </div>
                 <div className='add-content-discover-header'>Discover the best sources for any topic</div>

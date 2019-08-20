@@ -17,6 +17,7 @@ import NavBarContainer from './nav_bar/nav_bar_container';
 import Modal from './modal/modal'
 import MainPage from './main/main_page';
 import Results from './searchbar/results'; 
+import {filters} from './newsfeed/filters';
 import './cssreset.css';
 
 const App = () => (
@@ -42,6 +43,7 @@ const App = () => (
                <ProtectedRoute exact path="/newsfeed/entertainment" component={EntertainmentFeed} />
                <ProtectedRoute exact path="/newsfeed/business" component={BusinessFeed} />
                <ProtectedRoute path="/searchresults/:search" component={Results} />
+               <ProtectedRoute exact path="/:user_id/filters" component={filters}/>
                {/* <AuthRoute exact path="/login" component={LoginFormContainer} /> */}
                {/* <AuthRoute exact path="/signup" component={SignUpFormContainer} /> */}
                {/* <AuthRoute exact path="/login" component={LoginFormContainer} />

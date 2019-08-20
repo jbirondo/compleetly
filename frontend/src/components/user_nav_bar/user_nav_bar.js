@@ -88,15 +88,15 @@ class UserNavBar extends React.Component {
             <div className="user-bar-container" >
                 <div className='user-nav-bar-elements-container'>
                     <Link to={`/newsfeed`} className='user-nav-today-container element-container'>
-                        <img className ='icon-user-nav-today' src={todayicon}/>
+                        <img alt='' className ='icon-user-nav-today' src={todayicon}/>
                         <div className='title-user-nav-today'>Today</div>
                     </Link>
                     <Link to={`/${this.props.currentUserId}/read_later`} className='user-nav-read-later-container element-container'>
-                        <img className ='icon-user-nav-read-later' src={readlatericon}/>
+                        <img alt='' className ='icon-user-nav-read-later' src={readlatericon}/>
                         <div className='title-user-nav-read-later'>Read later</div>
                     </Link>
                     <Link to={`/${this.props.currentUserId}/filters`} className='user-nav-filter-container element-container'>
-                        <img className ='icon-user-nav-filter' src={filtericon}/>
+                        <img alt='' className ='icon-user-nav-filter' src={filtericon}/>
                         <div className='title-user-nav-filter'>Filters</div>
                     </Link>
                 
@@ -108,7 +108,7 @@ class UserNavBar extends React.Component {
                     </div>
                     <div className="add-content-container">
                         <Link to={`/newsfeed/add`} className='user-nav-add-content'>
-                            <img src={plusicon} className="plus-icon icon-user"/>
+                            <img alt='' src={plusicon} className="plus-icon icon-user"/>
                             <div className="no-underline"> 
                                 ADD CONTENT
                             </div>

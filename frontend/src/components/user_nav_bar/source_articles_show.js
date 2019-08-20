@@ -114,7 +114,7 @@ class SourceArticlesShow extends React.Component {
                 if (article.urlToImage) {
                     image = <img alt={article.title} className='news-explore-img' src={article.urlToImage} />
                 } else {
-                    image = <img alt='stock-photograph' className='news-explore-img' src='https://images.unsplash.com/photo-1504465039710-0f49c0a47eb7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=675&q=80' />
+                    image = <img alt='stock-photograph' className='news-explore-img' src='https://images.unsplash.com/photo-1560177112-fbfd5fde9566?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80' />
                 }
     
                 let author;

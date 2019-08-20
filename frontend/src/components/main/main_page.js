@@ -32,6 +32,8 @@ import slack from './icons/slack-icon.png'
 class MainPage extends React.Component {
     constructor(props){
       super(props)
+
+      this.disableWarning = null;
     }
 
     render() {

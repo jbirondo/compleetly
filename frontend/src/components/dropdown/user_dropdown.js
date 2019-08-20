@@ -19,7 +19,7 @@ class userDropdown extends React.Component {
     render() {
         return (
             <div className="user-dropdown-button">
-                <button className='dropdown-btn' onClick={this.addHiddenClass}><h3 className="nav-bar-welcome-message">{this.props.currentUser.firstName[0]}</h3></button>
+                <button className='dropdown-btn' onClick={this.addHiddenClass}><h3 className="nav-bar-welcome-message">{this.props.currentUser.firstName[0].toUpperCase()}</h3></button>
                 <ul className={this.state.hidden ? 'user-dropdown-menu hide' : 'user-dropdown-menu'}>
                     <li className='li-dropdown'>
                         {/* <div>{this.props.currentUser.firstName[0]}</div> */}
@@ -34,6 +34,7 @@ class userDropdown extends React.Component {
                     <li className='li-dropdown'>Privacy</li>
                     <li className='li-dropdown'>Terms &amp; Policy</li> */}
                     <li className='li-dropdown'><Link className='link-nav' to='./newsfeed'>Today's News</Link></li>
+                    <li className='li-dropdown'><a className='link-nav' target='_blank' rel="noopener noreferrer" href='https://github.com/jbirondo/MERN-feedly/wiki'>GitHub</a></li>
                     <li className='li-dropdown'><button className="logout-button" onClick={this.props.logout}>Logout</button></li>
                 </ul>
             </div>

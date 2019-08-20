@@ -11,6 +11,78 @@
     /* align-content: space-around; */
 }
 
+.articles-li {
+    margin-top: 50px;
+    list-style-type: none;
+    padding: 30px;
+    background-color: rgb(255, 255, 255);
+    border: 1px solid #9e9e9e;
+    width: 700px;
+    margin-left: -75px;
+    border-radius: 3px;
+}
+
+.articles-li-description{
+    width: 80%;
+    color: #6b6b6b;
+    margin-top: 15px;
+}
+
+.articles-li-title{
+    color: black;
+    font-size: 20px;
+}
+
+.articles-li-url{
+    margin-bottom: 8px;
+    color: #6b6b6b;
+    margin-top: -8px;
+}
+
+.articles-li-btn {
+    float: right;
+    margin-top: 22px;
+    margin-right: 5px;
+    color: green;
+    border: green solid 1px;
+    border-radius: 3px;
+    font-weight: 700;
+    padding: 3px 9px;
+}
+
+.articles-li-btn:focus{
+    outline: none;
+}
+
+.unfollow-btn {
+    float: right;
+    margin-top: 22px;
+    margin-right: 5px;
+    color: #848484;
+    border: #848484 solid 1px;
+    border-radius: 3px;
+    font-weight: 600;
+    padding: 3px 9px;
+}
+
+.unfollow-btn:focus{
+    outline: none;
+}
+
+.unfollow-btn:hover:before{
+    content: 'UNFOLLOW';
+    font-weight: 700;
+    padding: 6px 0px;
+}
+
+.unfollow-btn:hover span{
+    display: none;
+}
+
+/* .articles-li-btn:focus{
+    outline: none;
+} */
+
 .add-content-feed-container {
     border-bottom: 1px solid rgba(0, 0, 0, 0.05);
     margin-top: 36px;
@@ -23,10 +95,6 @@
     margin-top: 1.5rem;
     font-size: 1.25rem;
     font-weight: 300;
-}
-
-.rss-icon-container {
-
 }
 
 .add-content-rss-sources-item {
