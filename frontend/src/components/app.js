@@ -16,6 +16,7 @@ import ReadLater from "./read_later/read_later";
 import NavBarContainer from './nav_bar/nav_bar_container';
 import Modal from './modal/modal'
 import MainPage from './main/main_page';
+import Results from './searchbar/results'; 
 import './cssreset.css';
 
 const App = () => (
@@ -40,6 +41,7 @@ const App = () => (
                <ProtectedRoute exact path="/newsfeed/general" component={GeneralFeed} />
                <ProtectedRoute exact path="/newsfeed/entertainment" component={EntertainmentFeed} />
                <ProtectedRoute exact path="/newsfeed/business" component={BusinessFeed} />
+               <ProtectedRoute path="/searchresults/:search" component={Results} />
                {/* <AuthRoute exact path="/login" component={LoginFormContainer} /> */}
                {/* <AuthRoute exact path="/signup" component={SignUpFormContainer} /> */}
                {/* <AuthRoute exact path="/login" component={LoginFormContainer} />

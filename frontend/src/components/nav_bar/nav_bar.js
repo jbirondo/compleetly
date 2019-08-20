@@ -2,6 +2,7 @@ import React from 'react';
 import UserDropdown from '../dropdown/user_dropdown';
 import './navbar.css';
 import {Link} from 'react-router-dom';
+import Search from '../searchbar/search'
 
 export default ({ isAuthenticated, currentUser, logout, openModal }) => {
     const display = isAuthenticated ? (
@@ -10,6 +11,7 @@ export default ({ isAuthenticated, currentUser, logout, openModal }) => {
            <button onClick={() => logout()}>Log Out</button> */}
             <Link to='/newsfeed' className='logo-logged-in'><img className='logo-logged-in' src={require('./logo.png')} /></Link>
             <UserDropdown/>
+            <Search />
         </div>
     ) : (
          <div className='upper-nav-bar sign-in-nav-bar'>
