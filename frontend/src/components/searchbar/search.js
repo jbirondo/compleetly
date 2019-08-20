@@ -13,13 +13,23 @@ class Search extends React.Component {
         }
     }
 
-    componentDidMount() {
-        this.setState({
-            query: '',
-            redirect: false,
-            articles: [],
-        })
-    }
+    // componentDidMount() {
+    //     this.setState({
+    //         query: '',
+    //         redirect: false,
+    //         articles: [],
+    //     })
+    // }
+    // componentDidUpdate(prevProps) {
+    //     // debugger;
+    //     if (this.props.location.pathname !== prevProps.location.pathname) {
+    //         this.setState({
+    //             query: '',
+    //             // redirect: false,
+    //             // articles: []
+    //         })
+    //     }
+    // }
 
     getInfo = (e) => {
         e.preventDefault();
@@ -38,6 +48,9 @@ class Search extends React.Component {
             // }}
             // />
             this.props.history.push({pathname: `/searchresults/${this.state.query}`, state: {articles: data.articles}})
+            
+            
+            // this.setState({ query: ''})
             // debugger;
             // this.setState({
             //     results: data.articles,
@@ -46,6 +59,13 @@ class Search extends React.Component {
              // return <Results results={data.articles} />
             // let resultData = data.articles;        
         })
+        // .then(() => {
+        //     this.setState({
+        //         query: '',
+        //         redirect: false,
+        //         articles: [],
+        //     })
+        // })
         // let articles = this.state.articles
         // <Redirect to={{
         //             pathname: '/searchresults',
