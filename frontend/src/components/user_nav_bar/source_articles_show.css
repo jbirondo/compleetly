@@ -71,3 +71,15 @@
    width: 530px;
    margin-right: 20px;
 }
+
+.source-read-later-button {
+   border: none;
+   display: block;
+   position: relative;
+   flex-direction: column;
+}
+
+.add-source-read-later-icon {
+   height: 40px;
+   width: 40px;
+} 

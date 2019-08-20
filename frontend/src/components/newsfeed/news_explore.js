@@ -5,6 +5,7 @@ import { createReadLater } from "../../actions/read_later_actions"
 import axios from 'axios';
 // import { link } from 'fs';
 // import { link } from 'fs';
+import addreadlatericon from "../user_nav_bar/icons/add-read-later-icon.png"
 import './newsfeed.css';
 // const NewsAPI = require('newsapi');
 // const newsapi = new NewsAPI('0fe3c7ee9aa4446d94b11b44f28c4b74');
@@ -42,6 +43,13 @@ class NewsFeed extends React.Component {
         // if (!this.props.user) {
         //     return null
         // }
+        let readLaterArray;
+
+        if (!this.props.user.readLater){
+            readLaterArray = []
+        } else {
+            readLaterArray = this.props.user.readLater.map(ele => {return ele.readLaterURL});
+        }
 
         let articles;
         articles = this.state.articles.map((article, i) => {
@@ -72,6 +80,21 @@ class NewsFeed extends React.Component {
                 description = <p className='news-explore-content'>{article.content}</p>
             }
 
+            let button;
+            button = <button 
+                        onClick={() => this.props.createReadLater({
+                            readLaterURL: article.url,
+                            readLaterName: article.source.name,
+                            readLaterDescription: article.description,
+                            reader: this.props.user.id
+                        })}
+                            className="source-read-later-button">
+                            <img 
+                                src={addreadlatericon}
+                                className="add-source-read-later-icon"
+                                alt=" "
+                                 />
+                        </button>
 
 
 
@@ -87,12 +110,13 @@ class NewsFeed extends React.Component {
                         {description}
                     </div>
                     </a>
-                    <button onClick={() => this.props.createReadLater({
+                    {button}
+                    {/* <button onClick={() => this.props.createReadLater({
                         readLaterURL: article.url,
                         readLaterName: article.source.name,
                         readLaterDescription: article.description,
                         reader: this.props.user.id
-                    })}>Read Later</button>
+                    })}>Read Later</button> */}
                 </li>
             )
         })
