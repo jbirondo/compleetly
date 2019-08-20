@@ -60,6 +60,10 @@
    margin-top: -7px;
 }
 
+.read-later-li-a-tag-div-name {
+   margin-right: 13px;
+}
+
 .news-explore-content{
    color: gray;
    font-size: 14px;
@@ -78,6 +82,10 @@
    position: relative;
    flex-direction: column;
    background: white;
+}
+
+.source-read-later-button:hover {
+   transform: scale(1.06)
 }
 
 .add-source-read-later-icon {
