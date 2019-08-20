@@ -28,23 +28,18 @@ const Articles = ({createFollow, deleteFollow, articles, propFollows, currentUse
 
         if (!!followName.includes(article.name)) {
             return <li key={i} className='articles-li'>
-                <div className='articles-li-left'>
-                    <h2 className='articles-li-title'>{article.name}</h2>
-                    <p className='articles-li-url'>{article.url}</p>
-                </div>
-                <div className='articles-li-right'>
+                <h2 className='articles-li-title'>{article.name}</h2>
+                <p className='articles-li-description'>{article.description}</p>
+                <p className='articles-li-url'>{article.url}</p>
                 <button className='articles-li-btn' onClick={() => deleteFollow({ followId: article.followId, currentUserId: currentUserId })}>Unfollow</button>
-                </div>
             </li>
         } else {
+            debugger;
             return <li key={i} className='articles-li'>
-                {/* <div className='articles-li-left'> */}
-                    <h2 className='articles-li-title'>{article.name}</h2>
-                    <p className='articles-li-url'>{article.url}</p>
-                {/* </div> */}
-                {/* <div className='articles-li-right'> */}
+                <h2 className='articles-li-title'>{article.name}</h2>
+                <p className='articles-li-description'>{article.description}</p>
+                <p className='articles-li-url'>{article.url}</p>
                 <button className='articles-li-btn' onClick={() => createFollow({ source: article.id, followName: article.name, followURL: article.url, currentUserId: currentUserId })}>Follow!</button>
-                {/* </div> */}
             </li>
         }
         
