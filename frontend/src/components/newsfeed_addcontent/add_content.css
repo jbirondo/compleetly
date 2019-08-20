@@ -15,23 +15,40 @@
     margin-top: 50px;
     list-style-type: none;
     padding: 30px;
-    background-color: rgb(212, 212, 212);
-    border: 1px solid black;
+    background-color: rgb(255, 255, 255);
+    border: 1px solid #9e9e9e;
     width: 700px;
     margin-left: -75px;
     border-radius: 3px;
 }
 
 .articles-li-description{
-    width: 85%;
+    width: 80%;
+    color: #6b6b6b;
+    margin-top: 15px;
+}
+
+.articles-li-title{
+    color: black;
+    font-size: 14px;
+}
+
+.articles-li-url{
     margin-bottom: 8px;
+    color: #6b6b6b;
+    margin-top: -10px;
 }
 
-.articles-li-btn{
+.articles-li-btn {
     float: right;
+    margin-top: 22px;
+    margin-right: 5px;
+    color: green;
+    border: green solid 1px;
+    border-radius: 3px;
+    font-weight: 700;
+    padding: 3px 9px;
 }
-
-
 
 .add-content-feed-container {
     border-bottom: 1px solid rgba(0, 0, 0, 0.05);

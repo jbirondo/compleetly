@@ -28,18 +28,22 @@ const Articles = ({createFollow, deleteFollow, articles, propFollows, currentUse
 
         if (!!followName.includes(article.name)) {
             return <li key={i} className='articles-li'>
+                <button className='articles-li-btn' onClick={() => deleteFollow({ followId: article.followId, currentUserId: currentUserId })}>UNFOLLOW</button>
+                <a target='_blank' rel="noopener noreferrer" href={article.url} className='a-tag'>
                 <h2 className='articles-li-title'>{article.name}</h2>
-                <p className='articles-li-description'>{article.description}</p>
                 <p className='articles-li-url'>{article.url}</p>
-                <button className='articles-li-btn' onClick={() => deleteFollow({ followId: article.followId, currentUserId: currentUserId })}>Unfollow</button>
+                <p className='articles-li-description'>{article.description}</p>
+                </a>
             </li>
         } else {
             // debugger;
             return <li key={i} className='articles-li'>
+            <button className='articles-li-btn' onClick={() => createFollow({ source: article.id, followName: article.name, followURL: article.url, currentUserId: currentUserId })}>FOLLOW</button>
+                <a target='_blank' rel="noopener noreferrer" href={article.url} className='a-tag'>
                 <h2 className='articles-li-title'>{article.name}</h2>
-                <p className='articles-li-description'>{article.description}</p>
                 <p className='articles-li-url'>{article.url}</p>
-                <button className='articles-li-btn' onClick={() => createFollow({ source: article.id, followName: article.name, followURL: article.url, currentUserId: currentUserId })}>Follow!</button>
+                <p className='articles-li-description'>{article.description}</p>
+                </a>
             </li>
         }
         
