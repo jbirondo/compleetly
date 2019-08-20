@@ -3,6 +3,10 @@ import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom' 
 import { fetchArticles } from '../../actions/source_articles_actions';
 import { createReadLater } from "../../actions/read_later_actions"
+
+import addreadlatericon from './icons/add-read-later-icon.png'
+
+
 import './source_articles_show.css';
 
 class SourceArticlesShow extends React.Component {
@@ -107,6 +111,7 @@ class SourceArticlesShow extends React.Component {
         //     (<h3>{this.state.articles[0]._self.props.articles[0].name}</h3>)
         // const header = <h3>{this.state.articles[0].source.name}</h3>
         if (articles.length > 0) {
+
             
             
             articles = articles.map((article, i) => {
@@ -136,7 +141,7 @@ class SourceArticlesShow extends React.Component {
                 //     description = <p className='news-explore-content'>{article.content.slice(0, -14)}</p>
                 } else {
                     description = <p className='news-explore-content'>{article.content}</p>
-                }            
+                }       
 
                 return (
                     <li key={i} className='news-explore-li'>
@@ -151,17 +156,30 @@ class SourceArticlesShow extends React.Component {
                                 
                             </div>
                         </a>
-                        <button onClick={() => this.props.createReadLater({
+                        {/* <button
+                            type="submit"
+                            onClick={() => this.props.createReadLater({
                             readLaterURL: article.url,
                             readLaterName: article.source.name,
                             readLaterDescription: article.description,
                             reader: this.props.user.id
-                        })}>Read Later</button>
-                        {/* <button onClick={() => this.props.createReadLater({
-                            readLaterURL: article.url,
-                            readLaterDescription: article.description,
-                            reader: this.props.user.id
-                        })}>Read Later</button> */}
+                        })}
+                        className="source-read-later-button"
+                        ></button> */}
+                        <button 
+                            onClick={() => this.props.createReadLater({
+                                readLaterURL: article.url,
+                                readLaterDescription: article.description,
+                                reader: this.props.user.id,
+                                readLaterName: article.source.name
+                            })}
+                            className="source-read-later-button">
+                            <img 
+                                src={addreadlatericon}
+                                className="add-source-read-later-icon"
+                                alt=" "
+                                 />
+                        </button>
 
                     </li>
                 )
