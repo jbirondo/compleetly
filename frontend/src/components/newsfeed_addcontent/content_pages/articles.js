@@ -34,7 +34,7 @@ const Articles = ({createFollow, deleteFollow, articles, propFollows, currentUse
                 <button className='articles-li-btn' onClick={() => deleteFollow({ followId: article.followId, currentUserId: currentUserId })}>Unfollow</button>
             </li>
         } else {
-            debugger;
+            // debugger;
             return <li key={i} className='articles-li'>
                 <h2 className='articles-li-title'>{article.name}</h2>
                 <p className='articles-li-description'>{article.description}</p>
