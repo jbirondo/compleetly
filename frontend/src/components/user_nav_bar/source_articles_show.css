@@ -22,11 +22,13 @@
 }
 
 .article-title:hover{
-   text-decoration: underline;
+   /* text-decoration: underline; */
+   transform: scale(1.005);
 }
 
 .source-title:hover{
-   text-decoration: underline;
+   /* text-decoration: underline; */
+   transform: scale(1.05);
 }
 
 .news-exlore-li:first-child{
