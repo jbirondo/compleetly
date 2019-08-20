@@ -9,6 +9,7 @@ import entertainment from './entertainment.png';
 import business from './business.png';
 import rss from '../main/icons/rss-feed-icon.png';
 import './add_content.css';
+import Search from '../searchbar/search'
 
 
 // const NewsAPI = require('newsapi');
@@ -61,6 +62,10 @@ class AddContent extends React.Component {
                     </Link>
                     
                 </div>
+                <br />
+                <br />
+                <br />
+                <Search />
             </div>
         )
     }
