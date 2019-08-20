@@ -46,7 +46,7 @@
     color: green;
     border: green solid 1px;
     border-radius: 3px;
-    font-weight: 800;
+    font-weight: 700;
     padding: 3px 9px;
 }
 
@@ -58,8 +58,8 @@
     float: right;
     margin-top: 22px;
     margin-right: 5px;
-    color: green;
-    border: green solid 1px;
+    color: #848484;
+    border: #848484 solid 1px;
     border-radius: 3px;
     font-weight: 600;
     padding: 3px 9px;
@@ -71,7 +71,7 @@
 
 .unfollow-btn:hover:before{
     content: 'UNFOLLOW';
-    font-weight: 800;
+    font-weight: 700;
     padding: 6px 0px;
 }
 
