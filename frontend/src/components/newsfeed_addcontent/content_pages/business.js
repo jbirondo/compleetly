@@ -36,7 +36,6 @@ class BusinessFeed extends React.Component {
         } else {
             articles = <Articles articles={this.state.articles} propFollows={this.props.follows} />
         }
-
         return ( // article componenet that only receives articles as props, only render this component if I have these props. have render component do NO fetching logic
             // only pass articles to render component when I have successfully fetched
             <div>

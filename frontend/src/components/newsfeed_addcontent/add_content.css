@@ -11,6 +11,23 @@
     /* align-content: space-around; */
 }
 
+.articles-li {
+    margin-top: 50px;
+    list-style-type: none;
+    padding: 30px;
+    background-color: rgb(212, 212, 212);
+    border: 1px solid black;
+    width: 700px;
+    margin-left: -75px;
+    border-radius: 3px;
+}
+
+.articles-li-btn{
+    float: right;
+}
+
+
+
 .add-content-feed-container {
     border-bottom: 1px solid rgba(0, 0, 0, 0.05);
     margin-top: 36px;
@@ -23,10 +40,6 @@
     margin-top: 1.5rem;
     font-size: 1.25rem;
     font-weight: 300;
-}
-
-.rss-icon-container {
-
 }
 
 .add-content-rss-sources-item {

@@ -15,6 +15,8 @@ const Articles = ({createFollow, deleteFollow, articles, propFollows, currentUse
             followName.push(follow.followName);
             follows.push(follow)
         });
+    
+    
 
         // Object.values(propFollows).forEach(follow => follows.push(follow));
 
@@ -25,12 +27,24 @@ const Articles = ({createFollow, deleteFollow, articles, propFollows, currentUse
         })
 
         if (!!followName.includes(article.name)) {
-            return <li key={i}>{article.name} {article.url}
-                <button onClick={() => deleteFollow({ followId: article.followId, currentUserId: currentUserId })}>Unfollow</button>
+            return <li key={i} className='articles-li'>
+                <div className='articles-li-left'>
+                    <h2 className='articles-li-title'>{article.name}</h2>
+                    <p className='articles-li-url'>{article.url}</p>
+                </div>
+                <div className='articles-li-right'>
+                <button className='articles-li-btn' onClick={() => deleteFollow({ followId: article.followId, currentUserId: currentUserId })}>Unfollow</button>
+                </div>
             </li>
         } else {
-            return <li key={i}>{article.name} {article.url}
-                <button onClick={() => createFollow({ source: article.id, followName: article.name, followURL: article.url, currentUserId: currentUserId })}>Follow!</button>
+            return <li key={i} className='articles-li'>
+                {/* <div className='articles-li-left'> */}
+                    <h2 className='articles-li-title'>{article.name}</h2>
+                    <p className='articles-li-url'>{article.url}</p>
+                {/* </div> */}
+                {/* <div className='articles-li-right'> */}
+                <button className='articles-li-btn' onClick={() => createFollow({ source: article.id, followName: article.name, followURL: article.url, currentUserId: currentUserId })}>Follow!</button>
+                {/* </div> */}
             </li>
         }
         
