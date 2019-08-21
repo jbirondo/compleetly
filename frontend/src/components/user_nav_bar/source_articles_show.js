@@ -33,7 +33,7 @@ class SourceArticlesShow extends React.Component {
             // `sources=buzzfeed&` +
             const url = 'https://newsapi.org/v2/top-headlines?' +
             `sources=${sourceName}&` +
-            'apiKey=5216ab6784864a48886bd5e450c76cde';
+            'apiKey=e7cee6371dc3402f80bc03f623f8c410';
             const req = new Request(url);
             // debugger;
             this.props.fetchArticles(req).then(res => {
@@ -50,7 +50,7 @@ class SourceArticlesShow extends React.Component {
             // `sources=buzzfeed&` +
             const url = 'https://newsapi.org/v2/top-headlines?' +
                 `sources=${sourceName}&` +
-                'apiKey=5216ab6784864a48886bd5e450c76cde';
+                'apiKey=e7cee6371dc3402f80bc03f623f8c410';
             const req = new Request(url);
             // debugger;
             this.props.fetchArticles(req).then(res =>
