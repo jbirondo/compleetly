@@ -59,7 +59,6 @@ class SourceArticlesShow extends React.Component {
         // this.props.history.push('/newsfeed')
     }
     
-    
     render() {
         // const { source } = this.props.location.state
         // if (!source) {

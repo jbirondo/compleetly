@@ -1,75 +1,57 @@
 # Compleetly
 
-Interest based news feed
-Shows the complete article 
+Interest based news feed - live updating with top trending articles
+Users can select articles to read later and they can search for articles as well as have follows
 
-### Background and Overview
+https://compleetly.herokuapp.com/#/
 
-Compleetly is a theme based news site where you can pick pick different news outlets depending on what genres you are interested in
+![Home Page](./pic1.png)
 
- * Build a database to store user and feed data
- * Construct a Web application with customizable newsfeed interface
- * Utilizes free news api (newsapi.org) to populate articles 
- * Uses bcrypts for backend user auth and stores a session token inside cookies for frontend user auth
-* Does not store plain-text password
+# Features
+    * New account creation, login, and guest login
+    * Ability to follow news source
+    * Ability to browse a discover popular sources and articles
+    * Can select articles to read later
+    * Today - top trending articles from today can be browsed and marked to read later
+    * Search - articles can be searched and you can select articles to read later
 
-### Functionality and MVP
+# Project Design
 
- - [ ]  User authorization: sign up and log in
- - [ ]  Splash page with sign up / login modals. Splash page will also have a "Get started for free" button
- - [ ]  Has different feeds and boards from specific news outlets 
- - [ ]  News api (newsapi.org) will allow users to retrieve recent articles
- - [ ]  News feed nav bar allows user to organize by category
- - [ ]  News feed nav bar has/adds news outlets to our custom feed
- - [ ]  Production README
+Compleetly was designed and built in 1 week and 2 days. 
 
- Bonus Features
+A proposal was drafter with a schema, sample state, and backend/frontend routes to guide/outline the process
 
- - [ ]  Notifications on log in/ Keyword alerts
- - [ ]  Read-later functionalty
- - [ ]  Search bar
+# Implementation
 
+Passwords are secured using BCrypt to generate a passord_digest. A user session_token is stored in the database to keep track of each user session. When a user successfully logs in, a session token is generated, stored in the database, and stored on the client-side as a browser cookie.
 
+### Follows/Add Content
 
-### Technologies and Technical Challenges
+![Home Page](./pic2.png)
 
-Backend: MongoDB/Express
+Users has the ability follow news sources that are live updated with the top trending news. A user(once signed in) can follow sources and then later choose articles from just that source the users follows will appear in their user nav bar once logged in to the left of the screen.
 
-Technical challenges:
+### Read Later
 
-* Storing a user's feed preferences
-* utilizing API to generate live news feed
-* generating content based off live news feed
+![Home Page](./pic3.png)
 
-Frontend: React/Node.js
+Users can add articles to their read later section. A user can add articles from a search, from Today's top trending articles or from any of the articles in one of the followed sources categories
 
-Technical challenges:
+### Today Page
 
-* Reading data from MongoDB database and organizing for display
-* Proper display of API data
-* Customizable nav bar based on followed feeds/filters
+![Home Page](./pic4.png)
 
+Today page is a list of all of the top trending news articles right now. The user can select the articles to view the entire articles in a new tab on their browser, or the user can select read later to put it in their read later section to view the article/articles at a later dater 
 
-### Group Members and Work Breakdown
+### Search
 
-**DAY 1**
+![Home Page](./pic5.png)
 
-* Complete README
-* Create MongoDB
-* User Auth
-* Investigate news feed api
-* Sign Up/Login Modal
+A user can search for the articles that they want to read. They can select articles from the search results to read later, or just open them up in a new tab to view later
 
-**DAY 2**
+### Coming Features
 
-* Implement news feed api
-* Upper nav bar 
-* Left nav bar/customizable news feed
-* Keyword Alerts
+There were a couple of features we wanted to implement that we didn't get the chance to, they are as follows.
 
-**DAY 3**
-
-* 
-
-**DAY 4**
-**DAY 5**
+    * Favorites
+    * ReadLater/Remove from all pages and colored button
