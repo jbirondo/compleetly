@@ -19,6 +19,7 @@ router.get('/current', passport.authenticate('jwt', {session: false}), (req, res
 });
 
 router.get('/:userId', (req, res) => {
+    // debugger;
     // const user = req.params.userId;
     User.findOne({_id: req.params.userId})
         .then(async user => {

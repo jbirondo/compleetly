@@ -6,7 +6,7 @@ class Results extends React.Component {
         super(props);
     }
 
-    render () {
+    render() {
         // debugger;
         // if (!this.props.location.state) {
         //     return null;
