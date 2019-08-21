@@ -91,7 +91,13 @@ class Results extends React.Component {
                         </button>
                 </li>
         })
-        return <ul>{options}</ul>
+        return (
+            <div className="today-container">
+                <h1 className='today-header'>Search</h1>
+                <h3 className='desc-header'>Top results matching your search</h3>
+                <ul>{options}</ul>
+            </div>
+        )
     }
 }
 
