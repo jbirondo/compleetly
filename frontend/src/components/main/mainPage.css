@@ -97,10 +97,11 @@
     margin: 0px;
     font-size: 12px;
     font-family: sans-serif;
+    box-shadow: 0 3px 20px rgba(0, 0, 0, 0.2);
 }
 
 .main-page-landing-img-container {
-    box-shadow: 0 3px 20px rgba(0, 0, 0, 0.2);
+    /* box-shadow: 0 3px 20px rgba(0, 0, 0, 0.2); */
     display: block;
     height: auto;
     margin-top: 3rem;
