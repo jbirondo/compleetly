@@ -27,25 +27,12 @@
 .link-nav{
     text-decoration: none;
     color: black;
-    /* padding: 5px 0px 5px 12px; */
 }
 
 .li-dropdown:hover{
     background-color: rgb(211, 211, 211);
 }
 
-/* .user-dropdown-menu {
-    display: block;
-    list-style-type: none;
-    border: 1px solid rgb(168, 168, 168);
-    position: relative;
-    right: 31px;
-    padding: 5px 120px 15px 5px;
-    background-color: white;
-    border-radius: 3px;
-    right: 200px;
-    top: 15px;
-} */
 
 .user-dropdown-menu {
     display: block;
@@ -53,21 +40,15 @@
     border: 1px solid rgba(0, 0, 0, 0.15);
     position: relative;
     box-shadow: 0 0 0 0 transparent inset;
-    /* right: 31px; */
-    /* padding: 5px 120px 15px 5px; */
     background-color: white;
     border-radius: 3px;
     right: 39%;
     top: 29%;
     margin: 5px 120px 15px 5px;
     width: 272px;
-    /* left: 10px; */
+    box-shadow: 4px 4px 9px 0px rgba(3, 3, 3, 0.3);
     margin-left: -115px;
 }
-
-
-
-
 
 .nav-bar-welcome-message{
    padding: 10px 13px;
@@ -77,6 +58,7 @@
 
 .dropdown-btn{
     outline: none;
+    box-shadow: none !important;
 }
 
 .logout-button {
@@ -87,13 +69,6 @@
      font: inherit;
      cursor: pointer;
 }
-
-
-
-
-
-
-
 
 .hide {
     visibility: hidden;
