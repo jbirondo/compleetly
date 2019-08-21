@@ -22,12 +22,12 @@ class Search extends React.Component {
     //     })
     // }
     // componentDidUpdate(prevProps) {
-    //     // debugger;
+    //     debugger;
     //     if (this.props.location.pathname !== prevProps.location.pathname) {
     //         this.setState({
     //             query: '',
-    //             // redirect: false,
-    //             // articles: []
+    //             redirect: false,
+    //             articles: []
     //         })
     //     }
     // }
@@ -51,15 +51,15 @@ class Search extends React.Component {
             this.props.history.push({pathname: `/searchresults/${this.state.query}`, state: {articles: data.articles}})
             
             
-            // this.setState({ query: ''})
             // debugger;
             // this.setState({
-            //     results: data.articles,
-            //     redirect: true,
-            // })
-             // return <Results results={data.articles} />
-            // let resultData = data.articles;        
+                //     results: data.articles,
+                //     redirect: true,
+                // })
+                // return <Results results={data.articles} />
+                // let resultData = data.articles;        
         })
+        // this.setState({ query: ''})
         // .then(() => {
         //     this.setState({
         //         query: '',
@@ -85,11 +85,14 @@ class Search extends React.Component {
     //     this.setState({ articles: this.props.articles })
     // );
 
-    update = () => {
+    update = (e) => {
         this.setState({
             query: this.search.value,
             articles: []
         }) 
+        // if (e.key === 'Enter') {
+        //     this.setState({ query: '' })
+        // }
         // () => {
         //     if (this.state.query && this.state.query.length > 1) {
         //         if (this.state.query.length % 2 === 0) {
@@ -99,6 +102,13 @@ class Search extends React.Component {
         //     }
         // })
     }
+
+    // handleKeyPress = (e) => {
+    //     e.preventDefault();
+    //     if (e.key === 'Enter') {
+    //         this.setState({query: ''})
+    //     }
+    // }
 
     // handleSubmit = (e) => {
 
@@ -118,6 +128,7 @@ class Search extends React.Component {
                     placeholder='Search for...'
                     ref={input => this.search = input}
                     onChange={this.update}
+                    onKeyPress={this.handleKeyPress}
                 />
             </form>
         )
