@@ -9,11 +9,11 @@ https://compleetly.herokuapp.com/#/
 
 # Features
     * New account creation, login, and guest login
-    * Ability to upload photos
-    * Ability to browse a discover page with popular photos
-    * Can look your user profile and other profiles, which hold photos you took/uploaded
-    * Likes - there is a photo show page that allows you to like photos(if logged in) and keeps track of likes
-    * Comments - logged in users can comment on photos
+    * Ability to follow news source
+    * Ability to browse a discover popular sources and articles
+    * Can select articles to read later
+    * Today - top trending articles from today can be browsed and marked to read later
+    * Search - articles can be searched and you can select articles to read later
 
 # Project Design
 
