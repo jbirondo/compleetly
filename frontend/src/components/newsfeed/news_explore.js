@@ -25,7 +25,7 @@ class NewsFeed extends React.Component {
     getArticles() {
         const url = 'https://newsapi.org/v2/top-headlines?' +
         'country=us&' +
-        'apiKey=0fe3c7ee9aa4446d94b11b44f28c4b74';
+        'apiKey=5216ab6784864a48886bd5e450c76cde';
         const req = new Request(url);
         axios(req).then(res => {
             this.setState({articles: res.data.articles})

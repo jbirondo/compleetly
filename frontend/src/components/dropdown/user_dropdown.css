@@ -16,7 +16,7 @@
 
 .li-dropdown:first-child {
     border-bottom: 1px #bbbbbb solid;
-    padding: 1px 0px 1px 12px;
+    padding: 1px 0px 1.6% 12px;
 }
 
 .li-dropdown {
@@ -50,16 +50,17 @@
 .user-dropdown-menu {
     display: block;
     list-style-type: none;
-    border: 1px solid rgb(168, 168, 168);
+    border: 1px solid rgba(0, 0, 0, 0.15);
     position: relative;
+    box-shadow: 0 0 0 0 transparent inset;
     /* right: 31px; */
     /* padding: 5px 120px 15px 5px; */
     background-color: white;
     border-radius: 3px;
-    right: 90px;
-    top: 7px;
+    right: 39%;
+    top: 29%;
     margin: 5px 120px 15px 5px;
-    width: 255px;
+    width: 272px;
     /* left: 10px; */
     margin-left: -115px;
 }

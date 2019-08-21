@@ -37,7 +37,7 @@ class Search extends React.Component {
         const url = 'https://newsapi.org/v2/everything?' +
             'language=en&' +
             `q=${this.state.query}&` +
-            'apiKey=0fe3c7ee9aa4446d94b11b44f28c4b74';
+            'apiKey=5216ab6784864a48886bd5e450c76cde';
         const req = new Request(url);
         // debugger;
         axios(req).then(({data}) => {
@@ -118,9 +118,7 @@ class Search extends React.Component {
                     placeholder='Search for...'
                     ref={input => this.search = input}
                     onChange={this.update}
-                    // onKeyPress={(e) => {(e.key === 'Enter' ? this.getInfo() : this.update())}}
                 />
-                {/* <Results results={this.state.results} /> */}
             </form>
         )
     }

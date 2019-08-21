@@ -164,7 +164,7 @@ class MainPage extends React.Component {
                       Read
                     </div>
                     <div className="grid-item-description-2">
-                      Feedly offers a clean, minimalist reading experience optimized for productivity.                    </div>
+                      Compleetly offers a clean, minimalist reading experience optimized for productivity.                    </div>
                   </div>
                 </div>
                 <div className="main-page-section-feature-grid-item">
@@ -174,7 +174,7 @@ class MainPage extends React.Component {
                       Search
                     </div>
                     <div className="grid-item-description-3">
-                      Delve into the specific articles that interest you within your Feedly or within a specific publication.
+                      Delve into the specific articles that interest you within your Compleetly or within a specific publication.
                     </div>
                   </div>
                 </div>
@@ -185,7 +185,7 @@ class MainPage extends React.Component {
                       Read Later
                     </div>
                     <div className="grid-item-description-4">
-                      Save articles and easily get back to them. Tag with Feedly or use favorite web services like Evernote, Pocket, and Instapaper.
+                      Save articles and easily get back to them. Tag with Compleetly or use favorite web services like Evernote, Pocket, and Instapaper.
                     </div>
                   </div>
                 </div>
@@ -305,7 +305,7 @@ class MainPage extends React.Component {
                 Get started for free
                 </button>
               <div className="main-page-footer-top-link">
-                Discover Feedly's top blogs and websites
+                Discover Compleetly's top blogs and websites
               </div>
             </div>
           </div>

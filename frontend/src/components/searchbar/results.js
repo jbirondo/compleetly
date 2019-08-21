@@ -1,5 +1,9 @@
 import React from 'react';
 import { withRouter } from 'react-router';
+import { connect } from 'react-redux';
+import { createReadLater } from "../../actions/read_later_actions"
+import addreadlatericon from '../user_nav_bar/icons/add-read-later-icon.png'
+
 
 class Results extends React.Component {
     constructor(props) {
@@ -71,10 +75,35 @@ class Results extends React.Component {
                         {description}
                     </div>
                 </a>
+                        <button 
+                            onClick={() => this.props.createReadLater({
+                                readLaterURL: res.url,
+                                readLaterDescription: res.description,
+                                reader: this.props.user.id,
+                                readLaterName: res.source.name
+                            })}
+                            className="source-read-later-button">
+                            <img 
+                                src={addreadlatericon}
+                                className="add-source-read-later-icon"
+                                alt=" "
+                                 />
+                        </button>
                 </li>
         })
         return <ul>{options}</ul>
     }
 }
 
-export default withRouter(Results);
+const mapStateToProps = (state, ownProps) => {
+
+    return {
+        user: state.session.user
+    }
+};
+
+const mapDispatchToProps = dispatch => ({
+    createReadLater: readLater => dispatch(createReadLater(readLater)),
+});
+
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Results));
