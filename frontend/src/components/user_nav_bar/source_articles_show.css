@@ -82,6 +82,7 @@
    position: relative;
    flex-direction: column;
    background: white;
+   height: fit-content;
 }
 
 .source-read-later-button:hover {
