@@ -29,7 +29,7 @@ class NewsFeed extends React.Component {
         const req = new Request(url);
         axios(req).then(res => {
             this.setState({articles: res.data.articles})
-            console.log(res)
+            // console.log(res)
         })
     }
     

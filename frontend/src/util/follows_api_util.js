@@ -32,4 +32,4 @@ export const deleteFollow = (followData) => {
 //     return axios.post('/api/users/register', userData)
 // }
 
-window.axios = axios;
+// window.axios = axios;

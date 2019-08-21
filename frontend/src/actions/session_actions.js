@@ -65,4 +65,4 @@ export const logout = () => dispatch => {
     dispatch(logoutUser());
 };
 
-window.logout = logout;
+// window.logout = logout;
