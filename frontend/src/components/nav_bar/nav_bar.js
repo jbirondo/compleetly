@@ -10,8 +10,8 @@ export default ({ isAuthenticated, currentUser, logout, openModal }) => {
            {/* <h1 className='nav-bar-current-user'>{currentUser.firstName}</h1>
            <button onClick={() => logout()}>Log Out</button> */}
             <Link to='/newsfeed' className='logo-logged-in'><img alt='' className='logo-logged-in' src={require('./logo.png')} /></Link>
-            <UserDropdown/>
             <Search />
+            <UserDropdown/>
         </div>
     ) : (
          <div className='upper-nav-bar sign-in-nav-bar'>

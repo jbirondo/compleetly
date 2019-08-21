@@ -2,6 +2,7 @@
    display: flex;
    justify-content: flex-end;
    height: 50px;
+   align-content: center;
    border-bottom: rgb(185, 185, 185) solid 1px;
    z-index: -1;
    
@@ -30,14 +31,14 @@
 .logo-logged-out{
    width: 40px;
    height: 40px;
-   margin-right: 67%;
+   margin-right: 58%;
    margin-top: 6px;
 }
 
 .logo-logged-in{
    width: 40px;
    height: 40px;
-   margin-right: 66%;
+   margin-right: 56%;
    margin-top: 3px;
 }
 

@@ -2,6 +2,7 @@ import React from 'react';
 import { withRouter, Redirect } from 'react-router';
 import axios from 'axios';
 import Results from './results';
+import './search.css'
 
 class Search extends React.Component {
     constructor(props) {
@@ -110,8 +111,10 @@ class Search extends React.Component {
         
         // debugger;
         return (
-            <form onSubmit={this.getInfo}>
+            <form 
+            onSubmit={this.getInfo}>
                 <input
+                    className="upper-nav-search-bar"
                     placeholder='Search for...'
                     ref={input => this.search = input}
                     onChange={this.update}

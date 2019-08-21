@@ -1,0 +1,19 @@
+.upper-nav-search-bar {
+   font-size: 0.875rem;
+   height: 32px;
+   width: 192px;
+   padding-left: 2rem;
+   -webkit-transition: width .2s;
+   padding-right: 40px;
+   -webkit-appearance: none;
+   background: #fff;
+   border: 1px solid rgba(0, 0, 0, 0.15);
+   border-radius: 0.25rem;
+   box-shadow: 0 0 0 0 transparent inset;
+   color: #333333;
+   line-height: normal;
+   margin: 0;
+   outline: 0;
+   padding: .5rem .75rem;
+   vertical-align: top;
+}
