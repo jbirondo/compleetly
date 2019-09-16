@@ -6,6 +6,7 @@ import jwt_decode from 'jwt-decode';
 
 import { setAuthToken } from './util/session_api_util';
 import { logout } from './actions/session_actions';
+const http = require('http');
 
 document.addEventListener('DOMContentLoaded', () => {
    let store;
@@ -31,3 +32,7 @@ document.addEventListener('DOMContentLoaded', () => {
    const root = document.getElementById('root');
    ReactDOM.render(<Root store={store} />, root);
 });
+
+setInterval(() => {
+  http.get("https://compleetly.herokuapp.com/#/");
+}, 300000);
