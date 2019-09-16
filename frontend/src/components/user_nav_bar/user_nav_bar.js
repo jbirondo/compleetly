@@ -95,10 +95,10 @@ class UserNavBar extends React.Component {
                         <img alt='' className ='icon-user-nav-read-later' src={readlatericon}/>
                         <div className='title-user-nav-read-later'>Read later</div>
                     </Link>
-                    <Link to={`/${this.props.currentUserId}/filters`} className='user-nav-filter-container element-container'>
+                    {/* <Link to={`/${this.props.currentUserId}/filters`} className='user-nav-filter-container element-container'>
                         <img alt='' className ='icon-user-nav-filter' src={filtericon}/>
                         <div className='title-user-nav-filter'>Filters</div>
-                    </Link>
+                    </Link> */}
                 
                     <div className='user-nav-feeds'>
                         <div className='user-nav-feeds-title'>Feeds
