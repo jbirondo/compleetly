@@ -136,6 +136,13 @@
     border-top: 1px solid rgba(0, 0, 0, 0.07);
 }
 
+.news-api-shoutout{
+  font-size: 10px;
+  font-weight: 600;
+  /* text-decoration: none; */
+  color: #414141;
+}
+
 img[class^="icon-user"] {
     height: 20px;
     width: 20px;
