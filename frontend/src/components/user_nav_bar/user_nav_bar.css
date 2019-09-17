@@ -141,6 +141,7 @@
   font-weight: 600;
   /* text-decoration: none; */
   color: #414141;
+  margin-top: 3px;
 }
 
 img[class^="icon-user"] {
