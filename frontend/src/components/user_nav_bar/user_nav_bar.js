@@ -95,6 +95,7 @@ class UserNavBar extends React.Component {
                         <img alt='' className ='icon-user-nav-read-later' src={readlatericon}/>
                         <div className='title-user-nav-read-later'>Read later</div>
                     </Link>
+                    <div className="news-api-shoutout">Live News powered by <a className="news-api-shoutout" href="https://newsapi.org/"> newsapi.org</a></div>
                     {/* <Link to={`/${this.props.currentUserId}/filters`} className='user-nav-filter-container element-container'>
                         <img alt='' className ='icon-user-nav-filter' src={filtericon}/>
                         <div className='title-user-nav-filter'>Filters</div>

@@ -29,7 +29,7 @@ class Results extends React.Component {
 
         let description;
         if (res.description === null) {
-            description = <p className='news-explore-content'>{res.content}</p>
+            description = <p className='news-explore-content'>{res.content.slice(0, -13)}</p>
         } else if (res.description.length > 100) {
             description = <p className='news-explore-content'>{res.description}</p>
         } else if (res.content === null) {
@@ -37,7 +37,7 @@ class Results extends React.Component {
         } else if (res.content.includes('+')) {
             description = <p className='news-explore-content'>{res.content.slice(0, -13)}</p>
         } else {
-            description = <p className='news-explore-content'>{res.content}</p>
+            description = <p className='news-explore-content'>{res.content.slice(0, -13)}</p>
         }
 
         let compName;
