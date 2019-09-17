@@ -33,6 +33,3 @@ document.addEventListener('DOMContentLoaded', () => {
    ReactDOM.render(<Root store={store} />, root);
 });
 
-setInterval(() => {
-  http.get("https://compleetly.herokuapp.com/#/");
-}, 300000);

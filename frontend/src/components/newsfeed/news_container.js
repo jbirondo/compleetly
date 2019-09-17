@@ -1,6 +1,7 @@
 import { connect } from 'react-redux';
 import News from './news_explore';
 import { createReadLater } from "../../../actions/read_later_actions"
+import { deleteReadLater } from "../../actions/read_later_actions";
 const NewsAPI = require('newsapi');
 const newsapi = new NewsAPI('0fe3c7ee9aa4446d94b11b44f28c4b74')
 
@@ -12,6 +13,7 @@ const msp = state => {
 
 const mdp = dispatch => ({
     createReadLater: user => dispatch(createReadLater(user)),
+    deleteReadLater: readLater => dispatch(deleteReadLater(readLater))
 })
 
 export default connect(msp, mdp)(News)
