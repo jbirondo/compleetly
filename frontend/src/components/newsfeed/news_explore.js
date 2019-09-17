@@ -80,7 +80,7 @@ class NewsFeed extends React.Component {
 
             let description;
             if (article.description === null) {
-                description = <p className='news-explore-content'>{article.content}</p>
+                description = <p className='news-explore-content'>{article.content.slice(0, -13)}</p>
             } else if (article.description.length > 100) {
                 description = <p className='news-explore-content'>{article.description}</p>
             } else if (article.content === null) {
@@ -88,7 +88,7 @@ class NewsFeed extends React.Component {
             } else if (article.content.includes('+')) {
                 description = <p className='news-explore-content'>{article.content.slice(0, -13)}</p>
             } else {
-                description = <p className='news-explore-content'>{article.content}</p>
+                description = <p className='news-explore-content'>{article.content.slice(0, -13)}</p>
             }
 
             let button;
