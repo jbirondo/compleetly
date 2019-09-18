@@ -1,7 +1,7 @@
 import React from 'react';
-import { withRouter, Redirect } from 'react-router';
+import { withRouter } from 'react-router';
 import axios from 'axios';
-import Results from './results';
+// import Results from './results';
 import './search.css'
 
 class Search extends React.Component {

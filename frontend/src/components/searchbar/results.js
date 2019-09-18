@@ -8,6 +8,10 @@ import addreadlatericon from '../user_nav_bar/icons/add-read-later-icon.png'
 class Results extends React.Component {
     constructor(props) {
         super(props);
+
+        this.state = {
+          warningDestroyer: null
+        }
     }
     
     render() {

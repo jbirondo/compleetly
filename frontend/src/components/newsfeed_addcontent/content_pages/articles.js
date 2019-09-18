@@ -13,7 +13,7 @@ const Articles = ({createFollow, deleteFollow, articles, propFollows, currentUse
         // debugger;
 
         if (article.name === "Fox Sports") {
-          return;
+          return null;
         }
 
         Object.values(propFollows).forEach(follow => {
