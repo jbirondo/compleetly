@@ -32,16 +32,16 @@ class Results extends React.Component {
 
 
         let description;
-        if (res.description === null) {
+        if (res.description === null && res.content) {
             description = <p className='news-explore-content'>{res.content.slice(0, -13)}</p>
         } else if (res.description.length > 100) {
             description = <p className='news-explore-content'>{res.description}</p>
-        } else if (res.content === null) {
+        } else if (res.description && res.content === null) {
             description = <p className='news-explore-content'>{res.description}</p>
-        } else if (res.content.includes('+')) {
+        } else if (res.content && res.content.includes('+')) {
             description = <p className='news-explore-content'>{res.content.slice(0, -13)}</p>
         } else {
-            description = <p className='news-explore-content'>{res.content.slice(0, -13)}</p>
+            description = <p className='news-explore-content'>No description.</p>
         }
 
         let compName;

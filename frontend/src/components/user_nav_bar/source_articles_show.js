@@ -129,9 +129,9 @@ class SourceArticlesShow extends React.Component {
                 }
     
                 let description;
-                if (article.description === null) {
+                if (article.description === null && article.content) {
                     description = <p className='news-explore-content'>{article.content.slice(0, -13)}</p>
-                } else if (article.description.length > 100) {
+                } else if (article.description) {
                     description = <p className='news-explore-content'>{article.description}</p>
                 } else if (article.content === null) {
                     description = <p className='news-explore-content'>{article.description}</p>
@@ -139,7 +139,7 @@ class SourceArticlesShow extends React.Component {
                 // } else if (article.content.includes('+')) {
                 //     description = <p className='news-explore-content'>{article.content.slice(0, -14)}</p>
                 } else {
-                    description = <p className='news-explore-content'>{article.content.slice(0, -13)}</p>
+                    description = <p className='news-explore-content'>No description.</p>
                 }       
 
                 return (
