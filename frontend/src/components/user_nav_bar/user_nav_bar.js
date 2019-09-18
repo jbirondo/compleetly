@@ -6,7 +6,7 @@ import {deleteFollow} from '../../actions/follow_actions';
 
 import todayicon from './icons/logo-icon.png'
 import readlatericon from './icons/read-later-icon.png'
-import filtericon from './icons/filter-icon.png'
+// import filtericon from './icons/filter-icon.png'
 import plusicon from './icons/plus-icon.jpg'
 
 import './user_nav_bar.css'

@@ -43,13 +43,13 @@ class NewsFeed extends React.Component {
         // if (!this.props.user) {
         //     return null
         // }
-        let readLaterArray;
+        // let readLaterArray;
 
-        if (!this.props.user.readLater){
-            readLaterArray = []
-        } else {
-            readLaterArray = this.props.user.readLater.map(ele => {return ele.readLaterURL});
-        }
+        // if (!this.props.user.readLater){
+        //     readLaterArray = []
+        // } else {
+        //     readLaterArray = this.props.user.readLater.map(ele => {return ele.readLaterURL});
+        // }
 
         let articles;
         articles = this.state.articles.map((article, i) => {
