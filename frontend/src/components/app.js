@@ -29,7 +29,7 @@ const App = () => (
             <AuthRoute path="/" component={MainPage} />
             <ProtectedRoute path="/" component={UserNavBar} />
          </div>
-         <div>
+         <div className="main-content-container">
             <Switch>
                <ProtectedRoute exact path="/:user_id/read_later" component={ReadLater} />
                <ProtectedRoute exact path="/newsfeed" component={NewsFeed} />
