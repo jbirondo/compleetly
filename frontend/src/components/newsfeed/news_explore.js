@@ -79,16 +79,16 @@ class NewsFeed extends React.Component {
             }
 
             let description;
-            if (article.description === null) {
+            if (article.description === null && article.content !== null) {
                 description = <p className='news-explore-content'>{article.content.slice(0, -13)}</p>
-            } else if (article.description.length > 100) {
+            } else if (article.description && article.description.length > 100) {
                 description = <p className='news-explore-content'>{article.description}</p>
-            } else if (article.content === null) {
+            } else if (article.content === null && article.description !== null) {
                 description = <p className='news-explore-content'>{article.description}</p>
-            } else if (article.content.includes('+')) {
+            } else if (article.content && article.content.includes('+')) {
                 description = <p className='news-explore-content'>{article.content.slice(0, -13)}</p>
             } else {
-                description = <p className='news-explore-content'>{article.content.slice(0, -13)}</p>
+                description = <p className='news-explore-content'>No description.</p>
             }
 
             let button;
