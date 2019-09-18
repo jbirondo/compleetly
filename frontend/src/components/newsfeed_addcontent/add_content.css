@@ -87,7 +87,6 @@
 .add-content-feed-container {
     border-bottom: 1px solid rgba(0, 0, 0, 0.05);
     margin-top: 36px;
-    margin-left: 250px;
     margin-right: 25%;
 }
 
@@ -98,7 +97,6 @@
     margin-top: 1.5rem;
     font-size: 1.25rem;
     font-weight: 300;
-    margin-left: 250px;
 }
 
 .add-content-rss-sources-item {
@@ -241,7 +239,6 @@
     column-gap: 0rem;
     row-gap: 1rem;
     /* justify-content: center; */
-    margin-left: 250px;
 }
 
 
@@ -330,4 +327,8 @@
 .business-content-categories-container-link:hover {
     transform: scale(1.02);
     opacity: 0.8;
+}
+
+.main-content-container {
+    margin-left: 250px;
 }
