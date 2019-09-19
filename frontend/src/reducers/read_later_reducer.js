@@ -18,6 +18,7 @@ export default function (state = {}, action) {
             }
             return merge({}, newState, tempState)
         case DELETE_READ_LATER:
+            // debugger;
             newState = merge({}, state);
             delete newState[action.readLater.data._id];
             return newState;

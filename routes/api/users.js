@@ -33,7 +33,7 @@ router.get('/:userId', (req, res) => {
                         email: user.email,
                         followedSources: user.followedSources,
                         sourcesArray: follows,
-                        readArray: readLater
+                        readLater: readLater
                     }
                     res.json(payload)
                 })
