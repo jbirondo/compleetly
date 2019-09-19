@@ -57,11 +57,11 @@ class NewsFeed extends React.Component {
         }
     
         // debugger;
-        let readLaterButton;
         let articles;
         // console.log(readLaterArray)
         articles = this.state.articles.map((article, i) => {
             // debugger;
+            let readLaterButton;
             readLaterArray.forEach(readLater => {
                 // debugger;
                 readLaterButton =
