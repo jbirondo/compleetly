@@ -71,7 +71,7 @@ class LoginForm extends React.Component {
     render() {
         return (
           <div>
-                <form className="sessionForm" onSubmit={this.handleSubmit}>
+                <form className="sessionForm logform" onSubmit={this.handleSubmit}>
                 <div className='sessionForm-div'>
                 <br/>
                 <h2 className='sessionForm-greeting'>Log in to compleetly</h2>
@@ -81,18 +81,18 @@ class LoginForm extends React.Component {
                     value={this.state.email}
                     onChange={this.update("email")}
                     placeholder="Email"
-                    className="input-btns input-top log-in-btns"
+                    className="input-btns input-top log"
                 />
                 <input
                     type="password"
                     value={this.state.password}
                     onChange={this.update("password")}
                     placeholder="Password"
-                    className="input-btns input-bottom log-in-btns"
+                    className="input-btns input-bottom log"
                 />
-                <input className='sessionForm-submit' type="submit" value="Login" />
+                <input className='sessionForm-submit logbut' type="submit" value="Login" />
                 <br/>
-                <button onClick={this.demoLogin} className='sessionForm-submit' >Demo Login</button>
+                <button onClick={this.demoLogin} className='sessionForm-submit logbut' >Demo Login</button>
                 {this.renderErrors()}
               </div>
             </form>
