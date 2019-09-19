@@ -4,9 +4,10 @@
    background-color: #fafafa;
    padding: 30px;
    margin: 0 auto;
-   width: 75%;
+   width: 133%;
    position: sticky;
-   margin-top: -240px;
+   height: 600px;
+   /* margin-top: -240px; */
 }
 
 .sessionForm-div{
@@ -20,6 +21,8 @@
    border: 1px solid gray;
    padding: 4px;
    background-color: #eaeaea;
+   width: 72%;
+   height: 30px;
 }
 
 .input-top{
@@ -39,18 +42,13 @@
    color: white;
    padding: 4px 14px;
    margin-top: 9px;
+   width: 76%;
+   height: 40px;
 }
 
 .sessionForm-greeting{
    margin: 0px;
    font-weight: 600;
-}
-
-
-.log-in-btns {
-    display: block;
-    /* margin: 0px 42px; */
-    margin-left: 20%;
 }
 
 .errors-li {
@@ -64,4 +62,17 @@
 
 .errors-li:first-child{
    margin-top: 7px;
+}
+
+.log {
+   width: 66%
+}
+
+.logbut {
+   width: 69%;
+   text-transform: uppercase;
+}
+
+.logform {
+   width: 109%
 }

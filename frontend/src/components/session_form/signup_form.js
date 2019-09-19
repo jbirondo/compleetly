@@ -109,7 +109,7 @@ class SignupForm extends React.Component {
                   className="input-btns input-bottom"
               />
               <br />
-              <input className='sessionForm-submit' type="submit" value="Submit" />
+              <input className='sessionForm-submit' type="submit" value="CREATE MY ACCOUNT" />
               {this.renderErrors()}
             </div>
           </form>
