@@ -103,6 +103,9 @@ router.delete('/:userId/follow', (req, res) => {
 //splice
 
 router.delete('/:userId/read_later', (req, res) => {
+    // console.log(req);
+    // console.log(req.body);
+    debugger;
     ReadLater.findOneAndDelete({ _id: req.body.readLaterId })
         .then(readLater => {
             readLater.delete()

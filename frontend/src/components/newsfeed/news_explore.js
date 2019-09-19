@@ -59,7 +59,7 @@ class NewsFeed extends React.Component {
         // debugger;
         let readLaterButton;
         let articles;
-        console.log(readLaterArray)
+        // console.log(readLaterArray)
         articles = this.state.articles.map((article, i) => {
             // debugger;
             readLaterArray.forEach(readLater => {
@@ -77,28 +77,33 @@ class NewsFeed extends React.Component {
                       }
                       className="source-read-later-button"
                     >
-                      <img
+                      <i className="far fa-bookmark add-source-read-later-icon"></i>
+                      {/* <img
                         src={addreadlatericon}
                         className="add-source-read-later-icon"
                         alt=" "
-                      />
+                      /> */}
                     </button>
                   ) : (
                     <button
                       onClick={() =>
-                        this.props.deleteReadLater(readLater)
+                        this.props.deleteReadLater({
+                          reader: this.props.user.id,
+                          readLaterId: readLater._id
+                        })
                       }
-                    //   className="delete-source-read-later-button"
-                      className="source-read-later-button"
+                      className="delete-source-read-later-button"
+                      //   className="source-read-later-button"
                     >
-                      <img
+                      <i className="fas fa-bookmark delete-source-read-later-icon"></i>
+                      {/* <img
                         src={addreadlatericon}
-                        // className="delete-source-read-later-icon"
-                        className="add-source-read-later-icon"
+                        className="delete-source-read-later-icon"
+                        // className="add-source-read-later-icon"
                         alt=" "
-                      />
+                      /> */}
                     </button>
-                );
+                  );
                 // console.log(button)
                 // debugger;
             })
