@@ -40,7 +40,7 @@
 }
 
 .main-page-header-container {
-    width: 80%;
+    width: 100%;
     float: left;
     position: relative;
     min-height: 1px;
@@ -57,6 +57,8 @@
     margin: 0px;
     font-size: 12px;
     font-family: sans-serif;
+    padding-left: 19%;
+    padding-bottom: 20%;
 }
 
 .main-page-sign-up-button {
@@ -98,6 +100,8 @@
     font-size: 12px;
     font-family: sans-serif;
     box-shadow: 0 3px 20px rgba(0, 0, 0, 0.2);
+    margin-left: 33%;
+    margin-top: -29%;
 }
 
 .main-page-landing-img-container {
@@ -110,6 +114,7 @@
     font-size: 12px;
     font-family: sans-serif;
     box-sizing: border-box;
+    z-index: 1;
 }
 
 .main-page-container {
@@ -125,7 +130,7 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    margin-left: 250px;
+    /* margin-left: 250px; */
     /* align-items: center */
 }
 
@@ -239,9 +244,13 @@ div[class^="main-page-section-feature-grid-item"] {
 }
 
 .main-page-footer-container{
+    padding-top: 10%;
+    margin-top: -10%;
     display: flex;
     justify-content: center;
-    flex-direction: column
+    flex-direction: column;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.05);
 }
 
 .footer-button {
@@ -254,6 +263,7 @@ div[class^="main-page-section-feature-grid-item"] {
 
 .feature-2 {
     margin-bottom: 8%;
+    background: rgba(0, 0, 0, 0.05);
 }
 
 .feature-3 {
