@@ -25,10 +25,8 @@ const App = () => (
       <Modal />
       <NavBarContainer />
       <div className="main-page-container">
-         <div>
             <AuthRoute path="/" component={MainPage} />
             <ProtectedRoute path="/" component={UserNavBar} />
-         </div>
          <div className="main-content-container">
             <Switch>
                <ProtectedRoute exact path="/:user_id/read_later" component={ReadLater} />

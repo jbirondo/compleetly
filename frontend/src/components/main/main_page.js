@@ -41,21 +41,24 @@ class MainPage extends React.Component {
           <div className="main-page-container">
 
               <div className="main-page-header-container">
+                <div className="main-page-header-flexbox">
                 <h1 className="main-page-header">
                   Where readers become leaders
+                </h1>
                   <div className="main-page-sub-header">
                     Keep up with all the topics that matter to you. All in one place.
                   </div>
-                </h1>
-                <button className="main-page-sign-up-button" 
-                onClick={() => this.props.openModal("signup")}>
+                <button className="main-page-sign-up-button"
+                  onClick={() => this.props.openModal("signup")}>
                   Get started for free
                 </button>
+                </div>
               </div>
 
-              <div className="main-page-landing-img-container">
+
+              {/* <div className="main-page-landing-img-container"> */}
                 <img src={landing} className="main-page-landing-img" alt=""/> 
-              </div>
+              {/* </div> */}
 
 
 
