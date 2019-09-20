@@ -57,8 +57,14 @@
     margin: 0px;
     font-size: 12px;
     font-family: sans-serif;
-    padding-left: 19%;
     padding-bottom: 20%;
+    display: flex;
+    justify-content: center;
+}
+
+.main-page-header-flexbox{
+    width: 420px;
+    margin-right: 15%;
 }
 
 .main-page-sign-up-button {
@@ -93,15 +99,17 @@
 
 .main-page-landing-img {
     min-height: 304px;
-    width: 100%;
+    width: 50%;
     box-sizing: border-box;
     color: inherit;
     margin: 0px;
     font-size: 12px;
     font-family: sans-serif;
     box-shadow: 0 3px 20px rgba(0, 0, 0, 0.2);
-    margin-left: 33%;
-    margin-top: -29%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: -15%;
+    z-index: 1;
 }
 
 .main-page-landing-img-container {
