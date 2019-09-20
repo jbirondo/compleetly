@@ -130,9 +130,6 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    margin-left: 125px;
-    /* margin-left: 250px; */
-    /* align-items: center */
 }
 
 .main-page-section-kicker {
