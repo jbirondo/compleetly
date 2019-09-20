@@ -32,14 +32,16 @@
    height: 40px;
    margin-right: 66.25%;
    margin-top: 6px;
+   
 }
 
 .logo-logged-in{
    width: 40px;
    height: 40px;
-   margin-right: 56%;
    margin-top: 3px;
-   margin-left: 12em;
+   position: fixed;
+   top: 0%;
+   left: 312px;
 }
 
 
