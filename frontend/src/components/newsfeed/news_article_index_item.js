@@ -10,28 +10,37 @@ import "./newsfeed.css";
 class NewsFeedIndexItem extends React.Component {
   constructor(props) {
     super(props);
+    // this.readLaterArray = this.props.user.readLater;
+    this.readLater = null;
+  }
+
+  isIncluded() {
+    for (let i = 0; i < this.props.user.readLater.length; i++) {
+        // debugger;
+      if (this.props.user.readLater[i].readLaterURL === this.props.article.url) {
+        this.readLater = this.props.user.readLater[i];
+        return true;
+      }
+    }
+    return false;
   }
 
   render() {
     let readLaterArray;
     let article = this.props.article;
-    let idx = this.props.key
+    let idx = this.props.key;
     // debugger;
 
-    readLaterArray = this.props.user.readLater.map(ele => {
-      // return ele.readLaterURL
-      return ele;
-    });
-
-    if (readLaterArray.length === 0) {
-      readLaterArray.push("no-article");
-    }
+    // console.log(readLaterArray);
+    // console.log(article);
+    // if (this.readL.user.readLater.aterArray.length === 0) {
+    //   this.readLaterArray.push("no-article");
+    // }
 
     let readLaterButton;
     // debugger;
-    readLaterArray.forEach(readLater => {
       readLaterButton =
-        readLater.readLaterURL !== article.url ? (
+        !this.isIncluded() ? (
           <button
             onClick={() =>
               this.props.createReadLater({
@@ -55,7 +64,7 @@ class NewsFeedIndexItem extends React.Component {
             onClick={() =>
               this.props.deleteReadLater({
                 reader: this.props.user.id,
-                readLaterId: readLater._id
+                readLaterId: this.readLater._id
               })
             }
             className="delete-source-read-later-button"
@@ -70,7 +79,6 @@ class NewsFeedIndexItem extends React.Component {
                       /> */}
           </button>
         );
-    });
     let image;
     if (article.urlToImage) {
       image = (
