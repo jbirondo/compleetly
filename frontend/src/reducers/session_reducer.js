@@ -56,20 +56,20 @@ export default function (state = initialState, action) {
       case RECEIVE_NEW_READ_LATER:
          let reads;
          newState = merge({}, state)
-         reads = newState.user.readArray
+         reads = newState.user.readLater
          reads.push(action.readLater.data)
-         newState.user.readArray = reads
+         newState.user.readLater = reads
          return newState
       case DELETE_READ_LATER:
-         let oReads = state.user.readArray;
+         let oReads = state.user.readLater;
          let nReads = [];
          for (let i = 0; i < oReads.length; i++) {
-            if (state.user.readArray[i]._id !== action.readLater.data._id) {
-               nReads.push(state.user.readArray[i]);
+            if (state.user.readLater[i]._id !== action.readLater.data._id) {
+               nReads.push(state.user.readLater[i]);
             }
          }
          newState = merge({}, state);
-         newState['user'].readArray = nReads;
+         newState['user'].readLater = nReads;
          return newState;
       default:
          return state;

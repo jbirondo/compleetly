@@ -90,6 +90,26 @@
 }
 
 .add-source-read-later-icon {
-   height: 40px;
-   width: 40px;
+   /* height: 40px;
+   width: 40px; */
+   font-size: 40px;
 } 
+
+.delete-source-read-later-button {
+   border: none;
+   display: block;
+   position: relative;
+   flex-direction: column;
+   background: white;
+   height: fit-content;
+}
+
+.delete-source-read-later-button:hover {
+   transform: scale(1.06)
+}
+
+.delete-source-read-later-icon {
+   /* height: 40px;
+   width: 40px; */
+   font-size: 40px;
+}

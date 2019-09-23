@@ -28,8 +28,8 @@ class ReadLater extends React.Component {
 
     renderReadLater() {
         let please;
-        if (this.props.readArray){
-            please = this.props.readArray.map(source => 
+        if (this.props.readLater){
+            please = this.props.readLater.map(source => 
                 <li key={source._id} 
                     className="read-later-li">
                     <a 
@@ -66,11 +66,11 @@ class ReadLater extends React.Component {
 
     render() {
 
-        if (!this.props.readArray) {
+        if (!this.props.readLater) {
             return null
         }
 
-        const display = (this.props.readArray.length > 0) ? (
+        const display = (this.props.readLater.length > 0) ? (
             <div className="read-later-list-container">
                 <h4 className="read-later-latest-header">LATEST</h4>
                 {this.renderReadLater()}
@@ -99,7 +99,7 @@ const mstp = state => {
         isAuthenticated: state.session.isAuthenticated,
         currentUserId: state.session.user.id,
         currentUser: state.session.user,
-        readArray: state.session.user.readArray
+        readLater: state.session.user.readLater
     }
 }
 

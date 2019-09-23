@@ -84,6 +84,7 @@ class UserNavBar extends React.Component {
         if (!this.props.follows) {
             return null;
         }
+        // debugger;
         return (
             <div className="user-bar-container" >
                 <div className='user-nav-bar-elements-container'>
