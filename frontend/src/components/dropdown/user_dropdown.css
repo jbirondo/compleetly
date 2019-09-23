@@ -74,8 +74,8 @@
     visibility: hidden;
 }
 
-button:focus {
+/* button:focus {
   outline: none;
   box-shadow: 0 0 0 3px  #64b631,
     0 0 0 1.5px  #64b631;
-}
+} */
