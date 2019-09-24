@@ -32,41 +32,17 @@ class NewsFeed extends React.Component {
         const req = new Request(url);
         axios(req).then(res => {
             this.setState({articles: res.data.articles})
-            // console.log(res)
         })
     }
-    
-    // let articles;
-    // this.getArticles().then(res => {
-    //     articles = res.data.articles.map((article, i) => (<li key={i}>{article.title}</li>))
-    // })
+
     
     
     render() {
-        // if (!this.props.user) {
-        //     return null
-        // }
-        // let readLaterArray;
-
-        // if (!this.props.user.readLater){
-        //     readLaterArray = []
-        // } else {
-        //     readLaterArray = this.props.user.readLater.map(ele => {return ele.readLaterURL});
-        // }
-
-       
-    
-        // debugger;
         let articles;
-        // console.log(readLaterArray)
-        
         articles = this.state.articles.map((article, i) => {
-            // debugger;
             return <NewsFeedIndexItem article={article} key={i} />
         })
-               
         return (
-            
             <div className="today-container">
                 <h1 className='today-header'>Today</h1>
                 <h3 className='desc-header'>The insights you need to get the inside edge</h3>
@@ -78,7 +54,6 @@ class NewsFeed extends React.Component {
 };
 
 const msp = state => {
-    // debugger;
     return {
         user: state.session.user
     }

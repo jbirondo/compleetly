@@ -27,9 +27,9 @@ class ReadLater extends React.Component {
     // }
 
     renderReadLater() {
-        let please;
+        let readLaterItems;
         if (this.props.readLater){
-            please = this.props.readLater.map(source => 
+            readLaterItems = this.props.readLater.map(source => 
                 <li key={source._id} 
                     className="read-later-li">
                     <a 
@@ -58,7 +58,7 @@ class ReadLater extends React.Component {
         
             return (
                     <ul className="read-later-ul">
-                        {please}
+                        {readLaterItems}
                     </ul>
             )
 
@@ -69,7 +69,6 @@ class ReadLater extends React.Component {
         if (!this.props.readLater) {
             return null
         }
-
         const display = (this.props.readLater.length > 0) ? (
             <div className="read-later-list-container">
                 <h4 className="read-later-latest-header">LATEST</h4>

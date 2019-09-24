@@ -29,16 +29,8 @@ class NewsFeedIndexItem extends React.Component {
     let readLaterArray;
     let article = this.props.article;
     let idx = this.props.key;
-    // debugger;
-
-    // console.log(readLaterArray);
-    // console.log(article);
-    // if (this.readL.user.readLater.aterArray.length === 0) {
-    //   this.readLaterArray.push("no-article");
-    // }
 
     let readLaterButton;
-    // debugger;
       readLaterButton =
         !this.isIncluded() ? (
           <button
@@ -53,11 +45,6 @@ class NewsFeedIndexItem extends React.Component {
             className="source-read-later-button"
           >
             <i className="far fa-bookmark add-source-read-later-icon"></i>
-            {/* <img
-                        src={addreadlatericon}
-                        className="add-source-read-later-icon"
-                        alt=" "
-                      /> */}
           </button>
         ) : (
           <button
@@ -68,15 +55,8 @@ class NewsFeedIndexItem extends React.Component {
               })
             }
             className="delete-source-read-later-button"
-            //   className="source-read-later-button"
           >
             <i className="fas fa-bookmark delete-source-read-later-icon"></i>
-            {/* <img
-                        src={addreadlatericon}
-                        className="delete-source-read-later-icon"
-                        // className="add-source-read-later-icon"
-                        alt=" "
-                      /> */}
           </button>
         );
     let image;
@@ -138,15 +118,6 @@ class NewsFeedIndexItem extends React.Component {
     } else {
       description = <p className="news-explore-content">{article.content}</p>;
     }
-    // debugger;
-
-    // console.log(readLaterArray)
-    // console.log('whatever', readLaterButton);
-    // debugger;
-    // console.log(this.props.user)
-    // console.log(this.props)
-    // console.log(readLaterButton)
-    // console.log(article)
     return (
       <li key={idx} className="news-explore-li">
         <a
@@ -162,15 +133,7 @@ class NewsFeedIndexItem extends React.Component {
             {description}
           </div>
         </a>
-        {/* {console.log(readLaterButton)}
-                    {console.log(article)} */}
         {readLaterButton}
-        {/* <button onClick={() => this.props.createReadLater({
-                        readLaterURL: article.url,
-                        readLaterName: article.source.name,
-                        readLaterDescription: article.description,
-                        reader: this.props.user.id
-                    })}>Read Later</button> */}
       </li>
     );
   }

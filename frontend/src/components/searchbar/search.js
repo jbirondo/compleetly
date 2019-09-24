@@ -39,16 +39,6 @@ class Search extends React.Component {
   };
 
   render() {
-    // debugger;
-
-    // const { redirect } = this.state;
-
-    // debugger;
-
-
-
-
-
     return (
       <form onSubmit={this.getInfo}>
         <input
