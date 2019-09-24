@@ -38,7 +38,7 @@ class EntertainmentFeed extends React.Component {
 
         return ( // article componenet that only receives articles as props, only render this component if I have these props. have render component do NO fetching logic
             // only pass articles to render component when I have successfully fetched
-            <div>
+            <div className="add-content-list-container">
                 {articles}
             </div>
         )
