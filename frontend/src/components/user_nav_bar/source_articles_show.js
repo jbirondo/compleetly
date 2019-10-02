@@ -199,7 +199,7 @@ class SourceArticlesShow extends React.Component {
         rel="noopener noreferrer"
         href={this.props.location.state.source.followURL}
       >
-        <h3>{this.state.articles[0].source.name}</h3>
+        <h3 className='source-article-namee'>{this.state.articles[0].source.name}</h3>
       </a>
     );
     return (
