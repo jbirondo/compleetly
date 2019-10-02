@@ -13,8 +13,7 @@
     margin-top: -6px;
 }
 
-
-.li-dropdown:first-child {
+.li-dropdown-name {
     border-bottom: 1px #bbbbbb solid;
     padding: 1px 0px 1.6% 12px;
 }
@@ -44,16 +43,17 @@
     border-radius: 3px;
     right: 39%;
     top: 29%;
-    margin: 5px 120px 15px 5px;
+    margin: 7px 120px 15px 5px;
     width: 272px;
     box-shadow: 4px 4px 9px 0px rgba(3, 3, 3, 0.3);
     margin-left: -115px;
 }
 
 .nav-bar-welcome-message{
-   padding: 10px 13px;
-   background-color: #64b631;
-   border-radius: 50%;
+  padding: 10px 13px;
+  background-color: #64b631;
+  border-radius: 50%;
+  margin-top: 15px;
 }
 
 .dropdown-btn{
@@ -68,6 +68,10 @@
      padding:0;
      font: inherit;
      cursor: pointer;
+}
+
+.padding-pls{
+  padding-right: 212px;
 }
 
 .hide {

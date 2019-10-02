@@ -21,7 +21,7 @@ class userDropdown extends React.Component {
             <div className="user-dropdown-button">
                 <button className='dropdown-btn' onClick={this.addHiddenClass}><h3 className="nav-bar-welcome-message">{this.props.currentUser.firstName[0].toUpperCase()}</h3></button>
                 <ul className={this.state.hidden ? 'user-dropdown-menu hide' : 'user-dropdown-menu'}>
-                    <li className='li-dropdown'>
+                    <li className='li-dropdown-name li-dropdown'>
                         {/* <div>{this.props.currentUser.firstName[0]}</div> */}
                         <h3>{this.props.currentUser.firstName} {this.props.currentUser.lastName}</h3>
                         {/* <div>{this.props.currentUser.email}</div> */}
@@ -33,9 +33,9 @@ class userDropdown extends React.Component {
                     <li className='li-dropdown'>Support</li>
                     <li className='li-dropdown'>Privacy</li>
                     <li className='li-dropdown'>Terms &amp; Policy</li> */}
-                    <li className='li-dropdown'><Link className='link-nav' to='/newsfeed'>Today's News</Link></li>
-                    <li className='li-dropdown'><a className='link-nav' target='_blank' rel="noopener noreferrer" href='https://github.com/jbirondo/MERN-feedly'>GitHub</a></li>
-                    <li className='li-dropdown'><button className="logout-button" onClick={this.props.logout}>Logout</button></li>
+                    <Link className='link-nav' to='/newsfeed'><li className='li-dropdown'>Today's News</li></Link>
+                    <a className='link-nav' target='_blank' rel="noopener noreferrer" href='https://github.com/jbirondo/MERN-feedly'><li className='li-dropdown'>GitHub</li></a>
+                    <button className="logout-button" onClick={this.props.logout}><li className='li-dropdown padding-pls'>Logout</li></button>
                 </ul>
             </div>
         )
