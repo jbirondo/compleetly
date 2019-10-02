@@ -72,8 +72,12 @@
 
 .title-author-desc-div-show{
    margin-left: 140px;
-   width: 530px;
+   width: 50 vw;
    margin-right: 20px;
+}
+
+.source-article-namee{
+  margin-left: 50px;
 }
 
 .source-read-later-button {
