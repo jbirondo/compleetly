@@ -5,6 +5,17 @@ Users can select articles to read later and they can search for articles as well
 
 https://compleetly.herokuapp.com/#/
 
+# Technologies
+- JavaScript
+- React
+- Node.js
+- Axios
+- Mongoose
+- Docker
+- MongoDB
+- Heroku Container Registry
+
+
 ![Home Page](./pic1.png)
 
 # Features
