@@ -19,8 +19,6 @@ router.get('/current', passport.authenticate('jwt', {session: false}), (req, res
 });
 
 router.get('/:userId', (req, res) => {
-    // debugger;
-    // const user = req.params.userId;
     User.findOne({_id: req.params.userId})
         .then(async user => {
             let readLater = await ReadLater.find({reader: user.id})
@@ -65,7 +63,6 @@ router.post('/:userId/read_later', (req, res) => {
     const userId = req.body.reader
     User.findOne({ _id: userId })
         .then(user => {
-            // debugger
             const newReadLater = new ReadLater({
                 readLaterURL: req.body.readLaterURL,
                 readLaterDescription: req.body.readLaterDescription,
@@ -100,12 +97,9 @@ router.delete('/:userId/follow', (req, res) => {
     })
     
 }) 
-//splice
+
 
 router.delete('/:userId/read_later', (req, res) => {
-    // console.log(req);
-    // console.log(req.body);
-    debugger;
     ReadLater.findOneAndDelete({ _id: req.body.readLaterId })
         .then(readLater => {
             readLater.delete()
